@@ -1,0 +1,39 @@
+running egg_info
+creating ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info
+writing ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/PKG-INFO
+writing dependency_links to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/dependency_links.txt
+writing entry points to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/entry_points.txt
+writing requirements to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/requires.txt
+writing top-level names to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/top_level.txt
+writing manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+reading manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+writing manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/build
+creating /home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/build/lib
+creating /home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/build/lib/crazyflie_gazebo
+copying crazyflie_gazebo/__init__.py -> /home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/build/lib/crazyflie_gazebo
+copying crazyflie_gazebo/control_services.py -> /home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/build/lib/crazyflie_gazebo
+running install
+running install_lib
+creating /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo
+copying /home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/build/lib/crazyflie_gazebo/__init__.py -> /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo
+copying /home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/build/lib/crazyflie_gazebo/control_services.py -> /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo
+byte-compiling /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo/control_services.py to control_services.cpython-310.pyc
+running install_data
+creating /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/ament_index
+creating /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/ament_index/resource_index
+creating /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/ament_index/resource_index/packages
+copying resource/crazyflie_gazebo -> /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/ament_index/resource_index/packages
+copying package.xml -> /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/crazyflie_gazebo
+creating /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/crazyflie_gazebo/launch
+copying launch/crazyflie_gazebo.launch.py -> /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/crazyflie_gazebo/launch
+creating /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/crazyflie_gazebo/config
+copying config/ros_gz_crazyflie_bridge.yaml -> /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/share/crazyflie_gazebo/config
+running install_egg_info
+Copying ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info to /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-0.0.0-py3.10.egg-info
+running install_scripts
+Installing control_services script to /home/denis/Desktop/crazyflie_ws/install/crazyflie_gazebo/lib/crazyflie_gazebo
+writing list of installed files to '/home/denis/Desktop/crazyflie_ws/build/crazyflie_gazebo/install.log'

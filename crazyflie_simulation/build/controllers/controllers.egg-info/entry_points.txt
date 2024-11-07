@@ -1,0 +1,3 @@
+[console_scripts]
+MotorControlNode = controllers.MotorControlNode:main
+

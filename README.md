@@ -1,4 +1,1 @@
-# GustGurus-Drone-Project
-Advanced Control Systems Integration project for robust control of a drone under simulated and experimental wind conditions
-
-Adapted from the tutorial found here: https://www.bitcraze.io/2024/09/crazyflies-adventures-with-ros-2-and-gazebo/
+Guys I made the paths all relative except for in the crazyflie.sdf world file. Relative paths wouldn't work there for some reason. Keep that in mind when testing on different computers

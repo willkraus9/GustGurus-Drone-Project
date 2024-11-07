@@ -1,0 +1,19 @@
+running egg_info
+writing ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/PKG-INFO
+writing dependency_links to ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/dependency_links.txt
+writing entry points to ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/entry_points.txt
+writing requirements to ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/requires.txt
+writing top-level names to ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/top_level.txt
+reading manifest file '../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+writing manifest file '../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info' (and everything under it)
+Copying ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info
+running install_scripts
+Installing control_services script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/crazyflie_gazebo
+writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/crazyflie_gazebo/install.log'

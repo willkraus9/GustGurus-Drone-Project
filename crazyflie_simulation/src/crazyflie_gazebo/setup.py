@@ -18,14 +18,17 @@ for file_path in glob('models/**/*', recursive=True):
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='1.0.0',
     packages=find_packages(exclude=['test']),
+    package_data={package_name: ['models/**/*.sdf', 'models/**/*.config']},
     data_files=data_files, # The files to be installed
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='denis',
-    maintainer_email='denis@todo.todo',
-    description='TODO: Package description',
+
+    maintainer='Denis, Will, Kaustab, Nikolaj',
+    maintainer_email='dkalpay@andrew.cmu.edu',
+
+    description='Package for loading a crazyflie drone in gazebo. Also include a keyboard controller',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={

@@ -19,14 +19,6 @@ import os
 def generate_launch_description():
     # Use the absolute path to the world file
     pkg_share_path = get_package_share_directory('crazyflie_gazebo')
-    print("----------------------------------------------------------")
-    print("----------------------------------------------------------")
-    print("----------------------------------------------------------")
-    print(pkg_share_path)
-    print("----------------------------------------------------------")
-    print("----------------------------------------------------------")
-    print("----------------------------------------------------------")
-
     world_file_path =  pkg_share_path + "/models/crazyflie_world.sdf"
 
     # Get path to the ros gazebo package
@@ -49,20 +41,14 @@ def generate_launch_description():
     )
 
     control = Node(
-        package='crazyflie_gazebo',
-        executable='control_services',
-        output='screen',
-        parameters=[
-            {'hover_height': 0.5},
-            {'robot_prefix': '/crazyflie'},
-            {'incoming_twist_topic': '/cmd_vel'},
-            {'max_ang_z_rate': 0.4},
-        ]
+        package='controllers',
+        executable='MotorControlNode',
+        output='screen'
     )
 
     return LaunchDescription([
         gz_sim,
+        control,
         bridge,
-        control
     ])
 

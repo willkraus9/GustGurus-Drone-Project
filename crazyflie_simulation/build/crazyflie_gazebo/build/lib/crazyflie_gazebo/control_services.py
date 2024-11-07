@@ -13,6 +13,7 @@ class ControlServices(Node):
         self.declare_parameter('robot_prefix', '/crazyflie')
         self.declare_parameter('incoming_twist_topic', '/cmd_vel')
         self.declare_parameter('max_ang_z_rate', 0.4)
+        self.declare_parameter('test', False)
 
         hover_height = self.get_parameter('hover_height').value
         robot_prefix = self.get_parameter('robot_prefix').value
@@ -86,6 +87,7 @@ class ControlServices(Node):
                 self.keep_height = False
 
         self.publisher_.publish(new_cmd_msg)
+        
 
     def odometry_callback(self, msg):
         self.current_pose = msg.pose.pose

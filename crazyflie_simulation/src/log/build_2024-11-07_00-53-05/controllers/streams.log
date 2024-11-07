@@ -1,0 +1,24 @@
+[1.715s] Invoking command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/controllers build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/install.log --single-version-externally-managed install_data
+[2.143s] running egg_info
+[2.145s] writing ../build/controllers/controllers.egg-info/PKG-INFO
+[2.146s] writing dependency_links to ../build/controllers/controllers.egg-info/dependency_links.txt
+[2.148s] writing entry points to ../build/controllers/controllers.egg-info/entry_points.txt
+[2.148s] writing requirements to ../build/controllers/controllers.egg-info/requires.txt
+[2.149s] writing top-level names to ../build/controllers/controllers.egg-info/top_level.txt
+[2.158s] reading manifest file '../build/controllers/controllers.egg-info/SOURCES.txt'
+[2.159s] writing manifest file '../build/controllers/controllers.egg-info/SOURCES.txt'
+[2.159s] running build
+[2.159s] running build_py
+[2.160s] copying controllers/MotorControlNode.py -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/build/lib/controllers
+[2.160s] running install
+[2.160s] running install_lib
+[2.162s] copying /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/build/lib/controllers/MotorControlNode.py -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/controllers/lib/python3.10/site-packages/controllers
+[2.168s] byte-compiling /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/controllers/lib/python3.10/site-packages/controllers/MotorControlNode.py to MotorControlNode.cpython-310.pyc
+[2.170s] running install_data
+[2.171s] running install_egg_info
+[2.171s] removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info' (and everything under it)
+[2.171s] Copying ../build/controllers/controllers.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info
+[2.174s] running install_scripts
+[2.212s] Installing MotorControlNode script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/controllers/lib/controllers
+[2.214s] writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/install.log'
+[2.261s] Invoked command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers' returned '0': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/controllers build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/controllers/install.log --single-version-externally-managed install_data

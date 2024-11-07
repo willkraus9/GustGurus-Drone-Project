@@ -1,0 +1,3 @@
+[console_scripts]
+control_services = crazyflie_gazebo.control_services:main
+

@@ -24,3 +24,9 @@
   ros_type_name: "sensor_msgs/msg/LaserScan"
   gz_type_name: "ignition.msgs.LaserScan"
   direction: GZ_TO_ROS
+- ros_topic_name: "/crazyflie/motor_commands"
+  gz_topic_name: "/crazyflie/gazebo/command/motor_speed"
+  ros_type_name: "actuator_msgs/msg/Actuators"
+  gz_type_name: "gz.msgs.Actuators"
+  direction: ROS_TO_GZ
+

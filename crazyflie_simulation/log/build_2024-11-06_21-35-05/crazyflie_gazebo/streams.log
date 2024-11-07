@@ -1,0 +1,22 @@
+[1.071s] Invoking command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data
+[1.434s] running egg_info
+[1.435s] writing ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/PKG-INFO
+[1.438s] writing dependency_links to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/dependency_links.txt
+[1.439s] writing entry points to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/entry_points.txt
+[1.441s] writing requirements to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/requires.txt
+[1.442s] writing top-level names to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/top_level.txt
+[1.444s] reading manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+[1.448s] writing manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+[1.449s] running build
+[1.449s] running build_py
+[1.450s] running install
+[1.451s] running install_lib
+[1.452s] running install_data
+[1.454s] copying models/crazyflie_world.sdf -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models
+[1.457s] running install_egg_info
+[1.460s] removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-0.0.0-py3.10.egg-info' (and everything under it)
+[1.462s] Copying ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-0.0.0-py3.10.egg-info
+[1.465s] running install_scripts
+[1.498s] Installing control_services script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/crazyflie_gazebo
+[1.500s] writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log'
+[1.540s] Invoked command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo' returned '0': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data

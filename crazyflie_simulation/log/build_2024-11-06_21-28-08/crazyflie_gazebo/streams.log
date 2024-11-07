@@ -1,0 +1,54 @@
+[2.242s] Invoking command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data
+[2.573s] running egg_info
+[2.575s] writing ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/PKG-INFO
+[2.578s] writing dependency_links to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/dependency_links.txt
+[2.580s] writing entry points to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/entry_points.txt
+[2.581s] writing requirements to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/requires.txt
+[2.583s] writing top-level names to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/top_level.txt
+[2.587s] reading manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+[2.590s] writing manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'
+[2.591s] running build
+[2.591s] running build_py
+[2.592s] running install
+[2.592s] running install_lib
+[2.594s] running install_data
+[2.595s] copying launch/crazyflie_gazebo.launch.py -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/launch
+[2.595s] creating /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie
+[2.596s] copying models/crazyflie/model.config -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie
+[2.598s] copying models/crazyflie/crazyflie_world.sdf -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie
+[2.598s] copying models/crazyflie/model.sdf -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie
+[2.599s] creating /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes
+[2.600s] creating /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/textures
+[2.601s] copying models/crazyflie/meshes/textures/fast_helix.png -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/textures
+[2.601s] creating /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.602s] copying models/crazyflie/meshes/stl_files/cw_prop.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.603s] copying models/crazyflie/meshes/stl_files/ccw_prop.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.604s] copying models/crazyflie/meshes/stl_files/cf_body.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.605s] copying models/crazyflie/meshes/stl_files/4_motormounts.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.605s] copying models/crazyflie/meshes/stl_files/pin_headers.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.606s] copying models/crazyflie/meshes/stl_files/motor_mount.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.606s] copying models/crazyflie/meshes/stl_files/cf2_assembly.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.607s] copying models/crazyflie/meshes/stl_files/battery_holder.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.607s] copying models/crazyflie/meshes/stl_files/4_motors.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.608s] copying models/crazyflie/meshes/stl_files/2_pinheaders.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.608s] copying models/crazyflie/meshes/stl_files/battery.stl -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/stl_files
+[2.608s] creating /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.609s] copying models/crazyflie/meshes/blender_files/cf_body.blend -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.609s] copying models/crazyflie/meshes/blender_files/cf2_assembly.blend -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.609s] copying models/crazyflie/meshes/blender_files/battery.blend -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.609s] copying models/crazyflie/meshes/blender_files/motor_mount.blend -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.609s] copying models/crazyflie/meshes/blender_files/pin_headers.blend -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.610s] copying models/crazyflie/meshes/blender_files/cw_prop.blend -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.610s] copying models/crazyflie/meshes/blender_files/battery_holder.blend -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/blender_files
+[2.611s] creating /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/collada_files
+[2.612s] copying models/crazyflie/meshes/collada_files/cf2_assembly_with_props.dae -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/collada_files
+[2.612s] copying models/crazyflie/meshes/collada_files/cw_prop.dae -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/collada_files
+[2.612s] copying models/crazyflie/meshes/collada_files/cf2_assembly.dae -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/collada_files
+[2.613s] copying models/crazyflie/meshes/collada_files/ccw_prop.dae -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/models/crazyflie/meshes/collada_files
+[2.613s] running install_egg_info
+[2.616s] removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-0.0.0-py3.10.egg-info' (and everything under it)
+[2.617s] Copying ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-0.0.0-py3.10.egg-info
+[2.618s] running install_scripts
+[2.652s] Installing control_services script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/crazyflie_gazebo
+[2.656s] writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log'
+[2.697s] Invoked command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo' returned '0': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data

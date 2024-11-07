@@ -91,7 +91,6 @@ class ControlServices(Node):
         self.current_pose = msg.pose.pose
 
     def takeoff_callback(self, request, response):
-
         self.takeoff_command = True
         response.success = True
         return response

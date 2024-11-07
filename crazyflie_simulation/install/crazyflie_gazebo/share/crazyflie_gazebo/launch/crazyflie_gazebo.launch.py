@@ -12,14 +12,26 @@ from launch.actions import ExecuteProcess, SetEnvironmentVariable
 
 from launch_ros.actions import Node
 
+import os
+
+
+
 def generate_launch_description():
     # Use the absolute path to the world file
-    world_file_path = "/home/denis/Desktop/crazyflie_ws/src/crazyflie_gazebo/models/crazyflie/crazyflie_world.sdf"
+    pkg_share_path = get_package_share_directory('crazyflie_gazebo')
+    print("----------------------------------------------------------")
+    print("----------------------------------------------------------")
+    print("----------------------------------------------------------")
+    print(pkg_share_path)
+    print("----------------------------------------------------------")
+    print("----------------------------------------------------------")
+    print("----------------------------------------------------------")
 
-    pkg_project = get_package_share_directory('crazyflie_gazebo')
+    world_file_path =  pkg_share_path + "/models/crazyflie_world.sdf"
+
+    # Get path to the ros gazebo package
     pkg_ros_gz_sim = get_package_share_directory('ros_gz_sim')
     gz_model_path = os.getenv('GZ_SIM_RESOURCE_PATH')
-
 
     gz_sim = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -31,7 +43,7 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         parameters=[{
-            'config_file': os.path.join(pkg_project, 'config', 'ros_gz_crazyflie_bridge.yaml'),
+            'config_file': os.path.join(pkg_share_path, 'config', 'ros_gz_crazyflie_bridge.yaml'),
         }],
         output='screen'
     )

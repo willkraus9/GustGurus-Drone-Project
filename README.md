@@ -14,6 +14,7 @@ There are currently two SDF files for the drone in the crazyflie_gazebo, however
 - One of the SDF files allows us to send twist commands, other allows us to send motor velocities.
 
 To run the simulation simply do:
+cd crazyflie_simulation
 
 colcon build 
 

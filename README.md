@@ -16,13 +16,11 @@ There are currently two SDF files for the drone in the crazyflie_gazebo, however
 To run the simulation simply do:
 ```
 cd crazyflie_simulation
-
 colcon build 
-
 ros2 launch crazyflie_gazebo crazyflie_gazebo.launch.py 
 ```
 Then you can enable the keyboard by:
-
+`
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
-
+`
 Don't forget to change the paths in the crazyflie_world.sdf file. (It would be nice if we can make those relative paths)

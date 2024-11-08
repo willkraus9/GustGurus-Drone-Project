@@ -20,7 +20,7 @@ colcon build
 ros2 launch crazyflie_gazebo crazyflie_gazebo.launch.py 
 ```
 Then you can enable the keyboard by:
-`
+```
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
-`
+```
 Don't forget to change the paths in the crazyflie_world.sdf file. (It would be nice if we can make those relative paths)

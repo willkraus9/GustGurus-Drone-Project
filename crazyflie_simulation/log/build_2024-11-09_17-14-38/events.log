@@ -1,0 +1,339 @@
+[0.000000] (-) TimerEvent: {}
+[0.002294] (controllers) JobQueued: {'identifier': 'controllers', 'dependencies': OrderedDict()}
+[0.002548] (cpp_controllers) JobQueued: {'identifier': 'cpp_controllers', 'dependencies': OrderedDict()}
+[0.003185] (crazyflie_gazebo) JobQueued: {'identifier': 'crazyflie_gazebo', 'dependencies': OrderedDict()}
+[0.003566] (controllers) JobStarted: {'identifier': 'controllers'}
+[0.024360] (cpp_controllers) JobStarted: {'identifier': 'cpp_controllers'}
+[0.040874] (crazyflie_gazebo) JobStarted: {'identifier': 'crazyflie_gazebo'}
+[0.099528] (-) TimerEvent: {}
+[0.201664] (-) TimerEvent: {}
+[0.305896] (-) TimerEvent: {}
+[0.408821] (-) TimerEvent: {}
+[0.510997] (-) TimerEvent: {}
+[0.613074] (-) TimerEvent: {}
+[0.624697] (cpp_controllers) JobProgress: {'identifier': 'cpp_controllers', 'progress': 'cmake'}
+[0.628071] (cpp_controllers) JobProgress: {'identifier': 'cpp_controllers', 'progress': 'build'}
+[0.630122] (cpp_controllers) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers', '--', '-j8', '-l8'], 'cwd': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'denis'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/denis'), ('OLDPWD', '/home/denis/Desktop/GustGurus-Drone-Project'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('PS1', '(crazyflie_ros) \\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$'), ('SYSTEMD_EXEC_PID', '1632'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('COLCON_PREFIX_PATH', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'denis'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'denis'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/denis/virtual_environments/crazyflie_ros/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/22:@/tmp/.ICE-unix/1604,unix/22:/tmp/.ICE-unix/1604'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/fd8905e2_063d_46ed_b215_600fecbdd565'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('VIRTUAL_ENV_PROMPT', '(crazyflie_ros)'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.92'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('VIRTUAL_ENV', '/home/denis/virtual_environments/crazyflie_ros'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble')]), 'shell': False}
+[0.716146] (-) TimerEvent: {}
+[0.818888] (-) TimerEvent: {}
+[0.919684] (-) TimerEvent: {}
+[1.021795] (-) TimerEvent: {}
+[1.122643] (-) TimerEvent: {}
+[1.163306] (cpp_controllers) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.163597] (cpp_controllers) StdoutLine: {'line': b'-- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.164131] (cpp_controllers) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.164237] (cpp_controllers) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.166241] (cpp_controllers) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.173614] (cpp_controllers) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.175189] (cpp_controllers) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.175401] (cpp_controllers) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.175804] (cpp_controllers) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.223693] (-) TimerEvent: {}
+[1.325587] (-) TimerEvent: {}
+[1.357567] (cpp_controllers) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.430737] (-) TimerEvent: {}
+[1.476402] (cpp_controllers) StdoutLine: {'line': b'-- Found actuator_msgs: 0.0.1 (/opt/ros/humble/share/actuator_msgs/cmake)\n'}
+[1.507737] (cpp_controllers) StdoutLine: {'line': b'-- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)\n'}
+[1.533108] (-) TimerEvent: {}
+[1.571794] (cpp_controllers) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[1.634192] (-) TimerEvent: {}
+[1.735330] (-) TimerEvent: {}
+[1.797972] (cpp_controllers) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[1.798659] (cpp_controllers) StdoutLine: {'line': b'-- Configured cppcheck include dirs: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/include/cpp_controllers\n'}
+[1.798869] (cpp_controllers) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[1.799091] (cpp_controllers) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.804853] (cpp_controllers) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[1.805735] (cpp_controllers) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[1.806155] (cpp_controllers) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.807945] (cpp_controllers) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.835876] (-) TimerEvent: {}
+[1.845506] (cpp_controllers) StdoutLine: {'line': b'-- Generating done\n'}
+[1.856254] (cpp_controllers) StdoutLine: {'line': b'-- Build files have been written to: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers\n'}
+[1.927799] (crazyflie_gazebo) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/crazyflie_gazebo', 'build', '--build-base', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build', 'install', '--record', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'denis', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/denis', 'OLDPWD': '/home/denis/Desktop/GustGurus-Drone-Project', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PS1': '(crazyflie_ros) \\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$', 'SYSTEMD_EXEC_PID': '1632', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'denis', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'denis', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/humble/bin:/home/denis/virtual_environments/crazyflie_ros/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/22:@/tmp/.ICE-unix/1604,unix/22:/tmp/.ICE-unix/1604', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/fd8905e2_063d_46ed_b215_600fecbdd565', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'VIRTUAL_ENV_PROMPT': '(crazyflie_ros)', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.92', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'VIRTUAL_ENV': '/home/denis/virtual_environments/crazyflie_ros', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers'}, 'shell': False}
+[1.932916] (cpp_controllers) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target motor_control_node\x1b[0m\n'}
+[1.937085] (-) TimerEvent: {}
+[1.969750] (controllers) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/controllers', 'build', '--build-base', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/build', 'install', '--record', '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'denis', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/denis', 'OLDPWD': '/home/denis/Desktop/GustGurus-Drone-Project', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'PS1': '(crazyflie_ros) \\[\\e]0;\\u@\\h: \\w\\a\\]${debian_chroot:+($debian_chroot)}\\[\\033[01;32m\\]\\u@\\h\\[\\033[00m\\]:\\[\\033[01;34m\\]\\w\\[\\033[00m\\]\\$', 'SYSTEMD_EXEC_PID': '1632', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'COLCON_PREFIX_PATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'denis', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'denis', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/humble/bin:/home/denis/virtual_environments/crazyflie_ros/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/22:@/tmp/.ICE-unix/1604,unix/22:/tmp/.ICE-unix/1604', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/fd8905e2_063d_46ed_b215_600fecbdd565', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'VIRTUAL_ENV_PROMPT': '(crazyflie_ros)', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.92', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'VIRTUAL_ENV': '/home/denis/virtual_environments/crazyflie_ros', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'VTE_VERSION': '6800', 'CMAKE_PREFIX_PATH': '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers'}, 'shell': False}
+[1.984132] (cpp_controllers) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o\x1b[0m\n'}
+[2.038606] (-) TimerEvent: {}
+[2.139601] (-) TimerEvent: {}
+[2.242454] (-) TimerEvent: {}
+[2.346722] (-) TimerEvent: {}
+[2.448451] (-) TimerEvent: {}
+[2.452758] (crazyflie_gazebo) StdoutLine: {'line': b'running egg_info\n'}
+[2.458586] (crazyflie_gazebo) StdoutLine: {'line': b'writing ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/PKG-INFO\n'}
+[2.460002] (crazyflie_gazebo) StdoutLine: {'line': b'writing dependency_links to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/dependency_links.txt\n'}
+[2.462491] (crazyflie_gazebo) StdoutLine: {'line': b'writing entry points to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/entry_points.txt\n'}
+[2.465955] (crazyflie_gazebo) StdoutLine: {'line': b'writing requirements to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/requires.txt\n'}
+[2.466288] (crazyflie_gazebo) StdoutLine: {'line': b'writing top-level names to ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/top_level.txt\n'}
+[2.471075] (crazyflie_gazebo) StdoutLine: {'line': b"reading manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'\n"}
+[2.474546] (crazyflie_gazebo) StdoutLine: {'line': b"writing manifest file '../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info/SOURCES.txt'\n"}
+[2.478169] (crazyflie_gazebo) StdoutLine: {'line': b'running build\n'}
+[2.478534] (crazyflie_gazebo) StdoutLine: {'line': b'running build_py\n'}
+[2.480964] (crazyflie_gazebo) StdoutLine: {'line': b'running install\n'}
+[2.481700] (crazyflie_gazebo) StdoutLine: {'line': b'running install_lib\n'}
+[2.481860] (crazyflie_gazebo) StdoutLine: {'line': b'running install_data\n'}
+[2.485361] (crazyflie_gazebo) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.490501] (crazyflie_gazebo) StdoutLine: {'line': b"removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info' (and everything under it)\n"}
+[2.492893] (crazyflie_gazebo) StdoutLine: {'line': b'Copying ../../build/crazyflie_gazebo/crazyflie_gazebo.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info\n'}
+[2.497613] (crazyflie_gazebo) StdoutLine: {'line': b'running install_scripts\n'}
+[2.549419] (controllers) StdoutLine: {'line': b'running egg_info\n'}
+[2.549729] (-) TimerEvent: {}
+[2.549897] (controllers) StdoutLine: {'line': b'writing ../../build/controllers/controllers.egg-info/PKG-INFO\n'}
+[2.559572] (controllers) StdoutLine: {'line': b'writing dependency_links to ../../build/controllers/controllers.egg-info/dependency_links.txt\n'}
+[2.560096] (controllers) StdoutLine: {'line': b'writing entry points to ../../build/controllers/controllers.egg-info/entry_points.txt\n'}
+[2.562634] (controllers) StdoutLine: {'line': b'writing requirements to ../../build/controllers/controllers.egg-info/requires.txt\n'}
+[2.562963] (controllers) StdoutLine: {'line': b'writing top-level names to ../../build/controllers/controllers.egg-info/top_level.txt\n'}
+[2.568473] (controllers) StdoutLine: {'line': b"reading manifest file '../../build/controllers/controllers.egg-info/SOURCES.txt'\n"}
+[2.572170] (controllers) StdoutLine: {'line': b"writing manifest file '../../build/controllers/controllers.egg-info/SOURCES.txt'\n"}
+[2.573719] (controllers) StdoutLine: {'line': b'running build\n'}
+[2.576897] (controllers) StdoutLine: {'line': b'running build_py\n'}
+[2.579614] (controllers) StdoutLine: {'line': b'running install\n'}
+[2.581093] (controllers) StdoutLine: {'line': b'running install_lib\n'}
+[2.586246] (controllers) StdoutLine: {'line': b'running install_data\n'}
+[2.588583] (controllers) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.597307] (controllers) StdoutLine: {'line': b"removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[2.604120] (controllers) StdoutLine: {'line': b'Copying ../../build/controllers/controllers.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info\n'}
+[2.607225] (crazyflie_gazebo) StdoutLine: {'line': b'Installing control_services script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/crazyflie_gazebo\n'}
+[2.611010] (crazyflie_gazebo) StdoutLine: {'line': b"writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log'\n"}
+[2.611311] (controllers) StdoutLine: {'line': b'running install_scripts\n'}
+[2.651233] (-) TimerEvent: {}
+[2.669708] (crazyflie_gazebo) CommandEnded: {'returncode': 0}
+[2.674144] (controllers) StdoutLine: {'line': b'Installing MotorControlNode script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/controllers\n'}
+[2.676187] (controllers) StdoutLine: {'line': b"writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log'\n"}
+[2.719453] (crazyflie_gazebo) JobEnded: {'identifier': 'crazyflie_gazebo', 'rc': 0}
+[2.731811] (controllers) CommandEnded: {'returncode': 0}
+[2.752255] (-) TimerEvent: {}
+[2.787230] (controllers) JobEnded: {'identifier': 'controllers', 'rc': 0}
+[2.852542] (-) TimerEvent: {}
+[2.954546] (-) TimerEvent: {}
+[3.055621] (-) TimerEvent: {}
+[3.157156] (-) TimerEvent: {}
+[3.259075] (-) TimerEvent: {}
+[3.361902] (-) TimerEvent: {}
+[3.463728] (-) TimerEvent: {}
+[3.567690] (-) TimerEvent: {}
+[3.669914] (-) TimerEvent: {}
+[3.770815] (-) TimerEvent: {}
+[3.872683] (-) TimerEvent: {}
+[3.974822] (-) TimerEvent: {}
+[4.077110] (-) TimerEvent: {}
+[4.179985] (-) TimerEvent: {}
+[4.282437] (-) TimerEvent: {}
+[4.384786] (-) TimerEvent: {}
+[4.488752] (-) TimerEvent: {}
+[4.590912] (-) TimerEvent: {}
+[4.692867] (-) TimerEvent: {}
+[4.794703] (-) TimerEvent: {}
+[4.896262] (-) TimerEvent: {}
+[4.998214] (-) TimerEvent: {}
+[5.101156] (-) TimerEvent: {}
+[5.203314] (-) TimerEvent: {}
+[5.306480] (-) TimerEvent: {}
+[5.407785] (-) TimerEvent: {}
+[5.509296] (-) TimerEvent: {}
+[5.611091] (-) TimerEvent: {}
+[5.712390] (-) TimerEvent: {}
+[5.814001] (-) TimerEvent: {}
+[5.916098] (-) TimerEvent: {}
+[6.019946] (-) TimerEvent: {}
+[6.122178] (-) TimerEvent: {}
+[6.223477] (-) TimerEvent: {}
+[6.328601] (-) TimerEvent: {}
+[6.431077] (-) TimerEvent: {}
+[6.533886] (-) TimerEvent: {}
+[6.635832] (-) TimerEvent: {}
+[6.737388] (-) TimerEvent: {}
+[6.838943] (-) TimerEvent: {}
+[6.940899] (-) TimerEvent: {}
+[7.043004] (-) TimerEvent: {}
+[7.145613] (-) TimerEvent: {}
+[7.249007] (-) TimerEvent: {}
+[7.351176] (-) TimerEvent: {}
+[7.453747] (-) TimerEvent: {}
+[7.557084] (-) TimerEvent: {}
+[7.659316] (-) TimerEvent: {}
+[7.760515] (-) TimerEvent: {}
+[7.862271] (-) TimerEvent: {}
+[7.964072] (-) TimerEvent: {}
+[8.065196] (-) TimerEvent: {}
+[8.166763] (-) TimerEvent: {}
+[8.267638] (-) TimerEvent: {}
+[8.368848] (-) TimerEvent: {}
+[8.469789] (-) TimerEvent: {}
+[8.571671] (-) TimerEvent: {}
+[8.672874] (-) TimerEvent: {}
+[8.775874] (-) TimerEvent: {}
+[8.877865] (-) TimerEvent: {}
+[8.979714] (-) TimerEvent: {}
+[9.081488] (-) TimerEvent: {}
+[9.185612] (-) TimerEvent: {}
+[9.287757] (-) TimerEvent: {}
+[9.388855] (-) TimerEvent: {}
+[9.489761] (-) TimerEvent: {}
+[9.591664] (-) TimerEvent: {}
+[9.693507] (-) TimerEvent: {}
+[9.795209] (-) TimerEvent: {}
+[9.899253] (-) TimerEvent: {}
+[9.936721] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:\x1b[m\x1b[K In constructor \xe2\x80\x98\x1b[01m\x1b[KMotorControlNode::MotorControlNode()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[9.937871] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:18:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdrone_state_sub\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope\n'}
+[9.938174] (cpp_controllers) StderrLine: {'line': b'   18 |     \x1b[01;31m\x1b[Kdrone_state_sub\x1b[m\x1b[K = this->create_subscription<nav_msgs::msg::Odometry>("crazyflie/odom", 10, std::bind(&MotorControlNode::droneStateCallback, this, std::placeholders::_1));\n'}
+[9.938331] (cpp_controllers) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.000363] (-) TimerEvent: {}
+[10.104536] (-) TimerEvent: {}
+[10.163426] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:22:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kdesired_state\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kdesired_state_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[10.164103] (cpp_controllers) StderrLine: {'line': b'   22 |     \x1b[01;31m\x1b[Kdesired_state\x1b[m\x1b[K = {\n'}
+[10.164249] (cpp_controllers) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.164331] (cpp_controllers) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kdesired_state_t\x1b[m\x1b[K\n'}
+[10.168687] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:23:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.169290] (cpp_controllers) StderrLine: {'line': b'   23 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kroll = 0.0,\n'}
+[10.169462] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.169580] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:24:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.169939] (cpp_controllers) StderrLine: {'line': b'   24 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kpitch = 0.0,\n'}
+[10.170669] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.171035] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:25:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.171820] (cpp_controllers) StderrLine: {'line': b'   25 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kyaw_rate = 0.0,\n'}
+[10.176292] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.176487] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:26:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.176627] (cpp_controllers) StderrLine: {'line': b'   26 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kaltitude = 2.0, // Target altitude in meters\n'}
+[10.176752] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.176858] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:27:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.176966] (cpp_controllers) StderrLine: {'line': b'   27 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kvx = 0.0,\n'}
+[10.177080] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.177216] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:28:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.177628] (cpp_controllers) StderrLine: {'line': b'   28 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kvy = 0.0\n'}
+[10.177819] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.183903] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:31:5:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kgains_pid\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kgains_pid_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[10.187461] (cpp_controllers) StderrLine: {'line': b'   31 |     \x1b[01;31m\x1b[Kgains_pid\x1b[m\x1b[K = {\n'}
+[10.189876] (cpp_controllers) StderrLine: {'line': b'      |     \x1b[01;31m\x1b[K^~~~~~~~~\x1b[m\x1b[K\n'}
+[10.190126] (cpp_controllers) StderrLine: {'line': b'      |     \x1b[32m\x1b[Kgains_pid_t\x1b[m\x1b[K\n'}
+[10.190288] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:32:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.190427] (cpp_controllers) StderrLine: {'line': b'   32 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkp_att_rp = 1.0,\n'}
+[10.190919] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.191182] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:33:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.191458] (cpp_controllers) StderrLine: {'line': b'   33 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkd_att_rp = 0.1,\n'}
+[10.191700] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.191890] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:34:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.192070] (cpp_controllers) StderrLine: {'line': b'   34 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkp_att_y = 1.2,\n'}
+[10.192505] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.192729] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:35:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.192840] (cpp_controllers) StderrLine: {'line': b'   35 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkd_att_y = 0.15,\n'}
+[10.192923] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.193009] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:36:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.193152] (cpp_controllers) StderrLine: {'line': b'   36 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkp_vel_xy = 1.5,\n'}
+[10.193239] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.193309] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:37:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.193383] (cpp_controllers) StderrLine: {'line': b'   37 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkd_vel_xy = 0.2,\n'}
+[10.193458] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.193538] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:38:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.193687] (cpp_controllers) StderrLine: {'line': b'   38 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkp_z = 2.0,\n'}
+[10.194139] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.194307] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:39:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.194467] (cpp_controllers) StderrLine: {'line': b'   39 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kkd_z = 0.5,\n'}
+[10.194616] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.194741] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:40:7:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.194985] (cpp_controllers) StderrLine: {'line': b'   40 |       \x1b[01;35m\x1b[K.\x1b[m\x1b[Kki_z = 0.1\n'}
+[10.195307] (cpp_controllers) StderrLine: {'line': b'      |       \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.206652] (-) TimerEvent: {}
+[10.238328] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid MotorControlNode::droneStateCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[10.242375] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:53:9:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[K\xe2\x80\x98\x1b[01m\x1b[Kactual_state\x1b[m\x1b[K\xe2\x80\x99 was not declared in this scope; did you mean \xe2\x80\x98\x1b[01m\x1b[Kactual_state_t\x1b[m\x1b[K\xe2\x80\x99?\n'}
+[10.243120] (cpp_controllers) StderrLine: {'line': b'   53 |         \x1b[01;31m\x1b[Kactual_state\x1b[m\x1b[K = {\n'}
+[10.243364] (cpp_controllers) StderrLine: {'line': b'      |         \x1b[01;31m\x1b[K^~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[10.243533] (cpp_controllers) StderrLine: {'line': b'      |         \x1b[32m\x1b[Kactual_state_t\x1b[m\x1b[K\n'}
+[10.243685] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:54:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.243834] (cpp_controllers) StderrLine: {'line': b'   54 |           \x1b[01;35m\x1b[K.\x1b[m\x1b[Kroll = 0.0,\n'}
+[10.243981] (cpp_controllers) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.244179] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:55:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.245144] (cpp_controllers) StderrLine: {'line': b'   55 |           \x1b[01;35m\x1b[K.\x1b[m\x1b[Kpitch = 0.0,\n'}
+[10.245576] (cpp_controllers) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.245675] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:56:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.245825] (cpp_controllers) StderrLine: {'line': b'   56 |           \x1b[01;35m\x1b[K.\x1b[m\x1b[Kyaw_rate = 0.0,\n'}
+[10.246102] (cpp_controllers) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.246203] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:57:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.246287] (cpp_controllers) StderrLine: {'line': b'   57 |           \x1b[01;35m\x1b[K.\x1b[m\x1b[Kaltitude = msg->pose.pose.position.z,\n'}
+[10.246371] (cpp_controllers) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.246463] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:58:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.246558] (cpp_controllers) StderrLine: {'line': b'   58 |           \x1b[01;35m\x1b[K.\x1b[m\x1b[Kvx = msg->twist.twist.linear.x,\n'}
+[10.246646] (cpp_controllers) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.246733] (cpp_controllers) StderrLine: {'line': b'\x1b[01m\x1b[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:59:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[KC++ designated initializers only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++20\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++20\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic\x07-Wpedantic\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[10.246824] (cpp_controllers) StderrLine: {'line': b'   59 |           \x1b[01;35m\x1b[K.\x1b[m\x1b[Kvy = msg->twist.twist.linear.y\n'}
+[10.246932] (cpp_controllers) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[10.306678] (-) TimerEvent: {}
+[10.407906] (-) TimerEvent: {}
+[10.509013] (-) TimerEvent: {}
+[10.611927] (-) TimerEvent: {}
+[10.713323] (-) TimerEvent: {}
+[10.817034] (-) TimerEvent: {}
+[10.919443] (-) TimerEvent: {}
+[11.021811] (-) TimerEvent: {}
+[11.123734] (-) TimerEvent: {}
+[11.224970] (-) TimerEvent: {}
+[11.326679] (-) TimerEvent: {}
+[11.428878] (-) TimerEvent: {}
+[11.531897] (-) TimerEvent: {}
+[11.633707] (-) TimerEvent: {}
+[11.736340] (-) TimerEvent: {}
+[11.838902] (-) TimerEvent: {}
+[11.940698] (-) TimerEvent: {}
+[12.041981] (-) TimerEvent: {}
+[12.145718] (-) TimerEvent: {}
+[12.247894] (-) TimerEvent: {}
+[12.351936] (-) TimerEvent: {}
+[12.453671] (-) TimerEvent: {}
+[12.555747] (-) TimerEvent: {}
+[12.657074] (-) TimerEvent: {}
+[12.758666] (-) TimerEvent: {}
+[12.859620] (-) TimerEvent: {}
+[12.962019] (-) TimerEvent: {}
+[13.065592] (-) TimerEvent: {}
+[13.168909] (-) TimerEvent: {}
+[13.272156] (-) TimerEvent: {}
+[13.374012] (-) TimerEvent: {}
+[13.476099] (-) TimerEvent: {}
+[13.578291] (-) TimerEvent: {}
+[13.680746] (-) TimerEvent: {}
+[13.782303] (-) TimerEvent: {}
+[13.884248] (-) TimerEvent: {}
+[13.985917] (-) TimerEvent: {}
+[14.091254] (-) TimerEvent: {}
+[14.193946] (-) TimerEvent: {}
+[14.296302] (-) TimerEvent: {}
+[14.398114] (-) TimerEvent: {}
+[14.499745] (-) TimerEvent: {}
+[14.602247] (-) TimerEvent: {}
+[14.705716] (-) TimerEvent: {}
+[14.806714] (-) TimerEvent: {}
+[14.908721] (-) TimerEvent: {}
+[15.010132] (-) TimerEvent: {}
+[15.114421] (-) TimerEvent: {}
+[15.216061] (-) TimerEvent: {}
+[15.318196] (-) TimerEvent: {}
+[15.419855] (-) TimerEvent: {}
+[15.523101] (-) TimerEvent: {}
+[15.624465] (-) TimerEvent: {}
+[15.725534] (-) TimerEvent: {}
+[15.827081] (-) TimerEvent: {}
+[15.930276] (-) TimerEvent: {}
+[16.031857] (-) TimerEvent: {}
+[16.136045] (-) TimerEvent: {}
+[16.239037] (-) TimerEvent: {}
+[16.341025] (-) TimerEvent: {}
+[16.442714] (-) TimerEvent: {}
+[16.545669] (-) TimerEvent: {}
+[16.647000] (-) TimerEvent: {}
+[16.748152] (-) TimerEvent: {}
+[16.849689] (-) TimerEvent: {}
+[16.951068] (-) TimerEvent: {}
+[17.051779] (-) TimerEvent: {}
+[17.153227] (-) TimerEvent: {}
+[17.255453] (-) TimerEvent: {}
+[17.356197] (-) TimerEvent: {}
+[17.457950] (-) TimerEvent: {}
+[17.560010] (-) TimerEvent: {}
+[17.663217] (-) TimerEvent: {}
+[17.680526] (cpp_controllers) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o] Error 1\n'}
+[17.681336] (cpp_controllers) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2\n'}
+[17.681935] (cpp_controllers) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[17.686662] (cpp_controllers) CommandEnded: {'returncode': 2}
+[17.763584] (-) TimerEvent: {}
+[17.804965] (cpp_controllers) JobEnded: {'identifier': 'cpp_controllers', 'rc': 2}
+[17.821028] (-) EventReactorShutdown: {}

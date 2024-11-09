@@ -1,0 +1,21 @@
+[1.450s] Invoking command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/controllers build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log --single-version-externally-managed install_data
+[1.817s] running egg_info
+[1.819s] writing ../../build/controllers/controllers.egg-info/PKG-INFO
+[1.820s] writing dependency_links to ../../build/controllers/controllers.egg-info/dependency_links.txt
+[1.821s] writing entry points to ../../build/controllers/controllers.egg-info/entry_points.txt
+[1.823s] writing requirements to ../../build/controllers/controllers.egg-info/requires.txt
+[1.826s] writing top-level names to ../../build/controllers/controllers.egg-info/top_level.txt
+[1.829s] reading manifest file '../../build/controllers/controllers.egg-info/SOURCES.txt'
+[1.834s] writing manifest file '../../build/controllers/controllers.egg-info/SOURCES.txt'
+[1.834s] running build
+[1.835s] running build_py
+[1.835s] running install
+[1.835s] running install_lib
+[1.838s] running install_data
+[1.839s] running install_egg_info
+[1.842s] removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info' (and everything under it)
+[1.843s] Copying ../../build/controllers/controllers.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info
+[1.848s] running install_scripts
+[1.912s] Installing MotorControlNode script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/controllers
+[1.914s] writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log'
+[2.003s] Invoked command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers' returned '0': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/controllers build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log --single-version-externally-managed install_data

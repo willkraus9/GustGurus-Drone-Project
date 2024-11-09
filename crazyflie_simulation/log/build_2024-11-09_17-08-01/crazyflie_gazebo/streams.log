@@ -1,0 +1,39 @@
+[1.301s] Invoking command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data
+[1.610s] Traceback (most recent call last):
+[1.610s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2866, in get_entry_map
+[1.613s]     ep_map = self._ep_map
+[1.613s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2828, in __getattr__
+[1.614s]     raise AttributeError(attr)
+[1.614s] AttributeError: _ep_map. Did you mean: '_dep_map'?
+[1.614s] 
+[1.614s] During handling of the above exception, another exception occurred:
+[1.615s] 
+[1.615s] Traceback (most recent call last):
+[1.615s]   File "/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/setup.py", line 20, in <module>
+[1.615s]     setup(
+[1.615s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 152, in setup
+[1.617s]     _install_setup_requires(attrs)
+[1.618s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 142, in _install_setup_requires
+[1.618s]     dist = MinimalDistribution(attrs)
+[1.618s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 134, in __init__
+[1.618s]     distutils.core.Distribution.__init__(self, filtered)
+[1.618s]   File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 457, in __init__
+[1.621s]     for ep in pkg_resources.iter_entry_points('distutils.setup_keywords'):
+[1.621s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 646, in <genexpr>
+[1.621s]     for entry in dist.get_entry_map(group).values()
+[1.621s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2868, in get_entry_map
+[1.622s]     ep_map = self._ep_map = EntryPoint.parse_map(
+[1.622s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2549, in parse_map
+[1.622s]     for group, lines in data:
+[1.622s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3205, in split_sections
+[1.623s]     for line in yield_lines(s):
+[1.623s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2780, in _get_metadata
+[1.624s]     for line in self.get_metadata_lines(name):
+[1.624s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1422, in get_metadata_lines
+[1.624s]     return yield_lines(self.get_metadata(name))
+[1.624s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1412, in get_metadata
+[1.624s]     value = self._get(path)
+[1.625s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1616, in _get
+[1.626s]     with open(path, 'rb') as stream:
+[1.626s] FileNotFoundError: [Errno 2] No such file or directory: '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info/entry_points.txt'
+[1.666s] Invoked command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo' returned '1': PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data

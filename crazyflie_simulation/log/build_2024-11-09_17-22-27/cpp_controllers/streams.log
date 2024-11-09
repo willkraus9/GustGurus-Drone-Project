@@ -1,0 +1,67 @@
+[0.465s] Invoking command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/cmake --build /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j8 -l8
+[0.529s] [35m[1mConsolidate compiler generated dependencies of target motor_control_node[0m
+[0.556s] [ 50%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o[0m
+[4.209s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:[m[K In constructor ‘[01m[KMotorControlNode::MotorControlNode()[m[K’:
+[4.209s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:18:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kdrone_state_sub[m[K’ was not declared in this scope
+[4.209s]    18 |     [01;31m[Kdrone_state_sub[m[K = this->create_subscription<nav_msgs::msg::Odometry>("crazyflie/odom", 10, std::bind(&MotorControlNode::droneStateCallback, this, std::placeholders::_1));
+[4.209s]       |     [01;31m[K^~~~~~~~~~~~~~~[m[K
+[4.273s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:22:21:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K=[m[K’ token
+[4.273s]    22 |     desired_state_s [01;31m[K=[m[K {
+[4.273s]       |                     [01;31m[K^[m[K
+[4.279s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:31:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kgains_pid[m[K’ was not declared in this scope; did you mean ‘[01m[Kgains_pid_t[m[K’?
+[4.279s]    31 |     [01;31m[Kgains_pid[m[K = {
+[4.280s]       |     [01;31m[K^~~~~~~~~[m[K
+[4.280s]       |     [32m[Kgains_pid_t[m[K
+[4.280s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:32:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.280s]    32 |       [01;35m[K.[m[Kkp_att_rp = 1.0,
+[4.280s]       |       [01;35m[K^[m[K
+[4.280s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:33:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.280s]    33 |       [01;35m[K.[m[Kkd_att_rp = 0.1,
+[4.280s]       |       [01;35m[K^[m[K
+[4.280s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:34:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.280s]    34 |       [01;35m[K.[m[Kkp_att_y = 1.2,
+[4.280s]       |       [01;35m[K^[m[K
+[4.281s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:35:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.281s]    35 |       [01;35m[K.[m[Kkd_att_y = 0.15,
+[4.281s]       |       [01;35m[K^[m[K
+[4.281s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:36:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.281s]    36 |       [01;35m[K.[m[Kkp_vel_xy = 1.5,
+[4.281s]       |       [01;35m[K^[m[K
+[4.281s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:37:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.281s]    37 |       [01;35m[K.[m[Kkd_vel_xy = 0.2,
+[4.281s]       |       [01;35m[K^[m[K
+[4.281s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:38:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.281s]    38 |       [01;35m[K.[m[Kkp_z = 2.0,
+[4.281s]       |       [01;35m[K^[m[K
+[4.281s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:39:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.281s]    39 |       [01;35m[K.[m[Kkd_z = 0.5,
+[4.282s]       |       [01;35m[K^[m[K
+[4.282s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:40:7:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.282s]    40 |       [01;35m[K.[m[Kki_z = 0.1
+[4.282s]       |       [01;35m[K^[m[K
+[4.296s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::droneStateCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[4.297s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:54:19:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.297s]    54 |                   [01;35m[K.[m[Kroll = 0.0,
+[4.297s]       |                   [01;35m[K^[m[K
+[4.297s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:55:19:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.297s]    55 |                   [01;35m[K.[m[Kpitch = 0.0,
+[4.297s]       |                   [01;35m[K^[m[K
+[4.297s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:56:19:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.298s]    56 |                   [01;35m[K.[m[Kyaw_rate = 0.0,
+[4.298s]       |                   [01;35m[K^[m[K
+[4.298s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:57:19:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.298s]    57 |                   [01;35m[K.[m[Kaltitude = msg->pose.pose.position.z,
+[4.298s]       |                   [01;35m[K^[m[K
+[4.298s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:58:19:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.298s]    58 |                   [01;35m[K.[m[Kvx = msg->twist.twist.linear.x,
+[4.298s]       |                   [01;35m[K^[m[K
+[4.298s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:59:19:[m[K [01;35m[Kwarning: [m[KC++ designated initializers only available with ‘[01m[K-std=c++20[m[K’ or ‘[01m[K-std=gnu++20[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wpedantic-Wpedantic]8;;[m[K]
+[4.298s]    59 |                   [01;35m[K.[m[Kvy = msg->twist.twist.linear.y
+[4.298s]       |                   [01;35m[K^[m[K
+[4.298s] [01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:53:24:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kactual_state[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[4.298s]    53 |         actual_state_t [01;35m[Kactual_state[m[K = {
+[4.298s]       |                        [01;35m[K^~~~~~~~~~~~[m[K
+[8.002s] gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:76: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o] Error 1
+[8.002s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+[8.004s] gmake: *** [Makefile:146: all] Error 2
+[8.009s] Invoked command in '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble PS1=(crazyflie_ros) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(crazyflie_ros) /usr/bin/cmake --build /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j8 -l8

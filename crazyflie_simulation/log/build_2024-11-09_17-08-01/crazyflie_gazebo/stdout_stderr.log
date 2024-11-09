@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2866, in get_entry_map
+    ep_map = self._ep_map
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2828, in __getattr__
+    raise AttributeError(attr)
+AttributeError: _ep_map. Did you mean: '_dep_map'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/setup.py", line 20, in <module>
+    setup(
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 152, in setup
+    _install_setup_requires(attrs)
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 142, in _install_setup_requires
+    dist = MinimalDistribution(attrs)
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 134, in __init__
+    distutils.core.Distribution.__init__(self, filtered)
+  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 457, in __init__
+    for ep in pkg_resources.iter_entry_points('distutils.setup_keywords'):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 646, in <genexpr>
+    for entry in dist.get_entry_map(group).values()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2868, in get_entry_map
+    ep_map = self._ep_map = EntryPoint.parse_map(
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2549, in parse_map
+    for group, lines in data:
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 3205, in split_sections
+    for line in yield_lines(s):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2780, in _get_metadata
+    for line in self.get_metadata_lines(name):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1422, in get_metadata_lines
+    return yield_lines(self.get_metadata(name))
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1412, in get_metadata
+    value = self._get(path)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 1616, in _get
+    with open(path, 'rb') as stream:
+FileNotFoundError: [Errno 2] No such file or directory: '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info/entry_points.txt'

@@ -17,6 +17,7 @@ models/ground_plane.sdf
 models/model.config
 models/model.sdf
 models/model_each_motor.sdf
+models/wind.sdf
 models/meshes/blender_files/battery.blend
 models/meshes/blender_files/battery_holder.blend
 models/meshes/blender_files/cf2_assembly.blend

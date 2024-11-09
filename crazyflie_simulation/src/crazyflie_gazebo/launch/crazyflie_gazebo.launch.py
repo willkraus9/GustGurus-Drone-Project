@@ -40,15 +40,22 @@ def generate_launch_description():
         output='screen'
     )
 
-    control = Node(
-        package='controllers',
-        executable='MotorControlNode',
+    motor_control = Node(
+        package='cpp_controllers',
+        executable='motor_control_node',
         output='screen'
     )
 
+    # keyboard_control = Node(
+    #     package = "crazyflie_gazebo",
+    #     executable = "control_services",
+    #     output = "screen"
+    # )
+
+
     return LaunchDescription([
         gz_sim,
-        control,
+        motor_control,
         bridge,
     ])
 

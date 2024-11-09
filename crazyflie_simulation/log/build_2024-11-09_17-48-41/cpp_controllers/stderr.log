@@ -1,0 +1,4 @@
+[01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:[m[K In member function ‘[01m[Kvoid MotorControlNode::droneStateCallback(nav_msgs::msg::Odometry_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp:48:70:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-parameter-Wunused-parameter]8;;[m[K]
+   48 |     void droneStateCallback([01;35m[Kconst nav_msgs::msg::Odometry::SharedPtr msg[m[K)
+      |                             [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K

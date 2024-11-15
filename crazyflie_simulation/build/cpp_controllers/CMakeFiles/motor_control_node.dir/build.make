@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers
+CMAKE_SOURCE_DIR = /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
+CMAKE_BINARY_DIR = /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
 
 # Include any dependencies generated for this target.
 include CMakeFiles/motor_control_node.dir/depend.make
@@ -70,27 +70,43 @@ include CMakeFiles/motor_control_node.dir/progress.make
 include CMakeFiles/motor_control_node.dir/flags.make
 
 CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: CMakeFiles/motor_control_node.dir/flags.make
-CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp
+CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp
 CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: CMakeFiles/motor_control_node.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o -MF CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o.d -o CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o -MF CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o.d -o CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o -c /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp
 
 CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp > CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp > CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.i
 
 CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp -o CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/MotorControlNode.cpp -o CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.s
+
+CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o: CMakeFiles/motor_control_node.dir/flags.make
+CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o: /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.cpp
+CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o: CMakeFiles/motor_control_node.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o -MF CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o.d -o CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o -c /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.cpp
+
+CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.cpp > CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.i
+
+CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.cpp -o CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.s
 
 # Object files for target motor_control_node
 motor_control_node_OBJECTS = \
-"CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o"
+"CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o" \
+"CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o"
 
 # External object files for target motor_control_node
 motor_control_node_EXTERNAL_OBJECTS =
 
 motor_control_node: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o
+motor_control_node: CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o
 motor_control_node: CMakeFiles/motor_control_node.dir/build.make
 motor_control_node: /opt/ros/humble/lib/libactuator_msgs__rosidl_typesupport_fastrtps_c.so
 motor_control_node: /opt/ros/humble/lib/libactuator_msgs__rosidl_typesupport_introspection_c.so
@@ -179,7 +195,7 @@ motor_control_node: /opt/ros/humble/lib/librcpputils.so
 motor_control_node: /opt/ros/humble/lib/librosidl_runtime_c.so
 motor_control_node: /opt/ros/humble/lib/librcutils.so
 motor_control_node: CMakeFiles/motor_control_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable motor_control_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable motor_control_node"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/motor_control_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -191,6 +207,6 @@ CMakeFiles/motor_control_node.dir/clean:
 .PHONY : CMakeFiles/motor_control_node.dir/clean
 
 CMakeFiles/motor_control_node.dir/depend:
-	cd /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles/motor_control_node.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles/motor_control_node.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/motor_control_node.dir/depend
 

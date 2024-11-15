@@ -1,0 +1,21 @@
+[0.605s] Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers': CONDA_PROMPT_MODIFIER=(acsi2) PYTHONPATH=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/controllers build --build-base /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/build install --record /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log --single-version-externally-managed install_data
+[0.767s] running egg_info
+[0.767s] writing ../../build/controllers/controllers.egg-info/PKG-INFO
+[0.768s] writing dependency_links to ../../build/controllers/controllers.egg-info/dependency_links.txt
+[0.768s] writing entry points to ../../build/controllers/controllers.egg-info/entry_points.txt
+[0.768s] writing requirements to ../../build/controllers/controllers.egg-info/requires.txt
+[0.768s] writing top-level names to ../../build/controllers/controllers.egg-info/top_level.txt
+[0.769s] reading manifest file '../../build/controllers/controllers.egg-info/SOURCES.txt'
+[0.770s] writing manifest file '../../build/controllers/controllers.egg-info/SOURCES.txt'
+[0.770s] running build
+[0.770s] running build_py
+[0.770s] running install
+[0.770s] running install_lib
+[0.771s] running install_data
+[0.771s] running install_egg_info
+[0.772s] removing '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info' (and everything under it)
+[0.772s] Copying ../../build/controllers/controllers.egg-info to /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages/controllers-0.0.0-py3.10.egg-info
+[0.773s] running install_scripts
+[0.788s] Installing MotorControlNode script to /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/controllers
+[0.788s] writing list of installed files to '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log'
+[0.814s] Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers' returned '0': CONDA_PROMPT_MODIFIER=(acsi2) PYTHONPATH=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/controllers build --build-base /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/build install --record /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log --single-version-externally-managed install_data

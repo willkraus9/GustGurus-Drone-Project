@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers
+CMAKE_SOURCE_DIR = /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
+CMAKE_BINARY_DIR = /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -234,6 +234,30 @@ src/MotorControlNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.s
 .PHONY : src/MotorControlNode.cpp.s
 
+src/pid_controller.o: src/pid_controller.cpp.o
+.PHONY : src/pid_controller.o
+
+# target to build an object file
+src/pid_controller.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o
+.PHONY : src/pid_controller.cpp.o
+
+src/pid_controller.i: src/pid_controller.cpp.i
+.PHONY : src/pid_controller.i
+
+# target to preprocess a source file
+src/pid_controller.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.i
+.PHONY : src/pid_controller.cpp.i
+
+src/pid_controller.s: src/pid_controller.cpp.s
+.PHONY : src/pid_controller.s
+
+# target to generate assembly for a file
+src/pid_controller.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/motor_control_node.dir/build.make CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.s
+.PHONY : src/pid_controller.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -253,6 +277,9 @@ help:
 	@echo "... src/MotorControlNode.o"
 	@echo "... src/MotorControlNode.i"
 	@echo "... src/MotorControlNode.s"
+	@echo "... src/pid_controller.o"
+	@echo "... src/pid_controller.i"
+	@echo "... src/pid_controller.s"
 .PHONY : help
 
 

@@ -46,16 +46,16 @@ def generate_launch_description():
         output='screen'
     )
 
-    # keyboard_control = Node(
-    #     package = "crazyflie_gazebo",
-    #     executable = "control_services",
-    #     output = "screen"
-    # )
+    keyboard_control = Node(
+        package = "crazyflie_gazebo",
+        executable = "control_services",
+        output = "screen"
+    )
 
 
     return LaunchDescription([
         gz_sim,
-        motor_control,
+        keyboard_control,
         bridge,
     ])
 

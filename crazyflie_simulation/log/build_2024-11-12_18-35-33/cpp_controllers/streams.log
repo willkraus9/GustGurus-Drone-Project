@@ -1,0 +1,59 @@
+[0.194s] Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers -DCMAKE_INSTALL_PREFIX=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers
+[0.241s] -- The C compiler identification is GNU 11.4.0
+[0.288s] -- The CXX compiler identification is GNU 11.4.0
+[0.294s] -- Detecting C compiler ABI info
+[0.358s] -- Detecting C compiler ABI info - done
+[0.363s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.363s] -- Detecting C compile features
+[0.364s] -- Detecting C compile features - done
+[0.366s] -- Detecting CXX compiler ABI info
+[0.439s] -- Detecting CXX compiler ABI info - done
+[0.445s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.445s] -- Detecting CXX compile features
+[0.445s] -- Detecting CXX compile features - done
+[0.447s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.732s] -- Found Python3: /home/kaust/anaconda3/envs/acsi2/bin/python3 (found version "3.10.15") found components: Interpreter 
+[0.803s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.837s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.841s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.848s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.857s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.869s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.902s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.904s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.991s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[1.025s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.069s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.075s] -- Looking for pthread.h
+[1.145s] -- Looking for pthread.h - found
+[1.146s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.215s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.216s] -- Found Threads: TRUE  
+[1.251s] -- Found actuator_msgs: 0.0.1 (/opt/ros/humble/share/actuator_msgs/cmake)
+[1.260s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[1.284s] -- Found ament_lint_auto: 0.12.11 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.354s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.355s] -- Configured cppcheck include dirs: /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/include/cpp_controllers
+[1.355s] -- Configured cppcheck exclude dirs and/or files: 
+[1.355s] -- Added test 'lint_cmake' to check CMake code style
+[1.356s] -- Added test 'uncrustify' to check C / C++ code style
+[1.356s] -- Configured uncrustify additional arguments: 
+[1.356s] -- Added test 'xmllint' to check XML markup files
+[1.357s] -- Configuring done
+[1.366s] -- Generating done
+[1.367s] -- Build files have been written to: /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
+[1.378s] Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers -DCMAKE_INSTALL_PREFIX=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers
+[1.379s] Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16
+[1.428s] [ 66%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o[0m
+[1.428s] [ 66%] [32mBuilding C object CMakeFiles/motor_control_node.dir/src/pid_controller.c.o[0m
+[7.838s] [100%] [32m[1mLinking CXX executable motor_control_node[0m
+[8.080s] /usr/bin/ld: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: in function `MotorControlNode::MotorControlNode()':
+[8.080s] MotorControlNode.cpp:(.text._ZN16MotorControlNodeC2Ev[_ZN16MotorControlNodeC5Ev]+0x6c9): undefined reference to `init_pid_attitude_fixed_height_controller()'
+[8.080s] /usr/bin/ld: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: in function `MotorControlNode::timerCallback()':
+[8.081s] MotorControlNode.cpp:(.text._ZN16MotorControlNode13timerCallbackEv[_ZN16MotorControlNode13timerCallbackEv]+0xd2): undefined reference to `pid_fixed_height_controller(actual_state_s, desired_state_s*, gains_pid_s, double, control_commands_s*)'
+[8.081s] /usr/bin/ld: MotorControlNode.cpp:(.text._ZN16MotorControlNode13timerCallbackEv[_ZN16MotorControlNode13timerCallbackEv]+0x104): undefined reference to `motor_mixing(control_commands_s, motor_power_s*)'
+[8.117s] collect2: error: ld returned 1 exit status
+[8.119s] gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:199: motor_control_node] Error 1
+[8.120s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+[8.120s] gmake: *** [Makefile:146: all] Error 2
+[8.123s] Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16

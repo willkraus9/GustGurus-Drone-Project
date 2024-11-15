@@ -1,6 +1,6 @@
 set(_AMENT_PACKAGE_NAME "cpp_controllers")
 set(cpp_controllers_VERSION "0.0.0")
-set(cpp_controllers_MAINTAINER "denis <deniskaanalpay@gmail.com>")
+set(cpp_controllers_MAINTAINER "kaust <kaustkaanalpay@gmail.com>")
 set(cpp_controllers_BUILD_DEPENDS "rclcpp" "std_msgs" "actuator_msgs")
 set(cpp_controllers_BUILDTOOL_DEPENDS "ament_cmake")
 set(cpp_controllers_BUILD_EXPORT_DEPENDS "rclcpp" "std_msgs" "actuator_msgs")

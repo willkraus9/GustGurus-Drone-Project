@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
+set(CMAKE_CXX_STANDARD 20)
+
 project(cpp_controllers)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -12,12 +14,16 @@ find_package(std_msgs REQUIRED)
 find_package(actuator_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 
-add_executable(motor_control_node src/MotorControlNode.cpp)
+
+add_executable(motor_control_node
+    src/MotorControlNode.cpp
+    src/pid_controller.cpp  #
+)
 ament_target_dependencies(motor_control_node rclcpp std_msgs)
 ament_target_dependencies(motor_control_node rclcpp actuator_msgs)
 ament_target_dependencies(motor_control_node rclcpp nav_msgs)
-
-target_include_directories(motor_control_node PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_controllers)
+# include_directories(include/cpp_controllers)
+target_include_directories(motor_control_node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_controllers)
 
 
 install(TARGETS
@@ -38,3 +44,5 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+
+#add_compile_options(-Wno-unused-variable)

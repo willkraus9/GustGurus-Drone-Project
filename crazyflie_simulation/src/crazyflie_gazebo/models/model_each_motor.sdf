@@ -176,7 +176,7 @@ Copyright (c) 2024 Bitcraze
       <jointName>crazyflie/m1_joint</jointName>
       <linkName>crazyflie/m1_prop</linkName>
       <turningDirection>ccw</turningDirection>
-      <maxRotVelocity>2618</maxRotVelocity>
+      <maxRotVelocity>4000</maxRotVelocity>
       <motorConstant>1.28192e-08</motorConstant>
       <momentConstant>0.005964552</momentConstant>
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
@@ -194,7 +194,7 @@ Copyright (c) 2024 Bitcraze
       <jointName>crazyflie/m2_joint</jointName>
       <linkName>crazyflie/m2_prop</linkName>
       <turningDirection>cw</turningDirection>
-      <maxRotVelocity>2618</maxRotVelocity>
+      <maxRotVelocity>4000</maxRotVelocity>
       <motorConstant>1.28192e-08</motorConstant>
       <momentConstant>0.005964552</momentConstant>
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
@@ -212,7 +212,7 @@ Copyright (c) 2024 Bitcraze
       <jointName>crazyflie/m3_joint</jointName>
       <linkName>crazyflie/m3_prop</linkName>
       <turningDirection>ccw</turningDirection>
-      <maxRotVelocity>2618</maxRotVelocity>
+      <maxRotVelocity>4000</maxRotVelocity>
       <motorConstant>1.28192e-08</motorConstant>
       <momentConstant>0.005964552</momentConstant>
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
@@ -230,7 +230,7 @@ Copyright (c) 2024 Bitcraze
       <jointName>crazyflie/m4_joint</jointName>
       <linkName>crazyflie/m4_prop</linkName>
       <turningDirection>cw</turningDirection>
-      <maxRotVelocity>2618</maxRotVelocity>
+      <maxRotVelocity>4000</maxRotVelocity>
       <motorConstant>1.28192e-08</motorConstant>
       <momentConstant>0.005964552</momentConstant>
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>

@@ -4,11 +4,11 @@
 
         <!-- it would be nice to figure out how to make these work with relative paths -->
         <include>
-            <uri>/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/models/model_each_motor.sdf</uri>
+            <uri>/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/models/model_each_motor.sdf</uri>
         </include>
 
         <include>
-            <uri>/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/models/ground_plane.sdf</uri>
+            <uri>/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/models/ground_plane.sdf</uri>
         </include>
 
         <light name="sun" type="directional">

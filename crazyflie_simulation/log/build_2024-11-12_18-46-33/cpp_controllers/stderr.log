@@ -1,0 +1,10 @@
+In file included from [01m[K/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/include/cpp_controllers/pid_controller.h:2[m[K,
+                 from [01m[K/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.c:36[m[K:
+[01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:152:10:[m[K [01;31m[Kfatal error: [m[Kcsignal: No such file or directory
+  152 | #include [01;31m[K<csignal>[m[K
+      |          [01;31m[K^~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:90: CMakeFiles/motor_control_node.dir/src/pid_controller.c.o] Error 1
+gmake[2]: *** Waiting for unfinished jobs....
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

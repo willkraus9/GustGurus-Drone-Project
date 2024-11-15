@@ -13,6 +13,7 @@ crazyflie_gazebo/__init__.py
 crazyflie_gazebo/control_services.py
 launch/crazyflie_gazebo.launch.py
 models/crazyflie_world.sdf
+models/gazebo_example_model.sdf
 models/ground_plane.sdf
 models/model.config
 models/model.sdf

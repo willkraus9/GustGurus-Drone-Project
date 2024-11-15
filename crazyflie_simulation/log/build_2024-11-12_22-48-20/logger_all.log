@@ -1,0 +1,264 @@
+[0.070s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.071s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x718762d13f10>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x718762d139d0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x718762d139d0>>)
+[0.193s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.193s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.193s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.193s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.193s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.193s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.193s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.193s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.194s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.201s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.201s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.201s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.201s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.201s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extensions ['ignore', 'ignore_ament_install']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'ignore'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'ignore_ament_install'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extensions ['colcon_pkg']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'colcon_pkg'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extensions ['colcon_meta']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'colcon_meta'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extensions ['ros']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'ros'
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extensions ['cmake', 'python']
+[0.202s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'cmake'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'python'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extensions ['python_setup_py']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(plugins) by extension 'python_setup_py'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/build) ignored
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extensions ['ignore', 'ignore_ament_install']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extension 'ignore'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extension 'ignore_ament_install'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extensions ['colcon_pkg']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extension 'colcon_pkg'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extensions ['colcon_meta']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extension 'colcon_meta'
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extensions ['ros']
+[0.203s] Level 1:colcon.colcon_core.package_identification:_identify(src/controllers) by extension 'ros'
+[0.205s] DEBUG:colcon.colcon_core.package_identification:Package 'src/controllers' with type 'ros.ament_python' and name 'controllers'
+[0.205s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extensions ['ignore', 'ignore_ament_install']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extension 'ignore'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extension 'ignore_ament_install'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extensions ['colcon_pkg']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extension 'colcon_pkg'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extensions ['colcon_meta']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extension 'colcon_meta'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extensions ['ros']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/cpp_controllers) by extension 'ros'
+[0.206s] DEBUG:colcon.colcon_core.package_identification:Package 'src/cpp_controllers' with type 'ros.ament_cmake' and name 'cpp_controllers'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extensions ['ignore', 'ignore_ament_install']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extension 'ignore'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extension 'ignore_ament_install'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extensions ['colcon_pkg']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extension 'colcon_pkg'
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extensions ['colcon_meta']
+[0.206s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extension 'colcon_meta'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extensions ['ros']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/crazyflie_gazebo) by extension 'ros'
+[0.207s] DEBUG:colcon.colcon_core.package_identification:Package 'src/crazyflie_gazebo' with type 'ros.ament_python' and name 'crazyflie_gazebo'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extensions ['ignore', 'ignore_ament_install']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) by extension 'ignore'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/install) ignored
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extensions ['ignore', 'ignore_ament_install']
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) by extension 'ignore'
+[0.207s] Level 1:colcon.colcon_core.package_identification:_identify(src/log) ignored
+[0.207s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.207s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.207s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.207s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.207s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.231s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.231s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.232s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install
+[0.233s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 288 installed packages in /opt/ros/humble
+[0.234s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'cmake_args' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'cmake_target' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'cmake_clean_cache' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'cmake_clean_first' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'cmake_force_configure' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'ament_cmake_args' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'catkin_cmake_args' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'controllers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.260s] DEBUG:colcon.colcon_core.verb:Building package 'controllers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers', 'merge_install': False, 'path': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers', 'symlink_install': False, 'test_result_base': None}
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'cmake_args' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'cmake_target' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'cmake_clean_cache' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'cmake_clean_first' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'cmake_force_configure' from command line to 'False'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'ament_cmake_args' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'catkin_cmake_args' from command line to 'None'
+[0.260s] Level 5:colcon.colcon_core.verb:set package 'cpp_controllers' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.260s] DEBUG:colcon.colcon_core.verb:Building package 'cpp_controllers' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers', 'merge_install': False, 'path': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers', 'symlink_install': False, 'test_result_base': None}
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'cmake_args' from command line to 'None'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'cmake_target' from command line to 'None'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'cmake_clean_cache' from command line to 'False'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'cmake_clean_first' from command line to 'False'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'cmake_force_configure' from command line to 'False'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'ament_cmake_args' from command line to 'None'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'catkin_cmake_args' from command line to 'None'
+[0.261s] Level 5:colcon.colcon_core.verb:set package 'crazyflie_gazebo' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.261s] DEBUG:colcon.colcon_core.verb:Building package 'crazyflie_gazebo' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo', 'merge_install': False, 'path': '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo', 'symlink_install': False, 'test_result_base': None}
+[0.261s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.262s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.262s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers' with build type 'ament_python'
+[0.262s] Level 1:colcon.colcon_core.shell:create_environment_hook('controllers', 'ament_prefix_path')
+[0.264s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.264s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/hook/ament_prefix_path.ps1'
+[0.264s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/hook/ament_prefix_path.dsv'
+[0.265s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/hook/ament_prefix_path.sh'
+[0.265s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.265s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.268s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers' with build type 'ament_cmake'
+[0.268s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers'
+[0.268s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.268s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.270s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo' with build type 'ament_python'
+[0.270s] Level 1:colcon.colcon_core.shell:create_environment_hook('crazyflie_gazebo', 'ament_prefix_path')
+[0.270s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/hook/ament_prefix_path.ps1'
+[0.271s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/hook/ament_prefix_path.dsv'
+[0.271s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/hook/ament_prefix_path.sh'
+[0.271s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.271s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.453s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers'
+[0.454s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.454s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.460s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16
+[0.640s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo'
+[0.640s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.640s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.645s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16
+[0.684s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --install /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
+[0.694s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp_controllers)
+[0.694s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --install /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
+[0.696s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers' for CMake module files
+[0.696s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers' for CMake config files
+[0.696s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp_controllers', 'cmake_prefix_path')
+[0.696s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/hook/cmake_prefix_path.ps1'
+[0.697s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/hook/cmake_prefix_path.dsv'
+[0.697s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/hook/cmake_prefix_path.sh'
+[0.697s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/lib'
+[0.698s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/bin'
+[0.698s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/lib/pkgconfig/cpp_controllers.pc'
+[0.698s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/lib/python3.10/site-packages'
+[0.698s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/bin'
+[0.698s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.ps1'
+[0.699s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.dsv'
+[0.699s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.sh'
+[0.700s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.bash'
+[0.700s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.zsh'
+[0.701s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/colcon-core/packages/cpp_controllers)
+[0.732s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(cpp_controllers)
+[0.733s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers' for CMake module files
+[0.733s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers' for CMake config files
+[0.733s] Level 1:colcon.colcon_core.shell:create_environment_hook('cpp_controllers', 'cmake_prefix_path')
+[0.733s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/hook/cmake_prefix_path.ps1'
+[0.734s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/hook/cmake_prefix_path.dsv'
+[0.734s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/hook/cmake_prefix_path.sh'
+[0.734s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/lib'
+[0.734s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/bin'
+[0.734s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/lib/pkgconfig/cpp_controllers.pc'
+[0.734s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/lib/python3.10/site-packages'
+[0.735s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/bin'
+[0.735s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.ps1'
+[0.735s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.dsv'
+[0.736s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.sh'
+[0.736s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.bash'
+[0.736s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/cpp_controllers/package.zsh'
+[0.736s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/cpp_controllers/share/colcon-core/packages/cpp_controllers)
+[0.889s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers': CONDA_PROMPT_MODIFIER=(acsi2) PYTHONPATH=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/controllers build --build-base /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/build install --record /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log --single-version-externally-managed install_data
+[0.892s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo': CONDA_PROMPT_MODIFIER=(acsi2) PYTHONPATH=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data
+[1.097s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers' for CMake module files
+[1.097s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/controllers' returned '0': CONDA_PROMPT_MODIFIER=(acsi2) PYTHONPATH=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/controllers build --build-base /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/build install --record /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/controllers/install.log --single-version-externally-managed install_data
+[1.098s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers' for CMake config files
+[1.098s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib'
+[1.098s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/bin'
+[1.098s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/pkgconfig/controllers.pc'
+[1.099s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/lib/python3.10/site-packages'
+[1.099s] Level 1:colcon.colcon_core.shell:create_environment_hook('controllers', 'pythonpath')
+[1.099s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/hook/pythonpath.ps1'
+[1.099s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/hook/pythonpath.dsv'
+[1.099s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/hook/pythonpath.sh'
+[1.100s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/bin'
+[1.100s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(controllers)
+[1.100s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/package.ps1'
+[1.100s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/package.dsv'
+[1.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/package.sh'
+[1.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/package.bash'
+[1.101s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/controllers/package.zsh'
+[1.101s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers/share/colcon-core/packages/controllers)
+[1.102s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo' for CMake module files
+[1.103s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo' returned '0': CONDA_PROMPT_MODIFIER=(acsi2) PYTHONPATH=/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/crazyflie_gazebo build --build-base /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/build install --record /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/crazyflie_gazebo/install.log --single-version-externally-managed install_data
+[1.103s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo' for CMake config files
+[1.104s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib'
+[1.104s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/bin'
+[1.104s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/pkgconfig/crazyflie_gazebo.pc'
+[1.104s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/lib/python3.10/site-packages'
+[1.104s] Level 1:colcon.colcon_core.shell:create_environment_hook('crazyflie_gazebo', 'pythonpath')
+[1.104s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/hook/pythonpath.ps1'
+[1.104s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/hook/pythonpath.dsv'
+[1.105s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/hook/pythonpath.sh'
+[1.105s] Level 1:colcon.colcon_core.environment:checking '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/bin'
+[1.105s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(crazyflie_gazebo)
+[1.105s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/package.ps1'
+[1.105s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/package.dsv'
+[1.106s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/package.sh'
+[1.106s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/package.bash'
+[1.106s] INFO:colcon.colcon_core.shell:Creating package script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/crazyflie_gazebo/package.zsh'
+[1.106s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo/share/colcon-core/packages/crazyflie_gazebo)
+[1.107s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[1.107s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[1.107s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[1.107s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[1.111s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[1.111s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[1.111s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[1.119s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[1.119s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/local_setup.ps1'
+[1.121s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/_local_setup_util_ps1.py'
+[1.122s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/setup.ps1'
+[1.123s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/local_setup.sh'
+[1.123s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/_local_setup_util_sh.py'
+[1.124s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/setup.sh'
+[1.124s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/local_setup.bash'
+[1.125s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/setup.bash'
+[1.125s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/local_setup.zsh'
+[1.126s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/setup.zsh'

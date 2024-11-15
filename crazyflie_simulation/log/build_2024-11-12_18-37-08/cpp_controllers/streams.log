@@ -1,0 +1,12 @@
+[0.186s] Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16
+[0.225s] [35m[1mConsolidate compiler generated dependencies of target motor_control_node[0m
+[0.243s] [ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o[0m
+[7.259s] [ 66%] [32m[1mLinking CXX executable motor_control_node[0m
+[7.512s] /usr/bin/ld: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: in function `MotorControlNode::timerCallback()':
+[7.512s] MotorControlNode.cpp:(.text._ZN16MotorControlNode13timerCallbackEv[_ZN16MotorControlNode13timerCallbackEv]+0xd2): undefined reference to `pid_fixed_height_controller(actual_state_s, desired_state_s*, gains_pid_s, double, control_commands_s*)'
+[7.512s] /usr/bin/ld: MotorControlNode.cpp:(.text._ZN16MotorControlNode13timerCallbackEv[_ZN16MotorControlNode13timerCallbackEv]+0x104): undefined reference to `motor_mixing(control_commands_s, motor_power_s*)'
+[7.551s] collect2: error: ld returned 1 exit status
+[7.554s] gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:199: motor_control_node] Error 1
+[7.554s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+[7.555s] gmake: *** [Makefile:146: all] Error 2
+[7.557s] Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16

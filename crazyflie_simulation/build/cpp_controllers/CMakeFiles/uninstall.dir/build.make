@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers
+CMAKE_SOURCE_DIR = /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
+CMAKE_BINARY_DIR = /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

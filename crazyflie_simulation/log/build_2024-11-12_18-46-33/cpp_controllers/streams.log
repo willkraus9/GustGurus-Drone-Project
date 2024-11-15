@@ -1,0 +1,15 @@
+[0.195s] Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16
+[0.235s] [35m[1mConsolidate compiler generated dependencies of target motor_control_node[0m
+[0.253s] [ 66%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o[0m
+[0.253s] [ 66%] [32mBuilding C object CMakeFiles/motor_control_node.dir/src/pid_controller.c.o[0m
+[0.276s] In file included from [01m[K/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/include/cpp_controllers/pid_controller.h:2[m[K,
+[0.276s]                  from [01m[K/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.c:36[m[K:
+[0.276s] [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:152:10:[m[K [01;31m[Kfatal error: [m[Kcsignal: No such file or directory
+[0.276s]   152 | #include [01;31m[K<csignal>[m[K
+[0.276s]       |          [01;31m[K^~~~~~~~~[m[K
+[0.276s] compilation terminated.
+[0.277s] gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:90: CMakeFiles/motor_control_node.dir/src/pid_controller.c.o] Error 1
+[0.277s] gmake[2]: *** Waiting for unfinished jobs....
+[6.576s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+[6.576s] gmake: *** [Makefile:146: all] Error 2
+[6.579s] Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16

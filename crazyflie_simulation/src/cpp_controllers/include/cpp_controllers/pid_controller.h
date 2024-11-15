@@ -1,5 +1,4 @@
 #pragma once
-
 /*
  * Copyright 2022 Bitcraze AB
  *
@@ -28,6 +27,7 @@
  * Description:  PID controller header file
  * Author:       Kimberly McGuire (Bitcraze AB)
  */
+
 
 typedef struct motor_power_s {
   double m1;

@@ -3,7 +3,7 @@ Name: crazyflie-gazebo
 Version: 1.0.0
 Summary: Package for loading a crazyflie drone in gazebo. Also include a keyboard controller
 Home-page: UNKNOWN
-Maintainer: Denis, Will, Kaustab, Nikolaj
+Maintainer: kaust, Will, Kaustab, Nikolaj
 Maintainer-email: dkalpay@andrew.cmu.edu
 License: TODO: License declaration
 Platform: UNKNOWN

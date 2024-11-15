@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o"
   "CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o.d"
+  "CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o"
+  "CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o.d"
   "motor_control_node"
   "motor_control_node.pdb"
 )

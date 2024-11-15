@@ -1,0 +1,11 @@
+[0.197s] Invoking command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16
+[0.236s] [35m[1mConsolidate compiler generated dependencies of target motor_control_node[0m
+[0.254s] [ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o[0m
+[6.673s] [ 66%] [32m[1mLinking CXX executable motor_control_node[0m
+[6.899s] /usr/bin/ld: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: in function `MotorControlNode::MotorControlNode()':
+[6.899s] MotorControlNode.cpp:(.text._ZN16MotorControlNodeC2Ev[_ZN16MotorControlNodeC5Ev]+0x6c9): undefined reference to `init_pid_attitude_fixed_height_controller()'
+[6.935s] collect2: error: ld returned 1 exit status
+[6.937s] gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:199: motor_control_node] Error 1
+[6.938s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
+[6.938s] gmake: *** [Makefile:146: all] Error 2
+[6.940s] Invoked command in '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/crazyflie_gazebo:/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/install/controllers:/opt/ros/humble CONDA_PROMPT_MODIFIER=(acsi2) /usr/bin/cmake --build /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/cpp_controllers -- -j16 -l16

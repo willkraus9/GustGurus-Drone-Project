@@ -4,7 +4,7 @@ set(CMAKE_CXX_STANDARD 20)
 project(cpp_controllers)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  # add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
 # find dependencies
@@ -14,26 +14,44 @@ find_package(std_msgs REQUIRED)
 find_package(actuator_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 
-# additional packages
+#----------------------------additional packages-----------------------------------------------------
 find_package(Eigen3 REQUIRED)
-include_directories(${EIGEN3_INCLUDE_DIR})
+# Manually set the include path if Eigen3_INCLUDE_DIRS is empty
+if(NOT Eigen3_INCLUDE_DIRS)
+  message(STATUS "Eigen3_INCLUDE_DIRS is empty, setting it manually")
+  set(Eigen3_INCLUDE_DIRS /usr/include/eigen3)
+endif()
+#----------------------------additional packages-----------------------------------------------------
 
-
+#----------------------------Add the executables-----------------------------------------------------
 add_executable(motor_control_node
     src/MotorControlNode.cpp
-    src/pid_controller.cpp  #
+    src/pid_controller.cpp  
 )
-ament_target_dependencies(motor_control_node rclcpp std_msgs)
-ament_target_dependencies(motor_control_node rclcpp actuator_msgs)
-ament_target_dependencies(motor_control_node rclcpp nav_msgs)
+
+add_executable(keyboard_control_node
+    src/KeyboardControlNode.cpp
+)
+#----------------------------Add the executables-----------------------------------------------------
+
+# To use ros2 messages and services
+ament_target_dependencies(motor_control_node rclcpp)
+ament_target_dependencies(motor_control_node std_msgs)
+ament_target_dependencies(motor_control_node actuator_msgs)
+ament_target_dependencies(motor_control_node nav_msgs)
+ament_target_dependencies(motor_control_node rosgraph_msgs)
+ament_target_dependencies(keyboard_control_node std_msgs)
+ament_target_dependencies(keyboard_control_node rclcpp)
+
+
 # include_directories(include/cpp_controllers)
 target_include_directories(motor_control_node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_controllers)
+target_include_directories(keyboard_control_node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_controllers)
+target_include_directories(motor_control_node PUBLIC ${Eigen3_INCLUDE_DIRS})
 
 
-install(TARGETS
-  motor_control_node
-  DESTINATION lib/${PROJECT_NAME}
-)
+install(TARGETS motor_control_node DESTINATION lib/${PROJECT_NAME})
+install(TARGETS keyboard_control_node DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -47,6 +65,8 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+
 ament_package()
 
-#add_compile_options(-Wno-unused-variable)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-missing-field-initializers -Wno-unused-parameter")

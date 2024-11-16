@@ -31,6 +31,7 @@
 
 #include <math.h>
 #include <stdio.h>
+#include <iostream>
 #include <string.h>
 
 #include "pid_controller.h"
@@ -44,7 +45,6 @@ double pastVxError, pastVyError;
 double altitudeIntegrator;
 
 void init_pid_attitude_fixed_height_controller() {
-  printf("Initializing PID controller\n");
   pastAltitudeError = 0;
   pastYawRateError = 0;
   pastPitchError = 0;

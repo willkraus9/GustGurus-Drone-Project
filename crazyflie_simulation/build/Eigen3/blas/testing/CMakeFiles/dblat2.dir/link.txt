@@ -1,1 +1,0 @@
-/usr/bin/gfortran -O3 -DNDEBUG -O3 CMakeFiles/dblat2.dir/dblat2.f.o -o dblat2  -Wl,-rpath,/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/blas ../libeigen_blas.so 

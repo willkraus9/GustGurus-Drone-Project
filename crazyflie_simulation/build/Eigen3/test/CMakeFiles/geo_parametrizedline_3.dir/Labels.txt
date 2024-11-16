@@ -1,4 +1,0 @@
-# Target labels
- BuildOfficial
-# Source files and their labels
-/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/eigen/test/geo_parametrizedline.cpp

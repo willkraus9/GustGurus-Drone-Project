@@ -1,0 +1,141 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wshorten64to32 failed with the following output:
+Change Dir: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_682dc/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_682dc.dir/build.make CMakeFiles/cmTC_682dc.dir/build
+gmake[1]: Entering directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_682dc.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_Wshorten64to32  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Werror   -Wshorten-64-to-32 -std=c++14 -o CMakeFiles/cmTC_682dc.dir/src.cxx.o -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-Wshorten-64-to-32'
+gmake[1]: *** [CMakeFiles/cmTC_682dc.dir/build.make:78: CMakeFiles/cmTC_682dc.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_682dc/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wcpp11extensions failed with the following output:
+Change Dir: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_826cf/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_826cf.dir/build.make CMakeFiles/cmTC_826cf.dir/build
+gmake[1]: Entering directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_826cf.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_Wcpp11extensions  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Werror   -Wc++11-extensions -std=c++14 -o CMakeFiles/cmTC_826cf.dir/src.cxx.o -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-Wc++11-extensions'; did you mean '-fms-extensions'?
+gmake[1]: *** [CMakeFiles/cmTC_826cf.dir/build.make:78: CMakeFiles/cmTC_826cf.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_826cf/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_fbfa2/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_fbfa2.dir/build.make CMakeFiles/cmTC_fbfa2.dir/build
+gmake[1]: Entering directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_fbfa2.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_wd981  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd981 -std=c++14 -o CMakeFiles/cmTC_fbfa2.dir/src.cxx.o -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-wd981'
+gmake[1]: *** [CMakeFiles/cmTC_fbfa2.dir/build.make:78: CMakeFiles/cmTC_fbfa2.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_fbfa2/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_e3f44/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_e3f44.dir/build.make CMakeFiles/cmTC_e3f44.dir/build
+gmake[1]: Entering directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_e3f44.dir/src.cxx.o
+/usr/bin/c++ -DCOMPILER_SUPPORT_wd2304  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wlogical-op -Wenum-conversion -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror   -wd2304 -std=c++14 -o CMakeFiles/cmTC_e3f44.dir/src.cxx.o -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.cxx
+c++: error: unrecognized command-line option '-wd2304'
+gmake[1]: *** [CMakeFiles/cmTC_e3f44.dir/build.make:78: CMakeFiles/cmTC_e3f44.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_e3f44/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Determining if the Fortran sgemm exists failed with the following output:
+Change Dir: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_b6425/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_b6425.dir/build.make CMakeFiles/cmTC_b6425.dir/build
+gmake[1]: Entering directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+Building Fortran object CMakeFiles/cmTC_b6425.dir/testFortranCompiler.f.o
+/usr/bin/gfortran    -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/testFortranCompiler.f -o CMakeFiles/cmTC_b6425.dir/testFortranCompiler.f.o
+Linking Fortran executable cmTC_b6425
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6425.dir/link.txt --verbose=1
+/usr/bin/gfortran CMakeFiles/cmTC_b6425.dir/testFortranCompiler.f.o -o cmTC_b6425 
+/usr/bin/ld: CMakeFiles/cmTC_b6425.dir/testFortranCompiler.f.o: in function `MAIN__':
+testFortranCompiler.f:(.text+0xa): undefined reference to `sgemm_'
+collect2: error: ld returned 1 exit status
+gmake[1]: *** [CMakeFiles/cmTC_b6425.dir/build.make:99: cmTC_b6425] Error 1
+gmake[1]: Leaving directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_b6425/fast] Error 2
+
+
+
+Performing C SOURCE FILE Test SCOTCH_Num_4 failed with the following compile output:
+Change Dir: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_eb1df/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_eb1df.dir/build.make CMakeFiles/cmTC_eb1df.dir/build
+gmake[1]: Entering directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_eb1df.dir/src.c.o
+/usr/bin/cc -DSCOTCH_Num_4   -o CMakeFiles/cmTC_eb1df.dir/src.c.o -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.c
+/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.c:4:10: fatal error: scotch.h: No such file or directory
+    4 | #include <scotch.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_eb1df.dir/build.make:78: CMakeFiles/cmTC_eb1df.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_eb1df/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <stdio.h>
+#include <stdint.h>
+#include <scotch.h>
+int main(int argc, char **argv) {
+  if (sizeof(SCOTCH_Num) == 4)
+    return 0;
+  else
+    return 1;
+}
+
+Performing C SOURCE FILE Test SCOTCH_Num_8 failed with the following compile output:
+Change Dir: /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_9b23b/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_9b23b.dir/build.make CMakeFiles/cmTC_9b23b.dir/build
+gmake[1]: Entering directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9b23b.dir/src.c.o
+/usr/bin/cc -DSCOTCH_Num_8   -o CMakeFiles/cmTC_9b23b.dir/src.c.o -c /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.c
+/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp/src.c:4:10: fatal error: scotch.h: No such file or directory
+    4 | #include <scotch.h>
+      |          ^~~~~~~~~~
+compilation terminated.
+gmake[1]: *** [CMakeFiles/cmTC_9b23b.dir/build.make:78: CMakeFiles/cmTC_9b23b.dir/src.c.o] Error 1
+gmake[1]: Leaving directory '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/CMakeFiles/CMakeTmp'
+gmake: *** [Makefile:127: cmTC_9b23b/fast] Error 2
+
+
+...and run output:
+
+Return value: 1
+Source file was:
+
+#include <stdio.h>
+#include <stdint.h>
+#include <scotch.h>
+int main(int argc, char **argv) {
+  if (sizeof(SCOTCH_Num) == 8)
+    return 0;
+  else
+    return 1;
+}
+

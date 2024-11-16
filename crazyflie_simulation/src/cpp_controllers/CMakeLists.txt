@@ -14,6 +14,10 @@ find_package(std_msgs REQUIRED)
 find_package(actuator_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 
+# additional packages
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
 
 add_executable(motor_control_node
     src/MotorControlNode.cpp

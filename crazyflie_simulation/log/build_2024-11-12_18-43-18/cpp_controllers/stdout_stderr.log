@@ -1,9 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target motor_control_node[0m
-[ 33%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o[0m
-[ 66%] [32m[1mLinking CXX executable motor_control_node[0m
-/usr/bin/ld: CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o: in function `MotorControlNode::timerCallback()':
-MotorControlNode.cpp:(.text._ZN16MotorControlNode13timerCallbackEv[_ZN16MotorControlNode13timerCallbackEv]+0xa6): undefined reference to `pid_fixed_height_controller(actual_state_s, desired_state_s*, gains_pid_s, double, control_commands_s*)'
-collect2: error: ld returned 1 exit status
-gmake[2]: *** [CMakeFiles/motor_control_node.dir/build.make:199: motor_control_node] Error 1
-gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/motor_control_node.dir/all] Error 2
-gmake: *** [Makefile:146: all] Error 2

@@ -25,7 +25,7 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
 
-    maintainer='kaust, Will, Kaustab, Nikolaj',
+    maintainer='denis, Will, denisab, Nikolaj',
     maintainer_email='dkalpay@andrew.cmu.edu',
 
     description='Package for loading a crazyflie drone in gazebo. Also include a keyboard controller',

@@ -4,7 +4,7 @@
   <name>crazyflie_gazebo</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="kaust@todo.todo">kaust</maintainer>
+  <maintainer email="denis@todo.todo">denis</maintainer>
   <license>TODO: License declaration</license>
 
   <test_depend>ament_copyright</test_depend>

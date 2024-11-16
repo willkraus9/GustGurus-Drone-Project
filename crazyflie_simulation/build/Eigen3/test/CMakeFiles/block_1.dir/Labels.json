@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/eigen/test/block.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "block_1"
+	}
+}

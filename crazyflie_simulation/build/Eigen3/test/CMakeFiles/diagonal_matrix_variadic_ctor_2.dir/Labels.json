@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/eigen/test/diagonal_matrix_variadic_ctor.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "diagonal_matrix_variadic_ctor_2"
+	}
+}

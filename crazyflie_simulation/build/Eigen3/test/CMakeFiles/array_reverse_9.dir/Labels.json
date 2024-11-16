@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/eigen/test/array_reverse.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "array_reverse_9"
+	}
+}

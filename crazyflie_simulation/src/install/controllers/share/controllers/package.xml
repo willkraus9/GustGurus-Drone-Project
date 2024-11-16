@@ -4,7 +4,7 @@
   <name>controllers</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="kaustkaanalpay@gmail.com">kaust</maintainer>
+  <maintainer email="deniskaanalpay@gmail.com">denis</maintainer>
   <license>TODO: License declaration</license>
 
   <depend>rclpy</depend>

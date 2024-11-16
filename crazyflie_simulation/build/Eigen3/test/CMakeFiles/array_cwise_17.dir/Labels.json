@@ -1,0 +1,16 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/eigen/test/array_cwise.cpp"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"BuildOfficial"
+		],
+		"name" : "array_cwise_17"
+	}
+}

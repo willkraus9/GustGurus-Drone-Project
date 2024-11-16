@@ -55,7 +55,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         gz_sim,
-        keyboard_control,
+        motor_control,
         bridge,
     ])
 

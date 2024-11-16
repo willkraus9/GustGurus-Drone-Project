@@ -3,6 +3,7 @@
 #include <memory>
 #include "actuator_msgs/msg/actuators.hpp"
 #include "pid_controller.h"
+#include <Eigen/Dense>
 
 class MotorControlNode : public rclcpp::Node
 {
@@ -44,11 +45,11 @@ public:
     };
 
     gain = {
-      .kp_att_rp = 50.0,
-      .kd_att_rp = 10.50,
+      .kp_att_rp = 70.0,
+      .kd_att_rp = 50.50,
 
-      .kp_att_y = 50.0,
-      .kd_att_y = 10.50,
+      .kp_att_y = 70.0,
+      .kd_att_y = 50.50,
 
       .kp_vel_xy = 0.0,
       .kd_vel_xy = 0.0,
@@ -74,9 +75,21 @@ private:
       // float x = msg->pose.pose.position.x;
       // float y = msg->pose.pose.position.y;
       float z = msg->pose.pose.position.z;
-      float roll = msg->pose.pose.orientation.x;
-      float pitch = msg->pose.pose.orientation.y;
-      float yaw = msg->pose.pose.orientation.z;
+      float quat_x = msg->pose.pose.orientation.x;
+      float quat_y = msg->pose.pose.orientation.y;
+      float quat_z = msg->pose.pose.orientation.z;
+      float quat_w = msg->pose.pose.orientation.w;
+
+      // Convert quaternion to euler angles
+      double roll, pitch, yaw;
+      Eigen::Quaternionf quaternion(quat_w, quat_x, quat_y, quat_z);
+      Eigen::Matrix3f rotationMatrix = quaternion.toRotationMatrix();
+      Eigen::Vector3f euler = rotationMatrix.eulerAngles(2, 1, 0);
+      roll = euler[2];
+      pitch = euler[1];
+      yaw = euler[0];
+
+      std::cout << "Roll: " << roll << " Pitch: " << pitch << " Yaw: " << yaw << std::endl;
 
       float xd = msg->twist.twist.linear.x;
       float yd = msg->twist.twist.linear.y;
@@ -84,11 +97,11 @@ private:
 
       // float roll_d = msg->twist.twist.angular.x;
       // float pitch_d = msg->twist.twist.angular.y;
-      // float yaw_d = msg->twist.twist.angular.z;
+      float yaw_d = msg->twist.twist.angular.z;
 
       state.roll = static_cast<double>(roll);
       state.pitch = pitch;
-      state.yaw_rate = yaw;
+      state.yaw_rate = yaw_d;
       state.altitude = z;
       state.vx = xd;
       state.vy = yd;

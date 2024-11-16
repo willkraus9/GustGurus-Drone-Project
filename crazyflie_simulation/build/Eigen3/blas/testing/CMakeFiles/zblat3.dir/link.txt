@@ -1,0 +1,1 @@
+/usr/bin/gfortran -O3 -DNDEBUG -O3 CMakeFiles/zblat3.dir/zblat3.f.o -o zblat3  -Wl,-rpath,/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/build/Eigen3/blas ../libeigen_blas.so 

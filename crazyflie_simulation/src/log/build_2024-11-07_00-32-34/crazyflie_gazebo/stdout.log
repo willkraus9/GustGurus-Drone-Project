@@ -11,11 +11,11 @@ running build_py
 running install
 running install_lib
 running install_data
-copying launch/crazyflie_gazebo.launch.py -> /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/share/crazyflie_gazebo/launch
-copying config/ros_gz_crazyflie_bridge.yaml -> /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/share/crazyflie_gazebo/config
+copying launch/crazyflie_gazebo.launch.py -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/share/crazyflie_gazebo/launch
+copying config/ros_gz_crazyflie_bridge.yaml -> /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/share/crazyflie_gazebo/config
 running install_egg_info
-removing '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info' (and everything under it)
-Copying ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info to /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info
+removing '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info' (and everything under it)
+Copying ../build/crazyflie_gazebo/crazyflie_gazebo.egg-info to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/python3.10/site-packages/crazyflie_gazebo-1.0.0-py3.10.egg-info
 running install_scripts
-Installing control_services script to /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/crazyflie_gazebo
-writing list of installed files to '/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/crazyflie_gazebo/install.log'
+Installing control_services script to /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/install/crazyflie_gazebo/lib/crazyflie_gazebo
+writing list of installed files to '/home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/build/crazyflie_gazebo/install.log'

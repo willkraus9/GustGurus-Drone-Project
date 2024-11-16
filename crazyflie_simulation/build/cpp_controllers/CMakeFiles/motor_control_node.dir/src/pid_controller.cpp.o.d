@@ -1,5 +1,5 @@
 CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o: \
- /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.cpp \
+ /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/src/pid_controller.cpp \
  /usr/include/stdc-predef.h /usr/include/c++/11/math.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -101,4 +101,4 @@ CMakeFiles/motor_control_node.dir/src/pid_controller.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h /usr/include/string.h \
  /usr/include/strings.h \
- /home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/include/cpp_controllers/pid_controller.h
+ /home/denis/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/cpp_controllers/include/cpp_controllers/pid_controller.h

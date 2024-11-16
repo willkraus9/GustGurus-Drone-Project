@@ -1,3 +1,0 @@
-[35m[1mConsolidate compiler generated dependencies of target motor_control_node[0m
-[ 66%] [32mBuilding CXX object CMakeFiles/motor_control_node.dir/src/MotorControlNode.cpp.o[0m
-[ 66%] [32mBuilding C object CMakeFiles/motor_control_node.dir/src/pid_controller.c.o[0m

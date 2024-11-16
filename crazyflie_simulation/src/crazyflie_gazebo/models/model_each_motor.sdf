@@ -182,9 +182,9 @@ Copyright (c) 2024 Bitcraze
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
       <rollingMomentCoefficient>0.0000001</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
-      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
-      <actuator_number>0</actuator_number>
-      <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic> <!-- I added this to control the motor velcoity -->
+      <actuator_number>0</actuator_number> 
+      <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic> <!-- I added this to control the motor velcoity -->
       <motorType>velocity</motorType>
     </plugin>
     <plugin

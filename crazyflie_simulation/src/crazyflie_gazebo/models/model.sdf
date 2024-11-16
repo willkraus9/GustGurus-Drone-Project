@@ -182,7 +182,9 @@ Copyright (c) 2024 Bitcraze
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
       <rollingMomentCoefficient>0.0000001</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
       <actuator_number>0</actuator_number>
+      <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic>
       <motorType>velocity</motorType>
     </plugin>
     <plugin
@@ -198,7 +200,9 @@ Copyright (c) 2024 Bitcraze
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
       <rollingMomentCoefficient>0.0000001</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
       <actuator_number>1</actuator_number>
+      <motorSpeedPubTopic>motor_speed/1</motorSpeedPubTopic>
       <motorType>velocity</motorType>
     </plugin>
     <plugin
@@ -214,7 +218,9 @@ Copyright (c) 2024 Bitcraze
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
       <rollingMomentCoefficient>0.0000001</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
       <actuator_number>2</actuator_number>
+      <motorSpeedPubTopic>motor_speed/2</motorSpeedPubTopic>
       <motorType>velocity</motorType>
     </plugin>
     <plugin
@@ -230,7 +236,9 @@ Copyright (c) 2024 Bitcraze
       <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
       <rollingMomentCoefficient>0.0000001</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>20</rotorVelocitySlowdownSim>
+      <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
       <actuator_number>3</actuator_number>
+      <motorSpeedPubTopic>motor_speed/3</motorSpeedPubTopic>
       <motorType>velocity</motorType>
     </plugin>
     <plugin

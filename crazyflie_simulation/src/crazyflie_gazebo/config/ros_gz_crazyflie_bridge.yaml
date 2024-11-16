@@ -1,3 +1,7 @@
+
+# This file is used to define the mapping between ROS and Gazebo topics
+# The bridge will automatically create the necessary publishers and subscribers
+# to forward messages between the two systems.
 ---
 - ros_topic_name: "/crazyflie/cmd_vel"
   gz_topic_name: "/crazyflie/gazebo/command/twist"
@@ -25,8 +29,7 @@
   gz_type_name: "ignition.msgs.LaserScan"
   direction: GZ_TO_ROS
 - ros_topic_name: "/crazyflie/motor_commands"
-  gz_topic_name: "/crazyflie/gazebo/command/motor_speed"
+  gz_topic_name: "/crazyflie/gazebo/command/motor_speed" # Found topic name by calling gz topic -l on terminal to find the name of the topics, crazyflie prefix comes from the robot namespace in the sdf file
   ros_type_name: "actuator_msgs/msg/Actuators"
   gz_type_name: "gz.msgs.Actuators"
   direction: ROS_TO_GZ
-

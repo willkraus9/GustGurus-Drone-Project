@@ -1,0 +1,28 @@
+function pdd = p_dyn(eta, pdot, T)
+    % Extract roll, pitch, and yaw from the vector eta
+    roll = eta(1);
+    pitch = eta(2);
+    yaw = eta(3);
+    
+    % Extract velocity components
+    xd = pdot(1);
+    yd = pdot(2);
+    zd = pdot(3);
+    
+    
+    % Trigonometric shorthand
+    c_phi = cos(roll);
+    s_phi = sin(roll);
+    c_theta = cos(pitch);
+    s_theta = sin(pitch);
+    c_psi = cos(yaw);
+    s_psi = sin(yaw);
+    
+    % Dynamic equations
+    x_dd = (T/m) * (c_theta * c_psi * xd + (s_phi * s_theta * c_psi - c_phi * s_psi) * yd + (c_phi * s_theta * c_psi + s_phi * s_psi) * zd);
+    y_dd = (T/m) * (c_theta * s_psi * xd + (s_phi * s_theta * s_psi + c_phi * c_psi) * yd + (c_phi * s_theta * s_psi - s_phi * c_psi) * zd);
+    z_dd = -g + (T/m) * (-s_theta * xd + s_phi * c_theta * yd + c_phi * c_theta * zd);
+    
+    % Combine into a vector
+    pdd = [x_dd; y_dd; z_dd];
+end

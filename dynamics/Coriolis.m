@@ -1,46 +1,37 @@
-function C = Coriolis(eta, eta_d, params)
-    % Coriolis computes the Coriolis matrix for a rigid body in 3D space.
-    %
-    % param eta: [roll; pitch; yaw] orientation angles (radians)
-    % param eta_d: [roll_rate; pitch_rate; yaw_rate] angular velocity components (rad/s)
-    %
-    % return: C - 3x3 Coriolis matrix (N·m·s)
+function C = Coriolis(eta, eta_d, Ix, Iy, Iz)
+    % Extract roll, pitch, and yaw from the vector eta
+    phi = eta(1);   % Roll angle
+    theta = eta(2); % Pitch angle
+    psi = eta(3);   % Yaw angle
+    
+    % Extract roll, pitch, and yaw rates from the vector eta_d
+    phi_d = eta_d(1);   % Roll rate
+    theta_d = eta_d(2); % Pitch rate
+    psi_d = eta_d(3);   % Yaw rate
+    
+    % Moments of inertia
+    I11 = Ix;
+    I22 = Iy;
+    I33 = Iz;
+    
+    % Trigonometric shorthand
+    s_phi = sin(phi);
+    c_phi = cos(phi);
+    s_theta = sin(theta);
+    c_theta = cos(theta);
+    
+    % Initialize Coriolis matrix
+    C = zeros(3, 3);
 
-    % Extract roll, pitch, and yaw from the orientation vector eta
-    roll = eta(1);   % Roll angle (phi)
-    pitch = eta(2);  % Pitch angle (theta)
-    yaw = eta(3);    % Yaw angle (psi)
-    
-    % Extract angular velocities (roll, pitch, yaw rates) from eta_d
-    roll_d = eta_d(1);   % Roll rate (phi_dot)
-    pitch_d = eta_d(2);  % Pitch rate (theta_dot)
-    yaw_d = eta_d(3);    % Yaw rate (psi_dot)
-    
-    % Moments of inertia (must be predefined or passed globally)
-    I11 = params.Ix; % Moment of inertia about x-axis
-    I22 = params.Iy; % Moment of inertia about y-axis
-    I33 = params.Iz; % Moment of inertia about z-axis
+    % Populate Coriolis matrix using the formulas from the image
+    C(1, 1) = 0;
+    C(1, 2) = (I22 - I33) * (theta_d * c_phi * s_phi + psi_d * c_theta * (s_phi^2 - c_phi^2)) - I11 * psi_d * c_theta;
+    C(1, 3) = (I33 - I22) * psi_d * c_phi * s_phi * c_theta^2;
+    C(2, 1) = (I33 - I22) * (theta_d * c_phi * s_phi + psi_d * c_theta * (s_phi^2 - c_phi^2)) + I11 * psi_d * c_theta;
+    C(2, 2) = (I33 - I22) * phi_d * c_phi * s_phi;
+    C(2, 3) = (-I11 * psi_d + I22 * psi_d * s_phi^2 + I33 * psi_d * c_phi^2) * s_theta * c_theta;
+    C(3, 1) = (I22 - I33) * psi_d * c_theta^2 * s_phi * c_phi - I11 * theta_d * c_theta;
+    C(3, 2) = (I33 - I22) * (theta_d * c_phi * s_phi * s_theta + phi_d * c_theta * (s_phi^2 - c_phi^2)) + (I11 - I22 * s_phi^2 - I33 * c_phi^2) * psi_d * s_theta * c_theta;
+    C(3, 3) = (I22 - I33) * phi_d * c_phi * s_phi * c_theta^2 + (I11 - I22 * s_phi^2 - I33 * c_phi^2) * theta_d * c_theta * s_theta;
 
-    % Trigonometric shorthand for efficiency
-    s_phi = sin(roll);    % Sine of roll
-    c_phi = cos(roll);    % Cosine of roll
-    s_theta = sin(pitch); % Sine of pitch
-    c_theta = cos(pitch); % Cosine of pitch
-    
-    % Coriolis matrix elements
-    % Each element is derived from the equations of motion for a rigid body.
-    C11 = 0;
-    C12 = -((I33 - I22) * (yaw_d * c_phi * s_theta + pitch_d * (c_theta^2 - c_phi^2)) - I11 * roll_d * c_phi);
-    C13 = ((I22 - I33) * pitch_d * s_phi + yaw_d * (c_theta^2 - s_phi^2)) + I11 * roll_d * s_phi;
-    C21 = ((I33 - I22) * yaw_d * s_phi + roll_d * (c_theta^2 - s_phi^2)) + I11 * roll_d * c_phi;
-    C22 = ((I33 - I22) * yaw_d * c_phi * s_theta);
-    C23 = (-I11 * roll_d + I22 * pitch_d * s_phi * c_theta + I33 * yaw_d) * c_phi * s_theta;
-    C31 = ((I22 - I33) * yaw_d * (c_phi * s_theta * c_theta - c_phi * roll_d) - I11 * roll_d);
-    C32 = ((I33 - I22) * (yaw_d * c_phi * s_theta * c_theta + roll_d * (c_phi * (s_theta^2 - c_theta^2))) + (I11 - I33) * roll_d * c_phi);
-    C33 = ((I22 - I33) * yaw_d * c_phi * s_theta * c_theta + (I11 - I22) * roll_d * s_theta^2 - I33 * roll_d * c_phi * s_theta);
-    
-    % Construct the Coriolis matrix
-    C = [C11, C12, C13;
-         C21, C22, C23;
-         C31, C32, C33];
 end

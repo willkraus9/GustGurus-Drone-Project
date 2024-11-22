@@ -24,3 +24,10 @@ params.g=9.81;
 params.Ax=0.35;
 params.Ay=params.Ax;
 params.Az=params.Ax;
+
+
+bus = Simulink.Bus.createObject(params);
+
+% bus is now stored in the workspace as a Bus object.
+% Save the bus object name
+busName = bus.busName;

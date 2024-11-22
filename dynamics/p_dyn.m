@@ -1,4 +1,4 @@
-function pdd = p_dyn(eta, pdot, T)
+function pdd = p_dyn(eta, pdot, T, params)
     % p_dyn computes the acceleration of the drone in the inertial frame 
     % based on its orientation (eta), velocity (pdot), and thrust (T).
     % 
@@ -34,6 +34,8 @@ function pdd = p_dyn(eta, pdot, T)
     
     % Dynamic equations of motion:
     % Acceleration components in the inertial frame due to thrust and gravity
+    m = params.m;
+    g = params.g;
     x_dd = (T/m) * (c_theta * c_psi * xd + ...
                     (s_phi * s_theta * c_psi - c_phi * s_psi) * yd + ...
                     (c_phi * s_theta * c_psi + s_phi * s_psi) * zd);

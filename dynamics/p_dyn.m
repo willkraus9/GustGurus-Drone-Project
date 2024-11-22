@@ -1,4 +1,4 @@
-function pdd = p_dyn(eta, pdot, T)
+function pdd = p_dyn(eta, pdot, params)
     % Extract roll, pitch, and yaw from the vector eta
     phi = eta(1);
     theta = eta(2);
@@ -19,8 +19,10 @@ function pdd = p_dyn(eta, pdot, T)
     s_psi = sin(psi);
     
      % Gravity vector
-    g_vec = [0; 0; -g];
-    
+    g_vec = [0; 0; -params.g];
+    T = params.T;
+    m = params.m;
+
     % Thrust vector in inertial frame
     thrust_vec = (T / m) * [
         c_psi * s_theta * c_phi + s_psi * s_phi;

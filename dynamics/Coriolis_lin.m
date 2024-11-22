@@ -1,4 +1,4 @@
-function C = Coriolis_lin(eta, eta_d, Ix, Iy, Iz)
+function C = Coriolis_lin(eta, eta_d, params)
     % Extract roll, pitch, and yaw from the vector eta
     phi = eta(1);   % Roll angle
     theta = eta(2); % Pitch angle
@@ -10,9 +10,9 @@ function C = Coriolis_lin(eta, eta_d, Ix, Iy, Iz)
     psi_d = eta_d(3);   % Yaw rate
     
     % Moments of inertia
-    I11 = Ix;
-    I22 = Iy;
-    I33 = Iz;
+    I11 = params.Ix;
+    I22 = params.Iy;
+    I33 = params.Iz;
     C = zeros(3, 3);
     C(1,1)=0;
     C(1,2) = (I33-I22)*psi_d - I11*psi_d;

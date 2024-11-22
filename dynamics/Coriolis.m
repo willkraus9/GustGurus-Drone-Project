@@ -1,4 +1,4 @@
-function C = Coriolis(eta, eta_d, params)
+function C = Coriolis(eta, eta_d, Ix, Iy, Iz)
     % Extract roll, pitch, and yaw from the vector eta
     phi = eta(1);   % Roll angle
     theta = eta(2); % Pitch angle
@@ -10,9 +10,9 @@ function C = Coriolis(eta, eta_d, params)
     psi_d = eta_d(3);   % Yaw rate
     
     % Moments of inertia
-    I11 = params.Ix;
-    I22 = params.Iy;
-    I33 = params.Iz;
+    I11 = Ix;
+    I22 = Iy;
+    I33 = Iz;
     
     % Trigonometric shorthand
     s_phi = sin(phi);

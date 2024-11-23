@@ -8,6 +8,7 @@
 #include "controller_indi.h"
 #include "controller_brescianini.h"
 #include "controller_lee.h"
+#include "controller_customPID.h"
 
 #include "autoconf.h"
 
@@ -31,7 +32,7 @@ static ControllerFcns controllerFunctions[] = {
   {.init = controllerBrescianiniInit, .test = controllerBrescianiniTest, .update = controllerBrescianini, .name = "Brescianini"},
   {.init = controllerLeeFirmwareInit, .test = controllerLeeFirmwareTest, .update = controllerLeeFirmware, .name = "Lee"},
   // Below are custom controllers
-  {.init = custom_pid_controller_init, .test = custom_pid_controller_test, .update = custom_pid_controller, .name = "CustomPID"},
+  {.init = controllerCustomPidInit, .test = controllerCustomPidTest, .update = controllerCustomPid, .name = "Custom PID"},
   #ifdef CONFIG_CONTROLLER_OOT
   {.init = controllerOutOfTreeInit, .test = controllerOutOfTreeTest, .update = controllerOutOfTree, .name = "OutOfTree"},
   #endif
@@ -61,6 +62,8 @@ void controllerInit(ControllerType controller) {
     #define CONTROLLER ControllerTypeLee
   #elif defined(CONFIG_CONTROLLER_OOT)
     #define CONTROLLER ControllerTypeOot
+  #elif defined(CONFIG_CONTROLLER_CUSTOM_PID)
+    #define CONTROLLER ControllerTypeCustomPid
   #else
     #define CONTROLLER ControllerTypeAutoSelect
   #endif

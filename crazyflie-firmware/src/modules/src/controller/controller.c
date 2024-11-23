@@ -31,7 +31,6 @@ static ControllerFcns controllerFunctions[] = {
   {.init = controllerINDIInit, .test = controllerINDITest, .update = controllerINDI, .name = "INDI"},
   {.init = controllerBrescianiniInit, .test = controllerBrescianiniTest, .update = controllerBrescianini, .name = "Brescianini"},
   {.init = controllerLeeFirmwareInit, .test = controllerLeeFirmwareTest, .update = controllerLeeFirmware, .name = "Lee"},
-  // Below are custom controllers
   {.init = controllerCustomPidInit, .test = controllerCustomPidTest, .update = controllerCustomPid, .name = "Custom PID"},
   #ifdef CONFIG_CONTROLLER_OOT
   {.init = controllerOutOfTreeInit, .test = controllerOutOfTreeTest, .update = controllerOutOfTree, .name = "OutOfTree"},
@@ -60,10 +59,10 @@ void controllerInit(ControllerType controller) {
     #define CONTROLLER ControllerTypeBrescianini
   #elif defined(CONFIG_CONTROLLER_LEE)
     #define CONTROLLER ControllerTypeLee
-  #elif defined(CONFIG_CONTROLLER_OOT)
-    #define CONTROLLER ControllerTypeOot
   #elif defined(CONFIG_CONTROLLER_CUSTOM_PID)
     #define CONTROLLER ControllerTypeCustomPid
+  #elif defined(CONFIG_CONTROLLER_OOT)
+    #define CONTROLLER ControllerTypeOot
   #else
     #define CONTROLLER ControllerTypeAutoSelect
   #endif

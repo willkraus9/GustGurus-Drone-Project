@@ -103,7 +103,7 @@ static void powerDistributionLegacy(const control_t *control, motors_thrust_unca
 static void powerDistributionForceTorque(const control_t *control, motors_thrust_uncapped_t* motorThrustUncapped) {
   static float motorForces[STABILIZER_NR_OF_MOTORS];
 
-  const float arm = 0.707106781f * armLength;
+  const float arm = 0.707106781f * armLength; // Convert from armlength to perpendicular distance
   const float rollPart = 0.25f / arm * control->torqueX;
   const float pitchPart = 0.25f / arm * control->torqueY;
   const float thrustPart = 0.25f * control->thrustSi; // N (per rotor)

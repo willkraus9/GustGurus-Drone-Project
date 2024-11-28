@@ -55,6 +55,13 @@ void init_pid_attitude_fixed_height_controller() {
 }
 
 void pid_attitude_fixed_height_controller(actual_state_t actual_state, desired_state_t *desired_state, gains_pid_t gains_pid,
+                                          double dt, control_commands_t *control_commands) {
+  pid_fixed_height_controller(actual_state, desired_state, gains_pid, dt, control_commands);
+  pid_attitude_controller(actual_state, desired_state, gains_pid, dt, control_commands);
+  // motor_mixing(control_commands, motorCommands);
+}
+
+void pid_attitude_fixed_height_controller2(actual_state_t actual_state, desired_state_t *desired_state, gains_pid_t gains_pid,
                                           double dt, motor_power_t *motorCommands) {
   control_commands_t control_commands = {0};
   pid_fixed_height_controller(actual_state, desired_state, gains_pid, dt, &control_commands);
@@ -80,7 +87,8 @@ void pid_fixed_height_controller(actual_state_t actual_state, desired_state_t *d
 
   altitudeIntegrator += altitudeError * dt;
   control_commands->altitude = gains_pid.kp_z * constrain(altitudeError, -1, 1) + gains_pid.kd_z * altitudeDerivativeError +
-                               gains_pid.ki_z * altitudeIntegrator + 48;
+                               gains_pid.ki_z * altitudeIntegrator + 0.27; // 2330 0.27
+
   pastAltitudeError = altitudeError;
 }
 
@@ -100,6 +108,9 @@ void pid_attitude_controller(actual_state_t actual_state, desired_state_t *desir
   double rollError = desired_state->roll - actual_state.roll;
   double rollDerivativeError = (rollError - pastRollError) / dt;
   double yawRateError = desired_state->yaw_rate - actual_state.yaw_rate;
+
+//   std::cout << "pitchError: " << pitchError << std::endl;
+//   std::cout << "rollError: " << rollError << std::endl;
 
   // PID control
   control_commands->roll = gains_pid.kp_att_rp * constrain(rollError, -1, 1) + gains_pid.kd_att_rp * rollDerivativeError;

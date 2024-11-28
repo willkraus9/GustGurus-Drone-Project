@@ -63,7 +63,7 @@ public:
         .vy = 0.0
     };
 
-    this->declare_parameter<std::vector<double>>("gains", {9.5e-7, 0, 0, 0, 0, 0, 0.14, 0.07, 0});
+    this->declare_parameter<std::vector<double>>("gains", {1e-3, 5e-4, 0, 0, 0, 0, 0.14, 0.07, 0});
     // this->declare_parameter<std::vector<double>>("gains", {200.0, 100.50, 200.0, 100.50, 0.0, 0.0, 2350.0, 1300.0, 0.0});
 
 

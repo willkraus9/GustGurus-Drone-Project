@@ -9,26 +9,21 @@
  *
  * Custom implementation of a PID controller by Nikolaj Hindsbo
  */
-
 #ifndef __CONTROLLER_CustomPID_H__
 #define __CONTROLLER_CustomPID_H__
-
 #include "stabilizer_types.h"
-
 typedef struct motor_power_s {
   double m1;
   double m2;
   double m3;
   double m4;
 } motor_power_t;
-
 typedef struct control_commands_s {
   double roll;
   double pitch;
   double yaw;
   double altitude;
 } control_commands_t;
-
 typedef struct desired_state_s {
   double roll;
   double pitch;
@@ -37,7 +32,6 @@ typedef struct desired_state_s {
   double vx;
   double vy;
 } desired_state_t;
-
 typedef struct actual_state_s {
   double roll;
   double pitch;
@@ -46,7 +40,6 @@ typedef struct actual_state_s {
   double vx;
   double vy;
 } actual_state_t;
-
 typedef struct gains_pid_s {
   double kp_att_rp;
   double kd_att_rp;
@@ -58,7 +51,6 @@ typedef struct gains_pid_s {
   double kd_z;
   double ki_z;
 } gains_pid_t;
-
 void controllerCustomPidInit(void);
 bool controllerCustomPidTest(void);
 void controllerCustomPid(control_t *control, const setpoint_t *setpoint,
@@ -80,5 +72,4 @@ void pid_horizontal_velocity_controller(actual_state_t actual_state, desired_sta
                                         double dt);
 void motor_mixing(control_commands_t control_commands, motor_power_t *motorCommands);
 void resetControlIfThrustZero(control_t *control);
-
 #endif //__CONTROLLER_CustomPID_H__

@@ -46,22 +46,22 @@ public:
                 goal_state_vector_[3] -= 0.1; // Decrease altitude
                 break;
             case 'a':
-                goal_state_vector_[0] -= 0.1; // Decrease roll
+                goal_state_vector_[0] -= 0.1; // Decrease y
                 break;
             case 'd':
-                goal_state_vector_[0] += 0.1; // Increase roll
+                goal_state_vector_[0] += 0.1; // Increase y
                 break;
             case 'q':
-                goal_state_vector_[1] += 0.1; // Increase pitch
+                goal_state_vector_[1] += 0.1; // Increase x
                 break;
             case 'e':
-                goal_state_vector_[1] -= 0.1; // Decrease pitch
+                goal_state_vector_[1] -= 0.1; // Decrease x
                 break;
             case 'z':
-                goal_state_vector_[2] += 0.1; // Increase yaw rate
+                goal_state_vector_[2] += 0.1; // Increase yaw 
                 break;
             case 'x':
-                goal_state_vector_[2] -= 0.1; // Decrease yaw rate
+                goal_state_vector_[2] -= 0.1; // Decrease yaw 
                 break;
             case 27: // ESC
                 tcsetattr(STDIN_FILENO, TCSANOW, &oldt); // Restore terminal

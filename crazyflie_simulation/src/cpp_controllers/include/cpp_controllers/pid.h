@@ -1,3 +1,4 @@
+#pragma once
 #include <Eigen/Dense>
 
 class pid {
@@ -7,8 +8,11 @@ class pid {
         float kp;
         float ki;
         float kd;
+        float output_max;
         float integral_max;
 
-        pid(float kp, float ki, float kd, float integral_max);
-        float update(float error, float dt);
+        pid(float kp, float ki, float kd, float integral_max, float output_max);
+        ~pid();
+        pid();
+        float update(float error, float dt, float baseline, bool verbose=false);
 };

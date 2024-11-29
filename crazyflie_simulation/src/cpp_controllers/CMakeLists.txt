@@ -27,6 +27,8 @@ endif()
 add_executable(motor_control_node
     src/MotorControlNode.cpp
     src/pid_controller.cpp  
+    src/CustomPidController.cpp
+    src/pid.cpp 
 )
 
 add_executable(keyboard_control_node

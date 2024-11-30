@@ -9,6 +9,7 @@
 #include "controller_brescianini.h"
 #include "controller_lee.h"
 #include "controller_customPID.h"
+#include "controller_directThrustPID.h"
 
 #include "autoconf.h"
 
@@ -32,6 +33,7 @@ static ControllerFcns controllerFunctions[] = {
   {.init = controllerBrescianiniInit, .test = controllerBrescianiniTest, .update = controllerBrescianini, .name = "Brescianini"},
   {.init = controllerLeeFirmwareInit, .test = controllerLeeFirmwareTest, .update = controllerLeeFirmware, .name = "Lee"},
   {.init = controllerCustomPidInit, .test = controllerCustomPidTest, .update = controllerCustomPid, .name = "Custom PID"},
+  {.init = controllerCustomDirectThrustFirmwareInit, .test = controllerCustomDirectThrustFirmwareTest, .update = controllerCustomDirectThrustFirmware, .name = "Custom PID Direct Thrust"},
   #ifdef CONFIG_CONTROLLER_OOT
   {.init = controllerOutOfTreeInit, .test = controllerOutOfTreeTest, .update = controllerOutOfTree, .name = "OutOfTree"},
   #endif
@@ -61,6 +63,8 @@ void controllerInit(ControllerType controller) {
     #define CONTROLLER ControllerTypeLee
   #elif defined(CONFIG_CONTROLLER_CUSTOM_PID)
     #define CONTROLLER ControllerTypeCustomPid
+  #elif defined(CONFIG_CONTROLLER_CUSTOM_PID_DIRECT_THRUST)
+    #define CONTROLLER ControllerTypeCustomPidDirectThrust
   #elif defined(CONFIG_CONTROLLER_OOT)
     #define CONTROLLER ControllerTypeOot
   #else

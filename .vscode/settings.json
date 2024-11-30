@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "pid_controller.h": "c",
-        "string.h": "c"
-    }
-}

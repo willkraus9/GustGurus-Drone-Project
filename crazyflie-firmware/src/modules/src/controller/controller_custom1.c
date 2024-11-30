@@ -1,14 +1,17 @@
-/**
- *    ||          ____  _ __
- * +------+      / __ )(_) /_______________ _____  ___
- * | 0xBC |     / __  / / __/ ___/ ___/ __ /_  / / _ \
- * +------+    / /_/ / / /_/ /__/ /  / /_/ / / /_/  __/
- *  ||  ||    /_____/_/\__/\___/_/   \__,_/ /___/\___/
- *
- * Crazyflie control firmware
- *
- * Custom implementation of a PID controller by Nikolaj Hindsbo
- */
+/*
+// __        _____ _   _ ____  ____  ____  _____    _    _  _______ ____  ____  
+// \ \      / /_ _| \ | |  _ \| __ )|  _ \| ____|  / \  | |/ / ____|  _ \/ ___| 
+//  \ \ /\ / / | ||  \| | | | |  _ \| |_) |  _|   / _ \ | ' /|  _| | |_) \___ \ 
+//   \ V  V /  | || |\  | |_| | |_) |  _ <| |___ / ___ \| . \| |___|  _ < ___) |
+//    \_/\_/  |___|_| \_|____/|____/|_| \_\_____/_/   \_\_|\_\_____|_| \_\____/ 
+//  
+//  Crazyflie control firmware
+//  
+//  Custom implementation of a PID controller via simulation (motor speed control) by Nikolaj Hindsbo & Denis Alpay
+//  
+*/
+
+
 #include "stabilizer_types.h"
 #include "attitude_controller.h"
 #include "position_controller.h"
@@ -22,7 +25,7 @@
 #include <stdbool.h>
 #include <string.h>
 #include <stdint.h>
-#include "controller_customPID.h"
+#include "controller_custom1.h"
 #define DEBUG_MODULE "MYCONTROLLER"
 #include "debug.h"
 #define constrain(value, min, max) ((value) < (min) ? (min) : ((value) > (max) ? (max) : (value)))
@@ -48,7 +51,7 @@ static const float ki_z = 0.0f;
 static const float kp_vel_xy = 2.5f;
 static const float kd_vel_xy = 0.8f;
 
-void controllerCustomPidInit() {
+void controllerCustomInit1() {
   // Initialize PID variables
   pastAltitudeError = 0.0f;
   pastPitchError = 0.0f;
@@ -60,12 +63,12 @@ void controllerCustomPidInit() {
   DEBUG_PRINT("Custom PID Controller Initialized\n");
 }
 
-bool controllerCustomPidTest() {
+bool controllerCustomTest1() {
   // Always return true to indicate the controller is functional
   return true;
 }
 
-void controllerCustomPid(control_t *control, const setpoint_t *setpoint, const sensorData_t *sensors, const state_t *state, const uint32_t stabilizerStep) {
+void controllerCustom1(control_t *control, const setpoint_t *setpoint, const sensorData_t *sensors, const state_t *state, const uint32_t stabilizerStep) {
   static uint32_t lastPrintTime = 0;  // Store the last time the print was executed
   uint32_t currentTime = xTaskGetTickCount();  // Get the current tick count
 
@@ -258,8 +261,6 @@ void motor_mixing(control_commands_t control_commands, motor_power_t *motorComma
 }
 
 
-
-
 void calculate_thrust_torques(const motor_power_t *motorCommands, float *T, float *Tx, float *Ty, float *Tz) {
     // Convert motor commands to forces
     float F1 = kT * motorCommands->m1 * motorCommands->m1;
@@ -275,3 +276,26 @@ void calculate_thrust_torques(const motor_power_t *motorCommands, float *T, floa
     *Ty = L * (F1 + F2 - F3 - F4);       // Torque around Y-axis
     *Tz = gamma * (-F1 + F2 - F3 + F4);  // Torque around Z-axis
 }
+
+#ifdef CRAZYFLIE_FW
+// Firmware initialization
+void controllerCustomFirmware1Init(void) {
+    controllerCustomInit1();
+}
+
+// Firmware test
+bool controllerCustomFirmware1Test(void) {
+    return true;
+}
+
+// Firmware control
+void controllerCustomFirmware1(
+    control_t *control,
+    const setpoint_t *setpoint,
+    const sensorData_t *sensors,
+    const state_t *state,
+    const uint32_t stabilizerStep
+) {
+    controllerCustom1(control, setpoint, sensors, state, stabilizerStep);
+}
+#endif

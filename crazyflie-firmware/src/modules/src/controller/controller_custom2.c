@@ -1,4 +1,16 @@
-#include "controller_directThrustPID.h"
+/*
+// __        _____ _   _ ____  ____  ____  _____    _    _  _______ ____  ____  
+// \ \      / /_ _| \ | |  _ \| __ )|  _ \| ____|  / \  | |/ / ____|  _ \/ ___| 
+//  \ \ /\ / / | ||  \| | | | |  _ \| |_) |  _|   / _ \ | ' /|  _| | |_) \___ \ 
+//   \ V  V /  | || |\  | |_| | |_) |  _ <| |___ / ___ \| . \| |___|  _ < ___) |
+//    \_/\_/  |___|_| \_|____/|____/|_| \_\_____/_/   \_\_|\_\_____|_| \_\____/ 
+//  
+//  Crazyflie control firmware
+//  
+//  Custom implementation of a PID controller via direct thrust/torque calculations by Nikolaj Hindsbo & Denis Alpay
+//  
+*/
+
 #include "log.h"
 #include "FreeRTOS.h"
 #include "task.h"
@@ -16,10 +28,11 @@
 #include "debug.h"
 
 #include "controller.h"
-#include "controller_customPID.h"
+#include "controller_custom2.h"
 #include <stdbool.h>
 #define constrain(value, min, max) ((value) < (min) ? (min) : ((value) > (max) ? (max) : (value)))
 
+// original values (tune as need be)
 static CustomDirectThrust_t g_self = {
     // Roll PID
     .kp_roll = 2e-4f, .ki_roll = 0.0f, .kd_roll = 1e-4f,
@@ -44,6 +57,7 @@ static PID_t roll_controller, pitch_controller, yaw_controller;
 
 static CustomPidController_t customPidController;
 
+
 // Initialize the PID structure
 void DirectThrustPID_init(PID_t *pid, float kp, float ki, float kd, float integral_max, float output_max) {
   /*
@@ -54,7 +68,7 @@ void DirectThrustPID_init(PID_t *pid, float kp, float ki, float kd, float integr
     * @param kd: Derivative gain
     * @param integral_max: Maximum value of the integral term
     * @param output_max: Maximum value of the output
-  */ 
+  */
     pid->kp = kp;
     pid->ki = ki;
     pid->kd = kd;
@@ -127,7 +141,7 @@ bool controllerCustomPidDirectThrustTest() {
 }
 
 // Map the setpoint to the desired state
-void map_setpoint_to_desired_direct_thrust(const setpoint_t *setpoint, desired_state_t_direct_thrust *desired_state) {
+void map_setpoint_to_desired_direct_thrust(const setpoint_t *setpoint, desired_state_t *desired_state) {
     desired_state->x = setpoint->position.x;
     desired_state->y = setpoint->position.y;
     desired_state->z = setpoint->position.z;
@@ -150,14 +164,15 @@ void controllerCustomPidDirectThrust(
             const setpoint_t *setpoint,
             const sensorData_t *sensors,
             const state_t *state,
-            const uint32_t stabilizerStep) 
+            const uint32_t stabilizerStep)
 {
     control->controlMode = controlModeForceTorque;
     static uint32_t lastPrintTime = 0;
+    static uint32_t lastPrintTime2 = 0;
     uint32_t currentTime = xTaskGetTickCount();
     float dt = 1.0f / ATTITUDE_RATE;
 
-    desired_state_t_direct_thrust desired_state;
+    desired_state_t desired_state;
     current_state_t current_state;
 
     map_setpoint_to_desired_direct_thrust(setpoint, &desired_state);
@@ -178,7 +193,7 @@ void controllerCustomPidDirectThrust(
         float roll_error = roll_target - (current_state.roll);
         float pitch_error = pitch_target - (current_state.pitch);
 
-        float thrust = DirectThrustPID_update(&z_controller, z_error, dt, 0.27f, false);
+        float thrust = DirectThrustPID_update(&z_controller, z_error, dt, 0.27f, false); // change back to 0.27f for min thrust
         float torqueX = DirectThrustPID_update(&roll_controller, roll_error, dt, 0.0f, false);
         float torqueY = DirectThrustPID_update(&pitch_controller, pitch_error, dt, 0.0f, false);
         float torqueZ = DirectThrustPID_update(&yaw_controller, desired_state.yaw - (current_state.yaw), dt, 0.0f, false);
@@ -207,7 +222,7 @@ void controllerCustomPidDirectThrust(
         }
     }
 
-        // Log the outputs
+    // Log the control outputs every 500ms
     if (currentTime - lastPrintTime >= pdMS_TO_TICKS(500)) {
         DEBUG_PRINT("----------------------------------------------------------------------");
         DEBUG_PRINT("control->thrust: %f\n", (double)control->thrustSi);
@@ -215,156 +230,170 @@ void controllerCustomPidDirectThrust(
         DEBUG_PRINT("current height: %f\n", (double)current_state.z);
         lastPrintTime = currentTime;
     }
+
+    // Print all controller parameters every 5 seconds
+    if (currentTime - lastPrintTime2 >= pdMS_TO_TICKS(5000)) {
+        DEBUG_PRINT("----------------------------------------------------------------------");
+        DEBUG_PRINT("x_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
+                    (double)x_controller.kp, (double)x_controller.ki, (double)x_controller.kd, 
+                    (double)x_controller.integral_max, (double)x_controller.output_max,
+                    (double)x_controller.error_integral, (double)x_controller.error_previous);
+
+        DEBUG_PRINT("y_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
+                    (double)y_controller.kp, (double)y_controller.ki, (double)y_controller.kd, 
+                    (double)y_controller.integral_max, (double)y_controller.output_max,
+                    (double)y_controller.error_integral, (double)y_controller.error_previous);
+
+        DEBUG_PRINT("z_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
+                    (double)z_controller.kp, (double)z_controller.ki, (double)z_controller.kd, 
+                    (double)z_controller.integral_max, (double)z_controller.output_max,
+                    (double)z_controller.error_integral, (double)z_controller.error_previous);
+
+        DEBUG_PRINT("roll_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
+                    (double)roll_controller.kp, (double)roll_controller.ki, (double)roll_controller.kd, 
+                    (double)roll_controller.integral_max, (double)roll_controller.output_max,
+                    (double)roll_controller.error_integral, (double)roll_controller.error_previous);
+
+        DEBUG_PRINT("pitch_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
+                    (double)pitch_controller.kp, (double)pitch_controller.ki, (double)pitch_controller.kd, 
+                    (double)pitch_controller.integral_max, (double)pitch_controller.output_max,
+                    (double)pitch_controller.error_integral, (double)pitch_controller.error_previous);
+
+        DEBUG_PRINT("yaw_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
+                    (double)yaw_controller.kp, (double)yaw_controller.ki, (double)yaw_controller.kd, 
+                    (double)yaw_controller.integral_max, (double)yaw_controller.output_max,
+                    (double)yaw_controller.error_integral, (double)yaw_controller.error_previous);
+        lastPrintTime2 = currentTime;
+
+    }
 }
 
-
-
-
 #ifdef CRAZYFLIE_FW
-
-#include "param.h"
-#include "log.h"
-
-/**
- * @brief Initialize the CustomDirectThrust controller firmware
- */
-void controllerCustomDirectThrustFirmwareInit(void) {
-    // Initialize the controller using the dynamic values in g_self
+// Firmware initialization
+void controllerCustomFirmware2Init(void) {
     controllerCustomPidDirectThrustInit();
 }
 
-/**
- * @brief Test the CustomDirectThrust controller firmware
- * @return True if successful
- */
-bool controllerCustomDirectThrustFirmwareTest(void) {
-    return controllerCustomPidDirectThrustTest();
+// Firmware test
+bool controllerCustomFirmware2Test(void) {
+    // always return true
+    return true;
 }
 
-/**
- * @brief CustomDirectThrust controller firmware function
- */
-void controllerCustomDirectThrustFirmware(
+// Firmware control
+void controllerCustomFirmware2(
     control_t *control,
     const setpoint_t *setpoint,
     const sensorData_t *sensors,
     const state_t *state,
-    const uint32_t stabilizerStep) 
-{
-    // Run the main CustomDirectThrust controller logic
+    const uint32_t stabilizerStep
+) {
     controllerCustomPidDirectThrust(control, setpoint, sensors, state, stabilizerStep);
 }
-
-// /**
-//  * Tuning variables for the CustomDirectThrust Controller
-//  */
-// PARAM_GROUP_START(ctrlCustomDirectThrust)
-
-// /**
-//  * @brief Roll P-gain
-//  */
-// PARAM_ADD_CORE(PARAM_FLOAT, kp_roll, &g_self.kp_roll)
-// // /**
-//  * @brief Roll I-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, ki_roll, &g_self.ki_roll)
-// /**
-//  * @brief Roll D-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, kd_roll, &g_self.kd_roll)
-// /**
-//  * @brief Roll maximum accumulated error
-//  */
-// PARAM_ADD(PARAM_FLOAT, integral_max_roll, &g_self.integral_max_roll)
-// /**
-//  * @brief Roll output limit
-//  */
-// PARAM_ADD(PARAM_FLOAT, output_max_roll, &g_self.output_max_roll)
-
-// /**
-//  * @brief Pitch P-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, kp_pitch, &g_self.kp_pitch)
-// /**
-//  * @brief Pitch I-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, ki_pitch, &g_self.ki_pitch)
-// /**
-//  * @brief Pitch D-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT , kd_pitch, &g_self.kd_pitch)
-// /**
-//  * @brief Pitch maximum accumulated error
-//  */
-// PARAM_ADD(PARAM_FLOAT, integral_max_pitch, &g_self.integral_max_pitch)
-// /**
-//  * @brief Pitch output limit
-//  */
-// PARAM_ADD(PARAM_FLOAT, output_max_pitch, &g_self.output_max_pitch)
-
-// /**
-//  * @brief Yaw P-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, kp_yaw, &g_self.kp_yaw)
-// /**
-//  * @brief Yaw I-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, ki_yaw, &g_self.ki_yaw)
-// /**
-//  * @brief Yaw D-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, kd_yaw, &g_self.kd_yaw)
-// /**
-//  * @brief Yaw maximum accumulated error
-//  */
-// PARAM_ADD(PARAM_FLOAT, integral_max_yaw, &g_self.integral_max_yaw)
-// /**
-//  * @brief Yaw output limit
-//  */
-// PARAM_ADD(PARAM_FLOAT, output_max_yaw, &g_self.output_max_yaw)
-
-// /**
-//  * @brief Thrust P-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, kp_thrust, &g_self.kp_thrust)
-// /**
-//  * @brief Thrust I-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, ki_thrust, &g_self.ki_thrust)
-// /**
-//  * @brief Thrust D-gain
-//  */
-// PARAM_ADD(PARAM_FLOAT, kd_thrust, &g_self.kd_thrust)
-// /**
-//  * @brief Thrust maximum accumulated error
-//  */
-// PARAM_ADD(PARAM_FLOAT, integral_max_thrust, &g_self.integral_max_thrust)
-// /**
-//  * @brief Thrust output limit
-//  */
-// PARAM_ADD(PARAM_FLOAT, output_max_thrust, &g_self.output_max_thrust)
-
-// PARAM_GROUP_STOP(ctrlCustomDirectThrust)
-
-
-// /**
-//  * Logging variables for the CustomDirectThrust Controller
-//  */
-// LOG_GROUP_START(ctrlCustomDirectThrust)
-// LOG_ADD(LOG_FLOAT, directCtrl_cmd_thrust, &g_self.kp_thrust) // Commanded thrust
-// LOG_ADD(LOG_FLOAT, directCtrl_cmd_roll, &g_self.kp_roll)    // Commanded roll
-// LOG_ADD(LOG_FLOAT, directCtrl_cmd_pitch, &g_self.kp_pitch)  // Commanded pitch
-// LOG_ADD(LOG_FLOAT, directCtrl_cmd_yaw, &g_self.kp_yaw)      // Commanded yaw
-
-// LOG_ADD(LOG_FLOAT, directCtrl_integral_roll, &g_self.integral_max_roll)    // Integral term roll
-// LOG_ADD(LOG_FLOAT, directCtrl_integral_pitch, &g_self.integral_max_pitch)  // Integral term pitch
-// LOG_ADD(LOG_FLOAT, directCtrl_integral_yaw, &g_self.integral_max_yaw)      // Integral term yaw
-// LOG_ADD(LOG_FLOAT, directCtrl_integral_thrust, &g_self.integral_max_thrust)// Integral term thrust
-
-// LOG_ADD(LOG_FLOAT, directCtrl_output_roll, &g_self.output_max_roll)    // Roll output
-// LOG_ADD(LOG_FLOAT, directCtrl_output_pitch, &g_self.output_max_pitch)  // Pitch output
-// LOG_ADD(LOG_FLOAT, directCtrl_output_yaw, &g_self.output_max_yaw)      // Yaw output
-// LOG_ADD(LOG_FLOAT, directCtrl_output_thrust, &g_self.output_max_thrust)// Thrust output
-// LOG_GROUP_STOP(ctrlCustomDirectThrust)
-
 #endif
+
+#ifdef CRAZYFLIE_FW
+#include "param.h"
+PARAM_GROUP_START(ctrlCustom2)
+
+// Roll PID
+PARAM_ADD(PARAM_FLOAT, kp_r, &roll_controller.kp)
+PARAM_ADD(PARAM_FLOAT, ki_r, &roll_controller.ki)
+PARAM_ADD(PARAM_FLOAT, kd_r, &roll_controller.kd)
+PARAM_ADD(PARAM_FLOAT, imax_r, &roll_controller.integral_max)
+PARAM_ADD(PARAM_FLOAT, omax_r, &roll_controller.output_max)
+
+// Pitch PID
+PARAM_ADD(PARAM_FLOAT, kp_p, &pitch_controller.kp)
+PARAM_ADD(PARAM_FLOAT, ki_p, &pitch_controller.ki)
+PARAM_ADD(PARAM_FLOAT, kd_p, &pitch_controller.kd)
+PARAM_ADD(PARAM_FLOAT, imax_p, &pitch_controller.integral_max)
+PARAM_ADD(PARAM_FLOAT, omax_p, &pitch_controller.output_max)
+
+// Yaw PID
+PARAM_ADD(PARAM_FLOAT, kp_y, &yaw_controller.kp)
+PARAM_ADD(PARAM_FLOAT, ki_y, &yaw_controller.ki)
+PARAM_ADD(PARAM_FLOAT, kd_y, &yaw_controller.kd)
+PARAM_ADD(PARAM_FLOAT, imax_y, &yaw_controller.integral_max)
+PARAM_ADD(PARAM_FLOAT, omax_y, &yaw_controller.output_max)
+
+// X-axis Thrust PID
+PARAM_ADD(PARAM_FLOAT, kp_x, &x_controller.kp)
+PARAM_ADD(PARAM_FLOAT, ki_x, &x_controller.ki)
+PARAM_ADD(PARAM_FLOAT, kd_x, &x_controller.kd)
+PARAM_ADD(PARAM_FLOAT, imax_x, &x_controller.integral_max)
+PARAM_ADD(PARAM_FLOAT, omax_x, &x_controller.output_max)
+
+// Y-axis Thrust PID
+PARAM_ADD(PARAM_FLOAT, kp_y_t, &y_controller.kp)
+PARAM_ADD(PARAM_FLOAT, ki_y_t, &y_controller.ki)
+PARAM_ADD(PARAM_FLOAT, kd_y_t, &y_controller.kd)
+PARAM_ADD(PARAM_FLOAT, imax_y_t, &y_controller.integral_max)
+PARAM_ADD(PARAM_FLOAT, omax_y_t, &y_controller.output_max)
+
+// Z-axis Thrust PID
+PARAM_ADD(PARAM_FLOAT, kp_z, &z_controller.kp)
+PARAM_ADD(PARAM_FLOAT, ki_z, &z_controller.ki)
+PARAM_ADD(PARAM_FLOAT, kd_z, &z_controller.kd)
+PARAM_ADD(PARAM_FLOAT, imax_z, &z_controller.integral_max)
+
+
+PARAM_GROUP_STOP(ctrlCustom2)
+
+
+LOG_GROUP_START(ctrlCustom2)
+
+// LOG_ADD(LOG_FLOAT, KR_x, &g_self.KR.x)
+// LOG_ADD(LOG_FLOAT, KR_y, &g_self.KR.y)
+// LOG_ADD(LOG_FLOAT, KR_z, &g_self.KR.z)
+// LOG_ADD(LOG_FLOAT, Kw_x, &g_self.Komega.x)
+// LOG_ADD(LOG_FLOAT, Kw_y, &g_self.Komega.y)
+// LOG_ADD(LOG_FLOAT, Kw_z, &g_self.Komega.z)
+
+// LOG_ADD(LOG_FLOAT,Kpos_Px, &g_self.Kpos_P.x)
+// LOG_ADD(LOG_FLOAT,Kpos_Py, &g_self.Kpos_P.y)
+// LOG_ADD(LOG_FLOAT,Kpos_Pz, &g_self.Kpos_P.z)
+// LOG_ADD(LOG_FLOAT,Kpos_Dx, &g_self.Kpos_D.x)
+// LOG_ADD(LOG_FLOAT,Kpos_Dy, &g_self.Kpos_D.y)
+// LOG_ADD(LOG_FLOAT,Kpos_Dz, &g_self.Kpos_D.z)
+
+
+// LOG_ADD(LOG_FLOAT, thrustSi, &g_self.thrustSi)
+// LOG_ADD(LOG_FLOAT, torquex, &g_self.u.x)
+// LOG_ADD(LOG_FLOAT, torquey, &g_self.u.y)
+// LOG_ADD(LOG_FLOAT, torquez, &g_self.u.z)
+
+// // current angles
+// LOG_ADD(LOG_FLOAT, rpyx, &g_self.rpy.x)
+// LOG_ADD(LOG_FLOAT, rpyy, &g_self.rpy.y)
+// LOG_ADD(LOG_FLOAT, rpyz, &g_self.rpy.z)
+
+// // desired angles
+// LOG_ADD(LOG_FLOAT, rpydx, &g_self.rpy_des.x)
+// LOG_ADD(LOG_FLOAT, rpydy, &g_self.rpy_des.y)
+// LOG_ADD(LOG_FLOAT, rpydz, &g_self.rpy_des.z)
+
+// // errors
+// LOG_ADD(LOG_FLOAT, error_posx, &g_self.p_error.x)
+// LOG_ADD(LOG_FLOAT, error_posy, &g_self.p_error.y)
+// LOG_ADD(LOG_FLOAT, error_posz, &g_self.p_error.z)
+
+// LOG_ADD(LOG_FLOAT, error_velx, &g_self.v_error.x)
+// LOG_ADD(LOG_FLOAT, error_vely, &g_self.v_error.y)
+// LOG_ADD(LOG_FLOAT, error_velz, &g_self.v_error.z)
+
+// // omega
+// LOG_ADD(LOG_FLOAT, omegax, &g_self.omega.x)
+// LOG_ADD(LOG_FLOAT, omegay, &g_self.omega.y)
+// LOG_ADD(LOG_FLOAT, omegaz, &g_self.omega.z)
+
+// // omega_r
+// LOG_ADD(LOG_FLOAT, omegarx, &g_self.omega_r.x)
+// LOG_ADD(LOG_FLOAT, omegary, &g_self.omega_r.y)
+// LOG_ADD(LOG_FLOAT, omegarz, &g_self.omega_r.z)
+
+// // LOG_ADD(LOG_UINT32, ticks, &ticks)
+
+LOG_GROUP_STOP(ctrlCustom2)
+
+#endif // CRAZYFLIE_FW defined

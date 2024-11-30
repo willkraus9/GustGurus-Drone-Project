@@ -36,6 +36,7 @@ typedef enum {
   ControllerTypeBrescianini,
   ControllerTypeLee,
   ControllerTypeCustomPid,
+  ControllerTypeCustomPidDirectThrust,
 #ifdef CONFIG_CONTROLLER_OOT
   ControllerTypeOot,
 #endif

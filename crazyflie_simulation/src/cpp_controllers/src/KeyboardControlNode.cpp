@@ -29,9 +29,9 @@ public:
 
         std::cout << "Keyboard control enabled. Use keys to change goal state:\n"
                   << "w/s: Increase/Decrease altitude\n"
-                  << "a/d: Increase/Decrease roll\n"
-                  << "q/e: Increase/Decrease pitch\n"
-                  << "z/x: Increase/Decrease yaw rate\n"
+                  << "a/d: Increase/Decrease y\n"
+                  << "q/e: Increase/Decrease x\n"
+                  << "z/x: Increase/Decrease yaw\n"
                   << "Press ESC to exit.\n";
 
         while (rclcpp::ok())
@@ -70,9 +70,9 @@ public:
                 break;
             }
 
-            std::cout << "Roll: " << goal_state_vector_[0] << std::endl;
-            std::cout << "Pitch: " << goal_state_vector_[1] << std::endl;
-            std::cout << "Yaw rate: " << goal_state_vector_[2] << std::endl;
+            std::cout << "y: " << goal_state_vector_[0] << std::endl;
+            std::cout << "x: " << goal_state_vector_[1] << std::endl;
+            std::cout << "Yaw: " << goal_state_vector_[2] << std::endl;
             std::cout << "Altitude: " << goal_state_vector_[3] << std::endl;
             
 

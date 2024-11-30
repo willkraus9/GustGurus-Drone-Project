@@ -14,9 +14,9 @@
   gz_type_name: "gz.msgs.Clock"
   direction: GZ_TO_ROS
 - ros_topic_name: "/crazyflie/odom"
-  gz_topic_name: "/model/crazyflie/odometry"
+  gz_topic_name: "/model/crazyflie/odometry_with_covariance"
   ros_type_name: "nav_msgs/msg/Odometry"
-  gz_type_name: "gz.msgs.Odometry"
+  gz_type_name: "gz.msgs.OdometryWithCovariance"
   direction: GZ_TO_ROS
 - ros_topic_name: "/tf"
   gz_topic_name: "/model/crazyflie/pose"

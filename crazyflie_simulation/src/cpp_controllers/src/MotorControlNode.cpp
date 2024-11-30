@@ -41,7 +41,10 @@ public:
         // create subscriber for the goal state
         goal_state_sub = this->create_subscription<std_msgs::msg::Float32MultiArray>("crazyflie/goal_state_vector", 10, std::bind(&MotorControlNode::goalStateCallback, this, std::placeholders::_1));
 
-        this->declare_parameter<float>("pitch_kp", 0.0104);
+        //
+        errors = this->create_publisher<std_msgs::msg::Float32MultiArray>("crazyflie/errors", 10);
+
+        this->declare_parameter<float>("pitch_kp", 2e-5);
 
         current_state = {
             .x = 0.0,
@@ -61,35 +64,35 @@ public:
 
 
         gains = {
-            .kp_x = 0.0,
-            .ki_x = 0.0,
-            .kd_x = 0.0,
+            .kp_x = 0.2,
+            .ki_x = 0.03,
+            .kd_x = 0.01,
             .integral_max_x = 0.0,
-            .output_max_x = 100.0,
+            .output_max_x = 0.2,
 
-            .kp_y = 0.0,
-            .ki_y = 0.0,
-            .kd_y = 0.0,   
+            .kp_y = 0.2,
+            .ki_y = 0.03,
+            .kd_y = 0.01,   
             .integral_max_y = 0.0,
-            .output_max_y = 100.0,
+            .output_max_y = 0.2,
 
-            .kp_z = 0.06,
-            .ki_z = 0.0,
+            .kp_z = 0.8,
+            .ki_z = 0.1,
             .kd_z = 0.3,
-            .integral_max_z = 0.0,
-            .output_max_z = 100.0,
+            .integral_max_z = 0.30,
+            .output_max_z = 0.55,
 
-            .kp_roll = 0.00104,
-            .ki_roll = 0.0,
-            .kd_roll = 0.00052,
+            .kp_roll = 8.0e-4,
+            .ki_roll = 1e-5,
+            .kd_roll = 1e-4,
             .integral_max_roll = 0.0,
-            .output_max_roll = 100.0,
+            .output_max_roll = 1e-2,
 
-            .kp_pitch = 0.0104,
-            .ki_pitch = 0.0,
-            .kd_pitch = 0.0052,
+            .kp_pitch = 8.0e-4,
+            .ki_pitch = 1e-5,
+            .kd_pitch = 1e-4,
             .integral_max_pitch = 0.0,
-            .output_max_pitch = 100.0,
+            .output_max_pitch = 1e-2,
 
             .kp_yaw = 0.0,
             .ki_yaw = 0.0,
@@ -107,10 +110,10 @@ public:
                         0, 0, 0.25/L, 0,
                         0, 0, 0, 0.25/gamma;
 
-        Thrust_torque_to_motor_forces << 1, -1, 1, 1,
-                                        1, -1, -1, -1,
-                                        1, 1, -1, 1,
-                                        1, 1, 1,-1;
+        Thrust_torque_to_motor_forces << 1, -1, -1, -1,
+                                        1, -1, 1, 1,
+                                        1, 1, 1, -1,
+                                        1, 1, -1, 1;
 
         // std::cout << "Thrust_torque_to_motor_forces: " << Thrust_torque_to_motor_forces << std::endl;               
 
@@ -130,7 +133,7 @@ public:
 
 
         timer_ = this->create_wall_timer(
-                std::chrono::milliseconds(1),
+                std::chrono::milliseconds(2),
                 std::bind(&MotorControlNode::timerCallback, this)
             );
 
@@ -191,14 +194,7 @@ private:
 
         // std::cout << "Roll: " << roll << " Pitch: " << pitch << std::endl;
 
-        float xd = msg->twist.twist.linear.x;
-        float yd = msg->twist.twist.linear.y;
-        // float zd = msg->twist.twist.linear.z;
-
         // float roll_d = msg->twist.twist.angular.x;
-        // float pitch_d = msg->twist.twist.angular.y;
-        float yaw_d = msg->twist.twist.angular.z;
-
         current_state = {
             .x = x,
             .y = y,
@@ -222,17 +218,17 @@ private:
         }
 
         float pitch_kp;
-        this->get_parameter("pitch_kp", pitch_kp);
+        // this->get_parameter("pitch_kp", pitch_kp);
 
-        gains.kp_pitch = pitch_kp;
-        gains.kp_roll = pitch_kp;
+        // gains.kp_pitch = pitch_kp;
+        // gains.kp_roll = pitch_kp;
 
         double dt = 0.001; // 1ms timer interval
 
         Eigen::Vector4f thrust_torque = controller.update(current_state, desired_state, dt);
 
         // Create and populate the actuator message
-        // RCLCPP_INFO(this->get_logger(), "Thrust_torque: %f, %f, %f, %f", thrust_torque[0], thrust_torque[1], thrust_torque[2], thrust_torque[3]);
+        RCLCPP_INFO(this->get_logger(), "Thrust_torque: %f, %f, %f, %f", thrust_torque[0], thrust_torque[1], thrust_torque[2], thrust_torque[3]);
         // std::cout << "Thrust_torque: " << thrust_torque << std::endl;
         Eigen::Vector4f motor_forces = Thrust_torque_to_motor_forces * thrust_torque;
         // std::cout << "Motor forces: " << motor_forces << std::endl;
@@ -299,6 +295,7 @@ private:
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr drone_state_sub;
     rclcpp::Subscription<rosgraph_msgs::msg::Clock>::SharedPtr simulation_time_sub;
     rclcpp::Subscription<std_msgs::msg::Float32MultiArray>::SharedPtr goal_state_sub;
+    rclcpp::Publisher<std_msgs::msg::Float32MultiArray>::SharedPtr errors;
     rclcpp::TimerBase::SharedPtr timer_;
 };
 

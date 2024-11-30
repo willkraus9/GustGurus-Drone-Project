@@ -20,7 +20,6 @@ Eigen::Vector4f CustomPidController::update(current_state_t current_state, desir
     float y_error = desired_state.y - current_state.y;
     float z_error = desired_state.z - current_state.z;
 
-    std::cout << "z_error: " << z_error << std::endl;
 
     Eigen::Vector3f world_pos_error(x_error, y_error, z_error);
     Eigen::Vector3f current_orientation(current_state.roll, current_state.pitch, current_state.yaw);
@@ -30,14 +29,21 @@ Eigen::Vector4f CustomPidController::update(current_state_t current_state, desir
     float body_x_error = body_pos_error(0);
     float body_y_error = body_pos_error(1);
     float body_z_error = body_pos_error(2);
-    std::cout << "body_z_error: " << body_z_error << std::endl;
+
     // Update controllers
-    float roll_target = 0.0; //x_controller.update(body_x_error, dt, 0.0);
-    float pitch_target = 0.0; //y_controller.update(body_y_error, dt, 0.0);
+    float roll_target = x_controller.update(body_x_error, dt, 0.0);
+    float pitch_target = y_controller.update(body_y_error, dt, 0.0);
+
+
     float roll_error = roll_target - current_state.roll;
     float pitch_error = pitch_target - current_state.pitch;
 
-    float thrust = z_controller.update(body_z_error, dt, 0.27, false);
+    std::cout << "body z error: " << body_z_error << std::endl;
+    std::cout << "roll_error: " << roll_error << std::endl;
+    std::cout << "pitch_error: " << pitch_error << std::endl;
+
+
+    float thrust = z_controller.update(body_z_error, dt, 0.27468, false);
     float torqueX = roll_controller.update(roll_error, dt, 0.0, false);
     float torqueY = pitch_controller.update(pitch_error, dt, 0.0);
     float torqueZ = yaw_controller.update(desired_state.yaw - current_state.yaw, dt, 0.0);

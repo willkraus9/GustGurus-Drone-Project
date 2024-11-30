@@ -69,8 +69,7 @@ void controllerCustomPid(control_t *control, const setpoint_t *setpoint, const s
   static uint32_t lastPrintTime = 0;  // Store the last time the print was executed
   uint32_t currentTime = xTaskGetTickCount();  // Get the current tick count
 
-  control->controlMode = controlModeLegacy;
-  float dt = 1.0f / ATTITUDE_RATE;
+  control->controlMode = controlModeForceTorque;
   desired_state_t desired_state;
   actual_state_t actual_state;
   control_commands_t control_commands;
@@ -92,49 +91,53 @@ void controllerCustomPid(control_t *control, const setpoint_t *setpoint, const s
   };
 
   motor_power_t motorCommands;
+  // Attitude rate control
   if (RATE_DO_EXECUTE(ATTITUDE_RATE, stabilizerStep)) {
+    float dt = 1.0f / ATTITUDE_RATE;
+
     pid_attitude_fixed_height_controller(actual_state, &desired_state, gains_pid, dt, &motorCommands);
   }
-  if (RATE_DO_EXECUTE(POSITION_RATE, stabilizerStep)) {
-    pid_velocity_fixed_height_controller(actual_state, &desired_state, gains_pid, dt, &motorCommands);
+
+  // Position rate control
+  // if (RATE_DO_EXECUTE(POSITION_RATE, stabilizerStep)) {
+  //   float dt = 1.0f / POSITION_RATE;
+
+  //   pid_velocity_fixed_height_controller(actual_state, &desired_state, gains_pid, dt, &motorCommands);
+  // }
+
+  // updaing thrusts and torques
+  if (RATE_DO_EXECUTE(ATTITUDE_RATE, stabilizerStep)){
+    // Calculate thrust and torques
+    float T, Tx, Ty, Tz;
+    calculate_thrust_torques(&motorCommands, &T, &Tx, &Ty, &Tz);
+
+    // Log thrust, torques, and motor commands for debugging every 1 second
+    if (currentTime - lastPrintTime >= pdMS_TO_TICKS(500)) {  // Check if 1 second has passed
+        DEBUG_PRINT("Thrust: %f, Torque X: %f, Torque Y: %f, Torque Z: %f\n", 
+                    (double)T, (double)Tx, (double)Ty, (double)Tz);
+
+        DEBUG_PRINT("Motor Commands - m1: %f, m2: %f, m3: %f, m4: %f\n", 
+                  (double)motorCommands.m1, (double)motorCommands.m2, 
+                  (double)motorCommands.m3, (double)motorCommands.m4);
+
+        DEBUG_PRINT("Actual State - Roll: %f, Pitch: %f, Yaw Rate: %f, Altitude: %f, Vx: %f, Vy: %f\n", 
+            (double)actual_state.roll, (double)actual_state.pitch, (double)actual_state.yaw_rate, 
+            (double)actual_state.altitude, (double)actual_state.vx, (double)actual_state.vy);
+
+        DEBUG_PRINT("Desired State - Roll: %f, Pitch: %f, Yaw Rate: %f, Altitude: %f, Vx: %f, Vy: %f\n", 
+            (double)desired_state.roll, (double)desired_state.pitch, (double)desired_state.yaw_rate, 
+            (double)desired_state.altitude, (double)desired_state.vx, (double)desired_state.vy);
+
+        lastPrintTime = currentTime;  // Update the last print time
+    }
+
+    control->thrustSi = (float)T;
+    control->torqueX= Tx;
+    control->torqueY= Ty;
+    control->torqueZ = Tz;
   }
-
-  motorCommands.m1 = 2330.0f;
-  motorCommands.m2 = 2330.0f;
-
-  motorCommands.m3 = 2330.0f;
-
-  motorCommands.m4 = 2330.0f;
-
   
-  // Calculate thrust and torques
-  float T, Tx, Ty, Tz;
-  calculate_thrust_torques(&motorCommands, &T, &Tx, &Ty, &Tz);
-
-  // Log thrust, torques, and motor commands for debugging every 1 second
-  if (currentTime - lastPrintTime >= pdMS_TO_TICKS(500)) {  // Check if 1 second has passed
-      DEBUG_PRINT("Thrust: %f, Torque X: %f, Torque Y: %f, Torque Z: %f\n", 
-                  (double)T, (double)Tx, (double)Ty, (double)Tz);
-
-      DEBUG_PRINT("Motor Commands - m1: %f, m2: %f, m3: %f, m4: %f\n", 
-                (double)motorCommands.m1, (double)motorCommands.m2, 
-                (double)motorCommands.m3, (double)motorCommands.m4);
-
-      DEBUG_PRINT("Actual State - Roll: %f, Pitch: %f, Yaw Rate: %f, Altitude: %f, Vx: %f, Vy: %f\n", 
-          (double)actual_state.roll, (double)actual_state.pitch, (double)actual_state.yaw_rate, 
-          (double)actual_state.altitude, (double)actual_state.vx, (double)actual_state.vy);
-
-      DEBUG_PRINT("Desired State - Roll: %f, Pitch: %f, Yaw Rate: %f, Altitude: %f, Vx: %f, Vy: %f\n", 
-          (double)desired_state.roll, (double)desired_state.pitch, (double)desired_state.yaw_rate, 
-          (double)desired_state.altitude, (double)desired_state.vx, (double)desired_state.vy);
-
-      lastPrintTime = currentTime;  // Update the last print time
-  }
-
-  control->thrust = T;
-  control->roll = Tx;
-  control->pitch = Ty;
-  control->yaw = Tz;
+  
 }
 
 void map_setpoint_to_desired(const setpoint_t *setpoint, desired_state_t *desired_state) {

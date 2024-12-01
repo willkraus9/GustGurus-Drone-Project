@@ -1,0 +1,12 @@
+/motor_control_node:
+  ros__parameters:
+    gains:       
+      - 5e-06
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.14
+      - 0.07
+      - 0.0

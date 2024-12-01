@@ -14,22 +14,22 @@
   gz_type_name: "gz.msgs.Clock"
   direction: GZ_TO_ROS
 - ros_topic_name: "/crazyflie/odom"
-  gz_topic_name: "/model/crazyflie/odometry"
+  gz_topic_name: "/model/crazyflie/odometry_with_covariance"
   ros_type_name: "nav_msgs/msg/Odometry"
-  gz_type_name: "gz.msgs.Odometry"
+  gz_type_name: "gz.msgs.OdometryWithCovariance"
   direction: GZ_TO_ROS
 - ros_topic_name: "/tf"
   gz_topic_name: "/model/crazyflie/pose"
   ros_type_name: "tf2_msgs/msg/TFMessage"
   gz_type_name: "gz.msgs.Pose_V"
   direction: GZ_TO_ROS
-- ros_topic_name: "/crazyflie/scan"
-  gz_topic_name: "/lidar"
-  ros_type_name: "sensor_msgs/msg/LaserScan"
-  gz_type_name: "ignition.msgs.LaserScan"
-  direction: GZ_TO_ROS
 - ros_topic_name: "/crazyflie/motor_commands"
   gz_topic_name: "/crazyflie/gazebo/command/motor_speed" # Found topic name by calling gz topic -l on terminal to find the name of the topics, crazyflie prefix comes from the robot namespace in the sdf file
   ros_type_name: "actuator_msgs/msg/Actuators"
   gz_type_name: "gz.msgs.Actuators"
   direction: ROS_TO_GZ
+- ros_topic_name: "/crazyflie/camera_view"
+  gz_topic_name: "/camera"
+  ros_type_name: "sensor_msgs/msg/Image"
+  gz_type_name: "gz.msgs.Image"
+  direction: GZ_TO_ROS

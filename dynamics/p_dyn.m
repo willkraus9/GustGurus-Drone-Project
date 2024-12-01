@@ -1,8 +1,8 @@
-function pdd = p_dyn(eta, pdot, T)
+function pdd = p_dyn(eta, pdot, T, params)
     % Extract roll, pitch, and yaw from the vector eta
-    roll = eta(1);
-    pitch = eta(2);
-    yaw = eta(3);
+    phi = eta(1);
+    theta = eta(2);
+    psi = eta(3);
     
     % Extract velocity components
     xd = pdot(1);
@@ -11,17 +11,35 @@ function pdd = p_dyn(eta, pdot, T)
     
     
     % Trigonometric shorthand
-    c_phi = cos(roll);
-    s_phi = sin(roll);
-    c_theta = cos(pitch);
-    s_theta = sin(pitch);
-    c_psi = cos(yaw);
-    s_psi = sin(yaw);
+    c_phi = cos(phi);
+    s_phi = sin(phi);
+    c_theta = cos(theta);
+    s_theta = sin(theta);
+    c_psi = cos(psi);
+    s_psi = sin(psi);
     
-    xdd = T/m * (cos(pitch) * sin(yaw) + sin(roll) * sin(pitch) * cos(yaw)) + Ax * xd;
-    ydd = T/m * (sin(pitch) * sin(roll) - cos(roll) * sin(pitch) * cos(yaw)) + Ay * yd;
-    zdd = T/m * (-cos(pitch) * cos(yaw)) - g + Az * zd;
+     % Gravity vector
+    g_vec = [0; 0; -params.g];
+    m = params.m;
+    Ax = params.Ax;
+    Ay = params.Ay;
+    Az = params.Az;
+
+    % Thrust vector in inertial frame
+    thrust_vec = (T / m) * [
+        c_psi * s_theta * c_phi + s_psi * s_phi;
+        s_psi * s_theta * c_phi - c_psi * s_phi;
+        c_theta * c_phi
+    ];
     
-    % Combine into a vector
-    pdd = [x_dd; y_dd; z_dd];
+    % Aerodynamic drag vector
+    drag_vec = (1 / m) * [
+        Ax * xd;
+        Ay * yd;
+        Az * zd
+    ];
+    
+    % Compute acceleration vector
+    pdd = g_vec + thrust_vec - drag_vec;
+
 end

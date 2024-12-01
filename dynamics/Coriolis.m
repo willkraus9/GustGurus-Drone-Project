@@ -1,38 +1,37 @@
-function C = Coriolis(eta, eta_d)
+function C = Coriolis(eta, eta_d, params)
     % Extract roll, pitch, and yaw from the vector eta
-    roll = eta(1);
-    pitch = eta(2);
-    yaw = eta(3);
+    phi = eta(1);   % Roll angle
+    theta = eta(2); % Pitch angle
+    psi = eta(3);   % Yaw angle
     
     % Extract roll, pitch, and yaw rates from the vector eta_d
-    roll_d = eta_d(1);
-    pitch_d = eta_d(2);
-    yaw_d = eta_d(3);
+    phi_d = eta_d(1);   % Roll rate
+    theta_d = eta_d(2); % Pitch rate
+    psi_d = eta_d(3);   % Yaw rate
     
     % Moments of inertia
-    I11 = Ix;
-    I22 = Iy;
-    I33 = Iz;
+    I11 = params.Ix;
+    I22 = params.Iy;
+    I33 = params.Iz;
     
     % Trigonometric shorthand
-    s_phi = sin(roll);
-    c_phi = cos(roll);
-    s_theta = sin(pitch);
-    c_theta = cos(pitch);
+    s_phi = sin(phi);
+    c_phi = cos(phi);
+    s_theta = sin(theta);
+    c_theta = cos(theta);
     
-    % Coriolis matrix elements
-    C11 = 0;
-    C12 = -((I33 - I22) * (yaw_d * c_phi * s_theta + pitch_d * (c_theta^2 - c_phi^2)) - I11 * roll_d * c_phi);
-    C13 = ((I22 - I33) * pitch_d * s_phi + yaw_d * (c_theta^2 - s_phi^2)) + I11 * roll_d * s_phi;
-    C21 = ((I33 - I22) * yaw_d * s_phi + roll_d * (c_theta^2 - s_phi^2)) + I11 * roll_d * c_phi;
-    C22 = ((I33 - I22) * yaw_d * c_phi * s_theta);
-    C23 = (-I11 * roll_d + I22 * pitch_d * s_phi * c_theta + I33 * yaw_d) * c_phi * s_theta;
-    C31 = ((I22 - I33) * yaw_d * (c_phi * s_theta * c_theta - c_phi * roll_d) - I11 * roll_d);
-    C32 = ((I33 - I22) * (yaw_d * c_phi * s_theta * c_theta + roll_d * (c_phi * (s_theta^2 - c_theta^2))) + (I11 - I33) * roll_d * c_phi);
-    C33 = ((I22 - I33) * yaw_d * c_phi * s_theta * c_theta + (I11 - I22) * roll_d * s_theta^2 - I33 * roll_d * c_phi * s_theta);
-    
-    % Construct the Coriolis matrix
-    C = [C11, C12, C13;
-         C21, C22, C23;
-         C31, C32, C33];
+    % Initialize Coriolis matrix
+    C = zeros(3, 3);
+
+    % Populate Coriolis matrix using the formulas from the image
+    C(1, 1) = 0;
+    C(1, 2) = (I22 - I33) * (theta_d * c_phi * s_phi + psi_d * c_theta * (s_phi^2 - c_phi^2)) - I11 * psi_d * c_theta;
+    C(1, 3) = (I33 - I22) * psi_d * c_phi * s_phi * c_theta^2;
+    C(2, 1) = (I33 - I22) * (theta_d * c_phi * s_phi + psi_d * c_theta * (s_phi^2 - c_phi^2)) + I11 * psi_d * c_theta;
+    C(2, 2) = (I33 - I22) * phi_d * c_phi * s_phi;
+    C(2, 3) = (-I11 * psi_d + I22 * psi_d * s_phi^2 + I33 * psi_d * c_phi^2) * s_theta * c_theta;
+    C(3, 1) = (I22 - I33) * psi_d * c_theta^2 * s_phi * c_phi - I11 * theta_d * c_theta;
+    C(3, 2) = (I33 - I22) * (theta_d * c_phi * s_phi * s_theta + phi_d * c_theta * (s_phi^2 - c_phi^2)) + (I11 - I22 * s_phi^2 - I33 * c_phi^2) * psi_d * s_theta * c_theta;
+    C(3, 3) = (I22 - I33) * phi_d * c_phi * s_phi * c_theta^2 + (I11 - I22 * s_phi^2 - I33 * c_phi^2) * theta_d * c_theta * s_theta;
+
 end

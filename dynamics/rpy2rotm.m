@@ -1,6 +1,7 @@
 function R = rpy2rotm(eta)
     % param eta: roll pitch yaw vector
     % return R: Roation MAtrix
+    
     % Extract roll, pitch, and yaw from the vector eta
     roll = eta(1);
     pitch = eta(2);

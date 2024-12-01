@@ -117,9 +117,9 @@ PLATFORM  ?= cf2
 PROG ?= $(PLATFORM)
 
 ifeq ($(CONFIG_DEBUG),y)
-ARCH_CFLAGS	+= -O0 -Wconversion
+# ARCH_CFLAGS	+= -O0 -Wconversion
 else
-ARCH_CFLAGS += -Os -Werror
+# ARCH_CFLAGS += -Os -Werror
 endif
 
 _all:

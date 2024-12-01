@@ -35,11 +35,11 @@
 // original values (tune as need be)
 static CustomDirectThrust_t g_self = {
     // Roll PID
-    .kp_roll = 2e-4f, .ki_roll = 0.0f, .kd_roll = 1e-4f,
+    .kp_roll = 0.04f, .ki_roll = 0.0f, .kd_roll = 0.06f,
     .integral_max_roll = 0.0f, .output_max_roll = 100.0f,
 
     // Pitch PID
-    .kp_pitch = 2e-4f, .ki_pitch = 0.0f, .kd_pitch = 1e-4f,
+    .kp_pitch = 0.04f, .ki_pitch = 0.0f, .kd_pitch = 0.06f,
     .integral_max_pitch = 0.0f, .output_max_pitch = 100.0f,
 
     // Yaw PID
@@ -47,7 +47,7 @@ static CustomDirectThrust_t g_self = {
     .integral_max_yaw = 0.0f, .output_max_yaw = 100.0f,
 
     // Thrust PID
-    .kp_thrust = 0.06f, .ki_thrust = 0.0f, .kd_thrust = 0.3f,
+    .kp_thrust = 0.06f, .ki_thrust = 0.0f, .kd_thrust = 0.0f,
     .integral_max_thrust = 0.0f, .output_max_thrust = 100.0f
 };
 
@@ -158,6 +158,8 @@ void map_state_to_actual_direct_thrust(const state_t *state, current_state_t *cu
     current_state->y = state->position.y;
 }
 
+float roll_error = 0;
+float pitch_error = 0;
 // Update the custom PID controller
 void controllerCustomPidDirectThrust(
             control_t *control,
@@ -170,7 +172,7 @@ void controllerCustomPidDirectThrust(
     static uint32_t lastPrintTime = 0;
     static uint32_t lastPrintTime2 = 0;
     uint32_t currentTime = xTaskGetTickCount();
-    float dt = 1.0f / ATTITUDE_RATE;
+    float dt = 1.0f / RATE_MAIN_LOOP;
 
     desired_state_t desired_state;
     current_state_t current_state;
@@ -178,7 +180,7 @@ void controllerCustomPidDirectThrust(
     map_setpoint_to_desired_direct_thrust(setpoint, &desired_state);
     map_state_to_actual_direct_thrust(state, &current_state);
 
-    if (RATE_DO_EXECUTE(ATTITUDE_RATE, stabilizerStep)) {
+    if (RATE_DO_EXECUTE(RATE_MAIN_LOOP, stabilizerStep)) {
         // Compute errors
         float x_error = desired_state.x - (current_state.x);
         float y_error = desired_state.y - (current_state.y);
@@ -190,10 +192,10 @@ void controllerCustomPidDirectThrust(
         roll_target = 0.0f;
         pitch_target = 0.0f;
 
-        float roll_error = roll_target - (current_state.roll);
-        float pitch_error = pitch_target - (current_state.pitch);
+        roll_error = roll_target - (current_state.roll);
+        pitch_error = pitch_target - (current_state.pitch);
 
-        float thrust = DirectThrustPID_update(&z_controller, z_error, dt, 0.27f, false); // change back to 0.27f for min thrust
+        float thrust = DirectThrustPID_update(&z_controller, z_error, dt, 0.27, false); // change back to 0.27f for min thrust
         float torqueX = DirectThrustPID_update(&roll_controller, roll_error, dt, 0.0f, false);
         float torqueY = DirectThrustPID_update(&pitch_controller, pitch_error, dt, 0.0f, false);
         float torqueZ = DirectThrustPID_update(&yaw_controller, desired_state.yaw - (current_state.yaw), dt, 0.0f, false);
@@ -220,52 +222,24 @@ void controllerCustomPidDirectThrust(
             control->torqueY = 0.0f;
             control->torqueZ = 0.0f;
         }
+        if (currentTime - lastPrintTime2 >= pdMS_TO_TICKS(500)) {
+            DEBUG_PRINT("Roll error: %.3f, pitch error %.3f, torqueY %.8f \n", 
+                            (double)roll_error, (double)pitch_error, (double)torqueY);
+            lastPrintTime2 = currentTime;
+    }
     }
 
     // Log the control outputs every 500ms
-    if (currentTime - lastPrintTime >= pdMS_TO_TICKS(500)) {
-        DEBUG_PRINT("----------------------------------------------------------------------");
-        DEBUG_PRINT("control->thrust: %f\n", (double)control->thrustSi);
-        DEBUG_PRINT("goal height: %f\n", (double)desired_state.z);
-        DEBUG_PRINT("current height: %f\n", (double)current_state.z);
-        lastPrintTime = currentTime;
-    }
+    // if (currentTime - lastPrintTime >= pdMS_TO_TICKS(500)) {
+    //     DEBUG_PRINT("----------------------------------------------------------------------");
+    //     DEBUG_PRINT("control->thrust: %f\n", (double)control->thrustSi);
+    //     DEBUG_PRINT("goal height: %f\n", (double)desired_state.z);
+    //     DEBUG_PRINT("current height: %f\n", (double)current_state.z);
+    //     lastPrintTime = currentTime;
+    // }
 
     // Print all controller parameters every 5 seconds
-    if (currentTime - lastPrintTime2 >= pdMS_TO_TICKS(5000)) {
-        DEBUG_PRINT("----------------------------------------------------------------------");
-        DEBUG_PRINT("x_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
-                    (double)x_controller.kp, (double)x_controller.ki, (double)x_controller.kd, 
-                    (double)x_controller.integral_max, (double)x_controller.output_max,
-                    (double)x_controller.error_integral, (double)x_controller.error_previous);
 
-        DEBUG_PRINT("y_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
-                    (double)y_controller.kp, (double)y_controller.ki, (double)y_controller.kd, 
-                    (double)y_controller.integral_max, (double)y_controller.output_max,
-                    (double)y_controller.error_integral, (double)y_controller.error_previous);
-
-        DEBUG_PRINT("z_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
-                    (double)z_controller.kp, (double)z_controller.ki, (double)z_controller.kd, 
-                    (double)z_controller.integral_max, (double)z_controller.output_max,
-                    (double)z_controller.error_integral, (double)z_controller.error_previous);
-
-        DEBUG_PRINT("roll_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
-                    (double)roll_controller.kp, (double)roll_controller.ki, (double)roll_controller.kd, 
-                    (double)roll_controller.integral_max, (double)roll_controller.output_max,
-                    (double)roll_controller.error_integral, (double)roll_controller.error_previous);
-
-        DEBUG_PRINT("pitch_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
-                    (double)pitch_controller.kp, (double)pitch_controller.ki, (double)pitch_controller.kd, 
-                    (double)pitch_controller.integral_max, (double)pitch_controller.output_max,
-                    (double)pitch_controller.error_integral, (double)pitch_controller.error_previous);
-
-        DEBUG_PRINT("yaw_controller: kp: %.3f, ki: %.3f, kd: %.3f, integral_max: %.3f, output_max: %.3f, error_integral: %.3f, error_previous: %.3f\n",
-                    (double)yaw_controller.kp, (double)yaw_controller.ki, (double)yaw_controller.kd, 
-                    (double)yaw_controller.integral_max, (double)yaw_controller.output_max,
-                    (double)yaw_controller.error_integral, (double)yaw_controller.error_previous);
-        lastPrintTime2 = currentTime;
-
-    }
 }
 
 #ifdef CRAZYFLIE_FW

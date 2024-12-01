@@ -575,7 +575,7 @@ LOG_ADD_CORE(LOG_FLOAT, x, &sensorData.acc.x)
  */
 LOG_ADD_CORE(LOG_FLOAT, y, &sensorData.acc.y)
 
-/**
+/**s
  * @brief Acceleration in Z [Gs]
  */
 LOG_ADD_CORE(LOG_FLOAT, z, &sensorData.acc.z)

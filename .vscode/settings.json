@@ -1,6 +1,18 @@
 {
     "files.associations": {
         "pid_controller.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "limits": "c",
+        "ratio": "c",
+        "semaphore": "c",
+        "algorithm": "c",
+        "chrono": "c",
+        "random": "c",
+        "power_distribution.h": "c",
+        "__locale": "cpp",
+        "functional": "cpp",
+        "freertos.h": "c",
+        "stdint.h": "c",
+        "debug.h": "c"
     }
 }

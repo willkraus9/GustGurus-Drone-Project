@@ -46,16 +46,16 @@ public:
                 goal_state_vector_[3] -= 0.1; // Decrease altitude
                 break;
             case 'a':
-                goal_state_vector_[0] -= 0.1; // Decrease y
+                goal_state_vector_[0] -= 0.3; // Decrease y
                 break;
             case 'd':
-                goal_state_vector_[0] += 0.1; // Increase y
+                goal_state_vector_[0] += 0.3; // Increase y
                 break;
             case 'q':
-                goal_state_vector_[1] += 0.1; // Increase x
+                goal_state_vector_[1] += 0.3; // Increase x
                 break;
             case 'e':
-                goal_state_vector_[1] -= 0.1; // Decrease x
+                goal_state_vector_[1] -= 0.3; // Decrease x
                 break;
             case 'z':
                 goal_state_vector_[2] += 0.1; // Increase yaw 

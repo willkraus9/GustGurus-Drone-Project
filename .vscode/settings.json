@@ -13,6 +13,7 @@
         "functional": "cpp",
         "freertos.h": "c",
         "stdint.h": "c",
-        "debug.h": "c"
+        "debug.h": "c",
+        "stabilizer_types.h": "c"
     }
 }

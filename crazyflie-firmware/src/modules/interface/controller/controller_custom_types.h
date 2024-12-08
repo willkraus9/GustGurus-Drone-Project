@@ -24,18 +24,21 @@ typedef struct desired_state_s {
   // shared
   float roll;
   float pitch;
-
-  // for simulation original PID method
-  float yaw_rate;
-  float altitude;
-  float vx;
-  float vy;
+  float yaw;
 
   // For direct thrust PID calculations
   float x;
   float y;
   float z;
-  float yaw;
+
+  float vx;
+  float vy;
+  float vz;
+  float vroll;
+  float vpitch;
+  float vyaw;
+  
+
 
 } desired_state_t;
 
@@ -67,6 +70,12 @@ typedef struct current_state_s {
     float roll;
     float pitch;
     float yaw;
+    float vx;
+    float vy;
+    float vz;
+    float vroll;
+    float vpitch; 
+    float vyaw;
 } current_state_t;
 
 // -------------------------- //

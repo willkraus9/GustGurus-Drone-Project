@@ -21,7 +21,7 @@ function C = Coriolis(eta, eta_d, params)
     c_theta = cos(theta);
     
     % Initialize Coriolis matrix
-    C = zeros(3, 3);
+    C = sym(zeros(3, 3));
 
     % Populate Coriolis matrix using the formulas from the image
     C(1, 1) = 0;

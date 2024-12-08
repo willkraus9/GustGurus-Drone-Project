@@ -33,14 +33,15 @@
 
 // PID controllers for each axis
 
-static PID_t x_controller = {.kp = 0.5f, .ki = 0.0f, .kd = 0.0f, .integral_max = 0.0f, .output_max = 0.3f, .output_min = -0.3f};
-static PID_t y_controller = {.kp = 0.5f, .ki = 0.0f, .kd = 0.0f, .integral_max = 0.0f, .output_max = 0.3f, .output_min = -0.3f};
-static PID_t z_controller = {.kp = 0.5f, .ki = 0.0f, .kd = 0.05f, .integral_max = 0.0f, .output_max = 2.0f, .output_min = 0.2f};
+static PID_t x_controller = {.kp = 0.3f, .ki = 0.0f, .kd = 0.0f, .integral_max = 0.0f, .output_max = 0.3f, .output_min = -0.3f};
+static PID_t y_controller = {.kp = 0.3f, .ki = 0.0f, .kd = 0.0f, .integral_max = 0.0f, .output_max = 0.3f, .output_min = -0.3f};
+static PID_t z_controller = {.kp = 0.1f, .ki = 0.0f, .kd = 0.05f, .integral_max = 0.0f, .output_max = 0.4f, .output_min = 0.25f};
 static PID_t yaw_controller = {.kp = 0.001f, .ki = 0.0f, .kd = 3e-5f, .integral_max = 0.0f, .output_max = 1.0f, .output_min = -1.0f};
-static PID_t roll_controller = {.kp = 0.004f, .ki = 2e-5f, .kd = 0.0007f, .integral_max = 1e-3f, .output_max = 1.0f, .output_min = -1.0f};
-static PID_t pitch_controller = {.kp = 0.004f, .ki = 2e-5f, .kd = 0.0007f, .integral_max = 1e-3f, .output_max = 1.0f, .output_min = -1.0f};
+static PID_t roll_controller = {.kp = 0.005f, .ki = 2e-7f, .kd = 0.0005f, .integral_max = 8e-4f, .output_max = 1.0f, .output_min = -1.0f};
+static PID_t pitch_controller = {.kp = 0.005f, .ki = 2e-7f, .kd = 0.001f, .integral_max = 8e-4f, .output_max = 1.0f, .output_min = -1.0f};
 
-
+static bool controller_reset = false;
+static float a_baseline = 0.33f;
 
 // original values (tune as need be)
 
@@ -174,6 +175,8 @@ void controllerCustomPidDirectThrust(
     if (!RATE_DO_EXECUTE(ATTITUDE_RATE, stabilizerStep)) {
         return;
     }
+
+
     control->controlMode = controlModeForceTorque;
     static uint32_t lastPrintTime = 0;
     static uint32_t lastPrintTime2 = 0;
@@ -214,7 +217,7 @@ void controllerCustomPidDirectThrust(
         float roll_error = (roll_target - (current_state.roll));
         float pitch_error =  (pitch_target - (current_state.pitch));
 
-        float thrust = DirectThrustPID_update(&z_controller, z_error, dt, 0.33f, false); // change back to 0.27f for min thrust
+        float thrust = DirectThrustPID_update(&z_controller, z_error, dt, a_baseline, false); // change back to 0.27f for min thrust
         float torqueX = DirectThrustPID_update(&roll_controller, roll_error, dt, 0.0f, false);
         float torqueY = DirectThrustPID_update(&pitch_controller, pitch_error, dt, 0.0f, false);
         float torqueZ = DirectThrustPID_update(&yaw_controller, desired_state.yaw - (current_state.yaw), dt, 0.0f, false);
@@ -231,7 +234,15 @@ void controllerCustomPidDirectThrust(
             control->torqueX = 0.0f;
             control->torqueY = 0.0f;
             control->torqueZ = 0.0f;
+
+            DirectThrustPID_reset(&x_controller);
+            DirectThrustPID_reset(&y_controller);
+            DirectThrustPID_reset(&z_controller);
+            DirectThrustPID_reset(&yaw_controller);
+            DirectThrustPID_reset(&roll_controller);
+            DirectThrustPID_reset(&pitch_controller);
         }
+
 
 
         float maxdeg = 1.0f;
@@ -248,7 +259,6 @@ void controllerCustomPidDirectThrust(
     if (currentTime - lastPrintTime >= pdMS_TO_TICKS(1000) && !isToppled && desired_state.z > 0.1f) {
         DEBUG_PRINT("----------------------------------------------------------------------\n");
         DEBUG_PRINT("Body error - x: %.3f, y: %.3f, z: %.3f\n", (double)x_error_body, (double)y_error_body, (double)z_error_body);
-        // DEBUG_PRINT("Global error - x: %.3f, y: %.3f, z: %.3f\n", (double)x_error, (double)y_error, (double)z_error);
         DEBUG_PRINT("Thrust: %.3f, TorqueX: %.6f, TorqueY: %.6f, TorqueZ: %.6f\n", (double)thrust, (double)torqueX, (double)-torqueY, (double)torqueZ);
         DEBUG_PRINT("Roll target: %.3f, Pitch target: %.3f\n", (double)roll_target, (double)pitch_target);
         DEBUG_PRINT("Roll, %.3f, Pitch: %.3f\n", (double)current_state.roll, (double)current_state.pitch);
@@ -288,6 +298,8 @@ void controllerCustomFirmware2(
 #ifdef CRAZYFLIE_FW
 #include "param.h"
 PARAM_GROUP_START(ctrlCustom2)
+
+PARAM_ADD_CORE(PARAM_FLOAT | PARAM_PERSISTENT, a_baseline, &a_baseline)
 
 // Roll PID
 PARAM_ADD_CORE(PARAM_FLOAT | PARAM_PERSISTENT, kp_r, &roll_controller.kp)

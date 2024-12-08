@@ -1,4 +1,5 @@
 
+
 typedef struct current_state_s {
     double x;
     double y;
@@ -6,13 +7,27 @@ typedef struct current_state_s {
     double roll;
     double pitch;
     double yaw;
+    double d_x;
+    double d_y;
+    double d_z;
+    double d_roll;
+    double d_pitch;
+    double d_yaw;
 } current_state_t;
 
 typedef struct desired_state_s {
     double x;
     double y;
     double z;
+    double roll;
+    double pitch;
     double yaw;
+    double d_x;
+    double d_y;
+    double d_z;
+    double d_roll;
+    double d_pitch;
+    double d_yaw;
 } desired_state_t;
 
 typedef struct pid_gains_s{
@@ -47,3 +62,21 @@ typedef struct pid_gains_s{
     float integral_max_yaw;
     float output_max_yaw;
 } pid_gains_t;
+
+
+// typedef struct current_state_s {
+//     double x;
+//     double y;
+//     double z;
+//     double roll;
+//     double pitch;
+//     double yaw;
+// } current_state_t;
+
+// typedef struct desired_state_s {
+//     double x;
+//     double y;
+//     double z;
+//     double yaw;
+// } desired_state_t;
+

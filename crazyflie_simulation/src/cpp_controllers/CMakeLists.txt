@@ -31,6 +31,14 @@ add_executable(motor_control_node
     src/pid.cpp 
 )
 
+add_executable(smc_motor_control_node
+    src/SmcMotorControlNode.cpp
+    src/pid_controller.cpp  
+    src/CustomPidController.cpp
+    src/sliding_mode_control.cpp
+    src/pid.cpp 
+)
+
 add_executable(keyboard_control_node
     src/KeyboardControlNode.cpp
 )
@@ -45,15 +53,25 @@ ament_target_dependencies(motor_control_node rosgraph_msgs)
 ament_target_dependencies(keyboard_control_node std_msgs)
 ament_target_dependencies(keyboard_control_node rclcpp)
 
+ament_target_dependencies(smc_motor_control_node rclcpp)
+ament_target_dependencies(smc_motor_control_node std_msgs)
+ament_target_dependencies(smc_motor_control_node actuator_msgs)
+ament_target_dependencies(smc_motor_control_node nav_msgs)
+ament_target_dependencies(smc_motor_control_node rosgraph_msgs)
+
+
 
 # include_directories(include/cpp_controllers)
 target_include_directories(motor_control_node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_controllers)
 target_include_directories(keyboard_control_node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_controllers)
+target_include_directories(smc_motor_control_node PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/cpp_controllers)
 target_include_directories(motor_control_node PUBLIC ${Eigen3_INCLUDE_DIRS})
+target_include_directories(smc_motor_control_node PUBLIC ${Eigen3_INCLUDE_DIRS})
 
 
 install(TARGETS motor_control_node DESTINATION lib/${PROJECT_NAME})
 install(TARGETS keyboard_control_node DESTINATION lib/${PROJECT_NAME})
+install(TARGETS smc_motor_control_node DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -41,8 +41,8 @@ def generate_launch_description():
     )
 
     motor_control = Node(
-        package='cpp_controllers',
-        executable='motor_control_node',
+        package='cpp_controllers',  
+        executable='smc_motor_control_node',
         output='screen'
     )
 

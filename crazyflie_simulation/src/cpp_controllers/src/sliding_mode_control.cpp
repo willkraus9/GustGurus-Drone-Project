@@ -30,22 +30,24 @@ float z_compensation(float error_d_z, float roll, float pitch, params_t params) 
     return z_comp;
 }
 
-float roll_compensation(float v_roll, float v_yaw, params_t params) {
+float roll_compensation(float d_e_roll, float d_pitch, float d_yaw, params_t params) {
     float I_xx = params.I_xx;
     float I_yy = params.I_yy;
     float I_zz = params.I_zz;
+    float alpha = params.alpha_roll;
 
-    float comp = (I_yy - I_zz)/I_xx * v_roll * v_yaw;
+    float comp = I_xx*((I_yy - I_zz)/I_xx * d_pitch * d_yaw + alpha * d_e_roll);
 
     return comp;
 }
 
-float pitch_compensation(float v_pitch, float v_yaw, params_t params) {
+float pitch_compensation(float d_e_pitch, float d_roll, float d_yaw, params_t params) {
     float I_xx = params.I_xx;
     float I_yy = params.I_yy;
     float I_zz = params.I_zz;
+    float alpha = params.alpha_pitch;
 
-    float comp = (I_zz - I_xx)/I_yy * v_pitch * v_yaw;
+    float comp = I_yy*((I_zz - I_xx)/I_yy * d_roll * d_yaw + alpha * d_e_pitch);
 
     return comp;
 }
@@ -78,7 +80,7 @@ float smc_z(float error_z, float error_d_z, float roll, float pitch, params_t pa
     float sliding_manifold = calculate_sliding_manifold_z(error_z, error_d_z, params);
 
 
-    float output = z_comp + 100*(error_z * error_z) * sign(sliding_manifold);
+    float output = 300*(error_z * error_z) * sign(sliding_manifold) + z_comp;
 
     return output;
     // return output * sign(sliding_manifold);
@@ -98,42 +100,44 @@ float calculate_sliding_manifold_roll(float error_roll, float error_d_roll, para
     return sliding_manifold;
 }
 
-float smc_pitch(float pitch, float yaw, float error_pitch, float error_d_pitch, params_t params)
+float smc_pitch(float error_pitch, float d_roll, float d_yaw, float error_d_pitch, params_t params)
 {
     float sliding_manifold = calculate_sliding_manifold_pitch(error_pitch, error_d_pitch, params);
-    float pitch_comp = pitch_compensation(pitch, yaw, params);
+    float pitch_comp = pitch_compensation(error_d_pitch, d_roll, d_yaw, params);
 
-    float output = 0.7*(error_pitch * error_pitch) * sign(sliding_manifold) + pitch_comp;
+    float output = 15*(error_pitch * error_pitch) * sign(sliding_manifold) - pitch_comp;
 
     return output;
 }
 
-float smc_pitch2(float pitch, float yaw, float error_pitch, float error_d_pitch, params_t params)
+float smc_pitch2(float error_pitch, float d_roll, float d_yaw, float error_d_pitch, params_t params)
 {
     float sliding_manifold = calculate_sliding_manifold_pitch(error_pitch, error_d_pitch, params);
-    float pitch_comp = pitch_compensation(pitch, yaw, params);
-
-    float output = 1*sliding_manifold + pitch_comp;
-
-    return output;
-}
-
-float smc_roll(float roll ,float yaw, float error_roll, float error_d_roll, params_t params)
-{
-    float sliding_manifold = calculate_sliding_manifold_roll(error_roll, error_d_roll, params);
-    float roll_comp = roll_compensation(roll, yaw, params);
-
-    float output = 0.7*(error_roll * error_roll) * sign(sliding_manifold) + roll_comp;
+    float pitch_comp = pitch_compensation(error_d_pitch, d_roll, d_yaw, params);
+    float k1=0.0;
+    float k2=14.40;
+    float output = k1*sliding_manifold + k2/(sign(sliding_manifold)+0.1) - pitch_comp;
 
     return output;
 }
 
-float smc_roll2(float roll ,float yaw, float error_roll, float error_d_roll, params_t params)
+float smc_roll(float error_roll, float d_pitch, float d_yaw, float error_d_roll, params_t params)
 {
     float sliding_manifold = calculate_sliding_manifold_roll(error_roll, error_d_roll, params);
-    float roll_comp = roll_compensation(roll, yaw, params);
+    float roll_comp = roll_compensation(error_d_roll, d_pitch, d_yaw, params);
 
-    float output = 1*sliding_manifold + roll_comp;
+    float output = 15*(error_roll * error_roll) * sign(sliding_manifold) - roll_comp;
+
+    return output;
+}
+
+float smc_roll2(float error_roll, float d_pitch, float d_yaw, float error_d_roll, params_t params)
+{
+    float sliding_manifold = calculate_sliding_manifold_roll(error_roll, error_d_roll, params);
+    float roll_comp = roll_compensation(error_d_roll, d_pitch, d_yaw, params);
+    float k1=0.0;
+    float k2=14.40;
+    float output = k1*sliding_manifold + k2/(sign(sliding_manifold)+0.1) - roll_comp;
 
     return output;
 }

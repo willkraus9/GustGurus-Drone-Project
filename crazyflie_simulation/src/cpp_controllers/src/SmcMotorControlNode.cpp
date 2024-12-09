@@ -273,11 +273,11 @@ private:
         
         // std::cout << "Thrust_torque: " << thrust_torque << std::endl;
         float thrust = smc_z(error_z, error_d_z, current_state.roll, current_state.pitch, params);
-        float roll = smc_roll2(current_state.roll, current_state.yaw, error_roll, error_d_roll, params);
-        float pitch = smc_pitch2(current_state.pitch, current_state.yaw, error_pitch, error_d_pitch, params);
+        float roll = smc_roll(error_roll, current_state.d_pitch, current_state.d_yaw, error_d_roll, params);
+        float pitch = smc_pitch(error_pitch, current_state.d_roll, current_state.d_yaw, error_d_pitch, params);
         
 
-        thrust_torque[0] = thrust + 0.27;
+        thrust_torque[0] = thrust;
         thrust_torque[1] = roll;
         thrust_torque[2] = pitch;
         RCLCPP_INFO(this->get_logger(), "Thrust_torque: %f, %f, %f, %f", thrust_torque[0], thrust_torque[1], thrust_torque[2], thrust_torque[3]);

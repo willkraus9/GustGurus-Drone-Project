@@ -9,8 +9,8 @@ typedef struct {
     float A = 0.35; // Drag constant
     float m = 0.028; // Mass of the quadrotor
     float alpha_z = 4.0; // Sliding mode control parameter original 4.0
-    float alpha_roll = 2.80;
-    float alpha_pitch = 2.80;
+    float alpha_roll = 3.80;
+    float alpha_pitch = 3.80;
     float I_xx = 16.571710E-06;
     float I_yy = 16.655602E-06;
     float I_zz = 29.261652E-06;

@@ -73,15 +73,15 @@ public:
 
 
         gains = {
-            .kp_x = 0.2,
-            .ki_x = 0.03,
-            .kd_x = 0.01,
+            .kp_x = 0.5,
+            .ki_x = 0.0,
+            .kd_x = 0.0,
             .integral_max_x = 0.0,
             .output_max_x = 0.2,
 
-            .kp_y = 0.2,
-            .ki_y = 0.03,
-            .kd_y = 0.01,   
+            .kp_y = 0.5,
+            .ki_y = 0.0,
+            .kd_y = 0.0,   
             .integral_max_y = 0.0,
             .output_max_y = 0.2,
 
@@ -103,7 +103,7 @@ public:
             .integral_max_pitch = 0.0,
             .output_max_pitch = 1e-2,
 
-            .kp_yaw = 0.0,
+            .kp_yaw = 1e-3,
             .ki_yaw = 0.0,
             .kd_yaw = 0.0,
             .integral_max_yaw = 0.0,
@@ -250,18 +250,36 @@ private:
 
         double dt = 0.001; // 1ms timer interval
 
+        float error_x = desired_state.x - current_state.x;
+        float error_y = desired_state.y - current_state.y;
         float error_z = desired_state.z - current_state.z;
-        float error_d_z = 0.0 - current_state.d_z;
+        Eigen::Vector3f error = {error_x, error_y, error_z};
+        Eigen::Vector3f current_orientation(current_state.roll, current_state.pitch, current_state.yaw);
 
+        Eigen::Vector3f body_error = controller.World2BodyError(error, current_orientation);
+
+        float roll_target = controller.x_controller.update(body_error[0], dt, 0.0);
+        float pitch_target = controller.y_controller.update(body_error[1], dt, 0.0);
+
+        float error_d_z = 0.0 - current_state.d_z;
+        float error_roll = roll_target - current_state.roll;
+        float error_d_roll = 0.0 - current_state.d_roll;
+        float error_pitch = pitch_target - current_state.pitch;
+        float error_d_pitch = 0.0 - current_state.d_pitch;
 
         Eigen::Vector4f thrust_torque = controller.update(current_state, desired_state, dt);
 
         // Create and populate the actuator message
         
         // std::cout << "Thrust_torque: " << thrust_torque << std::endl;
-        float thrust = calculate_thrust(error_z, error_d_z, 0.0, current_state.roll, current_state.pitch, params);
+        float thrust = smc_z(error_z, error_d_z, current_state.roll, current_state.pitch, params);
+        float roll = smc_roll2(current_state.roll, current_state.yaw, error_roll, error_d_roll, params);
+        float pitch = smc_pitch2(current_state.pitch, current_state.yaw, error_pitch, error_d_pitch, params);
+        
 
-        thrust_torque[0] = thrust;
+        thrust_torque[0] = thrust + 0.27;
+        thrust_torque[1] = roll;
+        thrust_torque[2] = pitch;
         RCLCPP_INFO(this->get_logger(), "Thrust_torque: %f, %f, %f, %f", thrust_torque[0], thrust_torque[1], thrust_torque[2], thrust_torque[3]);
         Eigen::Vector4f motor_forces = Thrust_torque_to_motor_forces * thrust_torque;
         // std::cout << "Motor forces: " << motor_forces << std::endl;
@@ -271,6 +289,7 @@ private:
             motor_forces[i] = 0;
           }
         }
+
         Eigen::Vector4f motor_speeds = sqrt(motor_forces.array() / thrust_coefficient);
 
         auto msg = actuator_msgs::msg::Actuators();

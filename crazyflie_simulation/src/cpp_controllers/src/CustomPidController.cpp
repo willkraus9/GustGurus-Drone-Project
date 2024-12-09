@@ -57,16 +57,34 @@ Eigen::Vector3f CustomPidController::World2BodyError(Eigen::Vector3f error, Eige
     float pitch = orientation(1);
     float yaw = orientation(2);
 
-    // Compute the rotation matrix from world to body frame
+    // Compute the rotation matrix from world to body frame using explicit matrices
     Eigen::Matrix3f rotation;
-    rotation = Eigen::AngleAxisf(-yaw, Eigen::Vector3f::UnitZ()) *  // Yaw (Z-axis)
-                Eigen::AngleAxisf(-pitch, Eigen::Vector3f::UnitY()) * // Pitch (Y-axis)
-                Eigen::AngleAxisf(-roll, Eigen::Vector3f::UnitX());  // Roll (X-axis)
+
+    // Roll (rotation about X-axis)
+    Eigen::Matrix3f rollMatrix;
+    rollMatrix << 1, 0, 0,
+                  0, cos(roll), -sin(roll),
+                  0, sin(roll), cos(roll);
+
+    // Pitch (rotation about Y-axis)
+    Eigen::Matrix3f pitchMatrix;
+    pitchMatrix << cos(pitch), 0, -sin(pitch),
+                   0, 1, 0,
+                   sin(pitch), 0, cos(pitch);
+
+    // Yaw (rotation about Z-axis)
+    Eigen::Matrix3f yawMatrix;
+    yawMatrix << cos(yaw), -sin(yaw), 0,
+                 sin(yaw), cos(yaw), 0,
+                 0, 0, 1;
+
+    // Combine the rotations to get the world-to-body rotation matrix
+    rotation = yawMatrix * pitchMatrix * rollMatrix;
 
     // Transform error from world frame to body frame
     return rotation * error;
+}
 
-};
 
 void CustomPidController::reset() {
     x_controller.error_integral = 0;

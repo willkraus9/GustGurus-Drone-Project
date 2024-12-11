@@ -80,7 +80,7 @@ float smc_z(float error_z, float error_d_z, float roll, float pitch, params_t pa
     float sliding_manifold = calculate_sliding_manifold_z(error_z, error_d_z, params);
 
 
-    float output = 300*(error_z * error_z) * sign(sliding_manifold) + z_comp;
+    float output = 100*(error_z * error_z) * sign(sliding_manifold) + z_comp;
 
     return output;
     // return output * sign(sliding_manifold);
@@ -105,7 +105,7 @@ float smc_pitch(float error_pitch, float d_roll, float d_yaw, float error_d_pitc
     float sliding_manifold = calculate_sliding_manifold_pitch(error_pitch, error_d_pitch, params);
     float pitch_comp = pitch_compensation(error_d_pitch, d_roll, d_yaw, params);
 
-    float output = 0.5*(error_pitch * error_pitch) * sign(sliding_manifold) - pitch_comp;
+    float output = 0.35*(error_pitch * error_pitch) * sign(sliding_manifold) - pitch_comp;
 
     return output;
 }
@@ -126,7 +126,7 @@ float smc_roll(float error_roll, float d_pitch, float d_yaw, float error_d_roll,
     float sliding_manifold = calculate_sliding_manifold_roll(error_roll, error_d_roll, params);
     float roll_comp = roll_compensation(error_d_roll, d_pitch, d_yaw, params);
 
-    float output = 0.5*(error_roll * error_roll) * sign(sliding_manifold) - roll_comp;
+    float output = 0.35*(error_roll * error_roll) * sign(sliding_manifold) - roll_comp;
 
     return output;
 }
@@ -173,5 +173,5 @@ Eigen::Vector3f World2BodyError(Eigen::Vector3f error, Eigen::Vector3f orientati
     rotation = yawMatrix * pitchMatrix * rollMatrix;
 
     // Transform error from world frame to body frame
-    return rotation.transpose() * error;
+    return rotation * error;
 }

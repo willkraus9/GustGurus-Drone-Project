@@ -73,13 +73,13 @@ public:
 
 
         gains = {
-            .kp_x = 0.5,
+            .kp_x = 0.95,
             .ki_x = 0.0,
             .kd_x = 0.0,
             .integral_max_x = 0.0,
             .output_max_x = 0.2,
 
-            .kp_y = 0.5,
+            .kp_y = 0.95,
             .ki_y = 0.0,
             .kd_y = 0.0,   
             .integral_max_y = 0.0,
@@ -277,9 +277,9 @@ private:
         float pitch = smc_pitch(error_pitch, current_state.d_roll, current_state.d_yaw, error_d_pitch, params);
         
 
-        thrust_torque[0] = thrust;
-        thrust_torque[1] = roll;
-        thrust_torque[2] = pitch;
+        // thrust_torque[0] = thrust;
+        // thrust_torque[1] = roll;
+        // thrust_torque[2] = pitch;
         RCLCPP_INFO(this->get_logger(), "Thrust_torque: %f, %f, %f, %f", thrust_torque[0], thrust_torque[1], thrust_torque[2], thrust_torque[3]);
         Eigen::Vector4f motor_forces = Thrust_torque_to_motor_forces * thrust_torque;
         // std::cout << "Motor forces: " << motor_forces << std::endl;

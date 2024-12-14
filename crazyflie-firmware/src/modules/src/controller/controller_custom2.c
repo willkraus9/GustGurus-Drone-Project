@@ -37,8 +37,8 @@ static PID_t x_controller = {.kp = 0.3f, .ki = 0.0f, .kd = 0.0f, .integral_max =
 static PID_t y_controller = {.kp = 0.3f, .ki = 0.0f, .kd = 0.0f, .integral_max = 0.0f, .output_max = 0.3f, .output_min = -0.3f};
 static PID_t z_controller = {.kp = 0.1f, .ki = 0.0f, .kd = 0.05f, .integral_max = 0.0f, .output_max = 0.4f, .output_min = 0.25f};
 static PID_t yaw_controller = {.kp = 0.001f, .ki = 0.0f, .kd = 3e-5f, .integral_max = 0.0f, .output_max = 1.0f, .output_min = -1.0f};
-static PID_t roll_controller = {.kp = 0.005f, .ki = 2e-7f, .kd = 0.0005f, .integral_max = 8e-4f, .output_max = 1.0f, .output_min = -1.0f};
-static PID_t pitch_controller = {.kp = 0.005f, .ki = 2e-7f, .kd = 0.001f, .integral_max = 8e-4f, .output_max = 1.0f, .output_min = -1.0f};
+static PID_t roll_controller = {.kp = 0.003f, .ki = 1e-3f, .kd = 0.0008f, .integral_max = 8e-4f, .output_max = 1.0f, .output_min = -1.0f};
+static PID_t pitch_controller = {.kp = 0.003f, .ki = 1e-3f, .kd = 0.0008f, .integral_max = 8e-4f, .output_max = 1.0f, .output_min = -1.0f};
 
 static bool controller_reset = false;
 static float a_baseline = 0.33f;
@@ -48,7 +48,7 @@ static float a_baseline = 0.33f;
 // Update the PID controller
 float DirectThrustPID_update(PID_t *pid, float error, float dt, float baseline, bool verbose) {
     // Integrate the error
-    pid->error_integral += error * dt;
+    pid->error_integral += pid->ki * error * dt;
 
     // Constrain the integral term
     if (pid->error_integral > pid->integral_max) pid->error_integral = pid->integral_max;
@@ -59,7 +59,7 @@ float DirectThrustPID_update(PID_t *pid, float error, float dt, float baseline, 
     pid->error_previous = error;
 
     // Compute the PID output
-    float output = pid->kp * error + pid->ki * pid->error_integral + pid->kd * derivative + baseline;
+    float output = pid->kp * error +  pid->error_integral + pid->kd * derivative + baseline;
 
     // Constrain the output
     if (output > pid->output_max) output = pid->output_max;
@@ -297,7 +297,7 @@ void controllerCustomFirmware2(
 
 #ifdef CRAZYFLIE_FW
 #include "param.h"
-PARAM_GROUP_START(ctrlCustom2)
+PARAM_GROUP_START(ctrlOurPID)
 
 PARAM_ADD_CORE(PARAM_FLOAT | PARAM_PERSISTENT, a_baseline, &a_baseline)
 
@@ -350,10 +350,10 @@ PARAM_ADD_CORE(PARAM_FLOAT | PARAM_PERSISTENT, omax_z, &z_controller.output_max)
 PARAM_ADD_CORE(PARAM_FLOAT | PARAM_PERSISTENT, omin_z, &z_controller.output_min)
 
 
-PARAM_GROUP_STOP(ctrlCustom2)
+PARAM_GROUP_STOP(ctrlOurPID)
 
 
-LOG_GROUP_START(ctrlCustom2)
+LOG_GROUP_START(ctrlOurPID)
 
 // LOG_ADD(LOG_FLOAT, KR_x, &g_self.KR.x)
 // LOG_ADD(LOG_FLOAT, KR_y, &g_self.KR.y)
@@ -406,6 +406,6 @@ LOG_GROUP_START(ctrlCustom2)
 
 // // LOG_ADD(LOG_UINT32, ticks, &ticks)
 
-LOG_GROUP_STOP(ctrlCustom2)
+LOG_GROUP_STOP(ctrlOurPID)
 
 #endif // CRAZYFLIE_FW defined

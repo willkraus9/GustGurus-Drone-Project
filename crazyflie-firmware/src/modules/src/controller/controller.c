@@ -34,12 +34,12 @@ static ControllerFcns controllerFunctions[] = {
   {.init = controllerMellingerFirmwareInit, .test = controllerMellingerFirmwareTest, .update = controllerMellingerFirmware, .name = "Mellinger"},
   {.init = controllerINDIInit, .test = controllerINDITest, .update = controllerINDI, .name = "INDI"},
   {.init = controllerBrescianiniInit, .test = controllerBrescianiniTest, .update = controllerBrescianini, .name = "Brescianini"},
-  {.init = controllerLeeFirmwareInit, .test = controllerLeeFirmwareTest, .update = controllerLeeFirmware, .name = "Lee"},
-  {.init = controllerCustomFirmware1Init, .test = controllerCustomFirmware1Test, .update = controllerCustomFirmware1, .name = "Custom Controller 1 - PID From Simulation Directly"},
+  // {.init = controllerLeeFirmwareInit, .test = controllerLeeFirmwareTest, .update = controllerLeeFirmware, .name = "Lee"},
+  {.init = controllerCustomFirmware1Init, .test = controllerCustomFirmware1Test, .update = controllerCustomFirmware1, .name = "Custom Controller 1 - SMC controller kaustabh"},
   {.init = controllerCustomFirmware2Init, .test = controllerCustomFirmware2Test, .update = controllerCustomFirmware2, .name = "Custom Controller 2 - PID Direct Thrust Calculation"},
   {.init = controllerCustomFirmware3Init, .test = controllerCustomFirmware3Test, .update = controllerCustomFirmware3, .name = "Custom Controller 3 - LQR"},
-  // {.init = controllerCustomFirmware4Init, .test = controllerCustomFirmware4Test, .update = controllerCustomFirmware4, .name = "Custom Controller 4 - Sliding Mode Control"},
-  // {.init = controllerCustomFirmware5Init, .test = controllerCustomFirmware5Test, .update = controllerCustomFirmware5, .name = "Custom Controller 5 - Who Knows"},
+  // {.init = controllerCustomFirmware4Init, .test = controllerCustomFirmware4Test, .update = controllerCustomFirmware4, .name = "Custom Controller 4 - LQR with Ricatti Equation Solver"},
+  // {.init = controllerCustomFirmware5Init, .test = controllerCustomFirmware5Test, .update = controllerCustomFirmware5, .name = "Custom Controller 5 - Sliding Mode Control other"},
   #ifdef CONFIG_CONTROLLER_OOT
   {.init = controllerOutOfTreeInit, .test = controllerOutOfTreeTest, .update = controllerOutOfTree, .name = "OutOfTree"},
   #endif

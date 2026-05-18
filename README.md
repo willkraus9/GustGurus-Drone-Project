@@ -97,12 +97,14 @@ ros2 launch crazyflie_gazebo crazyflie_gazebo.launch.py
 
 `motor_control_node` runs the C++ port of the firmware PID against a
 goal state on `/crazyflie/goal_state_vector` (Float32MultiArray of
-`[x, y, z, roll, pitch, yaw]`). Publish a setpoint to make the drone
-fly to a target:
+`[x, y, yaw, z]` — see `goalStateCallback` in
+`simulation/src/cpp_controllers/src/MotorControlNode.cpp`). Publish a
+setpoint to make the drone fly to a target — for a 1 m hover above the
+origin:
 
 ```bash
 ros2 topic pub --once /crazyflie/goal_state_vector std_msgs/msg/Float32MultiArray \
-  "{data: [0.0, 0.0, 1.0, 0.0, 0.0, 0.0]}"
+  "{data: [0.0, 0.0, 0.0, 1.0]}"
 ```
 
 For interactive keyboard control, run the optional bridge node and

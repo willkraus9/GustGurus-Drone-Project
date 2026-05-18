@@ -6,12 +6,6 @@
 // MAPPING SIMULATION TO REAL 
 // -------------------------- //
 
-typedef struct motor_power_s {
-  float m1;
-  float m2;
-  float m3;
-  float m4;
-} motor_power_t;
 
 typedef struct control_commands_s {
   float roll;
@@ -128,5 +122,60 @@ typedef struct {
 // -------------------------- //
 // FUTURE TYPES EXPLAIN 
 // -------------------------- //
+
+// SMC params controller 5 params
+typedef struct {
+    float nu;
+    float g;        // Gravity constant
+    float A;        // Drag constant
+    float m;        // Mass of the quadrotor
+    float lambda_z;
+    float lambda_roll;
+    float lambda_pitch;
+    float lambda_yaw;
+
+    float kD_z;
+    float kD_roll;
+    float kD_pitch;
+    float kD_yaw;
+
+    float delta_z;
+    float delta_roll;
+    float delta_pitch;
+    float delta_yaw;
+
+    float I_xx;
+    float I_yy;
+    float I_zz;
+    float Jr;
+} SMC5_params_t;
+
+typedef struct {
+    float nu;
+    float g;
+    float A; // Drag constant
+    float m; // Mass of the quadrotor
+    float alpha_z; // Sliding mode control parameter original 4.0
+    float alpha_roll;
+    float alpha_pitch;
+    float I_xx;
+    float I_yy;
+    float I_zz;
+    float gain_z;
+    float gain_roll;
+    float gain_pitch;
+    float gain_yaw;
+
+    float roll_k1;
+    float roll_k2;
+    float roll_eps;
+
+    float pitch_k1;
+    float pitch_k2;
+    float pitch_eps;
+    
+    
+} SMC1_params_t;
+
 
 #endif

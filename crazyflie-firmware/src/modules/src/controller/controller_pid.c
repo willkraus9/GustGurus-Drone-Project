@@ -63,8 +63,6 @@ void controllerPid(control_t *control, const setpoint_t *setpoint,
                                          const stabilizerStep_t stabilizerStep)
 {
   control->controlMode = controlModeLegacy;
-    static uint32_t lastPrintTime = 0;
-    uint32_t currentTime = xTaskGetTickCount();
 
   if (RATE_DO_EXECUTE(ATTITUDE_RATE, stabilizerStep)) {
     // Rate-controled YAW is moving YAW angle setpoint

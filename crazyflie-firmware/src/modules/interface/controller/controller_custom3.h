@@ -27,3 +27,19 @@ void map_state_to_actual_direct_thrust_LQR(const state_t *state, const sensorDat
 #endif // CRAZYFLIE_FW
 
 #endif // _CONTROLLER_DirectThrustPID_H_
+
+// changes from new LQR controller: 
+
+// // static float capAngle(float angle);
+// void controllerLqrInit(void);
+// void controllerLqrInit(void);
+// bool controllerLqrTest(void);
+// void controllerLqr(control_t *control, const setpoint_t *setpoint,
+//                    const sensorData_t *sensors, const state_t *state,
+//                    const uint32_t tick);
+
+
+
+
+
+

@@ -5,7 +5,8 @@
 #include "controller_custom_types.h"
 #include "math.h"
 // Initialize the PID structure
-void DirectThrustPID_init(PID_t *pid, float kp, float ki, float kd, float integral_max, float output_max);
+
+float DirectThrustPID_update(PID_t *pid, float error, float dt, float baseline, bool verbose);
 
 Vector3f multiplyMatrixVector(float matrix[3][3], Vector3f vector);
 

@@ -4,88 +4,37 @@
 #include "controller_custom_types.h"
 
 // Initialize the custom controller
-void controllerCustomInit1(void);
 
-// Test the custom controller
-bool controllerCustomTest1(void);
 
-// Main custom controller function
-void controllerCustom1(
-    control_t *control,
-    const setpoint_t *setpoint,
-    const sensorData_t *sensors,
-    const state_t *state,
-    const uint32_t stabilizerStep
-);
 
-// Map setpoint to desired state
-void map_setpoint_to_desired(const setpoint_t *setpoint, desired_state_t *desired_state);
+float calculate_sliding_manifold_z(float error_z, float error_d_z, SMC1_params_t params);
 
-// Map actual state
-void map_state_to_actual(const state_t *state, actual_state_t *actual_state);
+float sign(float value);
 
-// Map control to commands
-void map_control_to_commands(const control_t *control, control_commands_t *control_commands);
+float z_compensation(float error_d_z, float roll, float pitch, SMC1_params_t params);
 
-void multiply_matrices(const float mat1[3][3], const float mat2[3][3], float result[3][3]);
+float smc_z(float error_z, float error_d_z, float roll, float pitch, SMC1_params_t params);
 
-// PID-based fixed height controller
-void pid_fixed_height_controller(
-    actual_state_t actual_state,
-    desired_state_t *desired_state,
-    gains_pid_t gains_pid,
-    float dt,
-    control_commands_t *control_commands
-);
+float get_beta(float estimated_disturbance, float error_dz, float roll, float pitch, SMC1_params_t params);
 
-// PID-based attitude controller
-void pid_attitude_controller(
-    actual_state_t actual_state,
-    desired_state_t *desired_state,
-    gains_pid_t gains_pid,
-    float dt,
-    control_commands_t *control_commands
-);
+float calculate_thrust(float error_z, float error_d_z, float estimated_disturbance, float roll, float pitch, SMC1_params_t params);
 
-// PID-based horizontal velocity controller
-void pid_horizontal_velocity_controller(
-    actual_state_t actual_state,
-    desired_state_t *desired_state,
-    gains_pid_t gains_pid,
-    float dt
-);
+float calculate_sliding_manifold_roll(float error_roll, float error_d_roll, SMC1_params_t params);
 
-// Combined PID-based attitude and fixed height controller
-void pid_attitude_fixed_height_controller(
-    actual_state_t actual_state,
-    desired_state_t *desired_state,
-    gains_pid_t gains_pid,
-    float dt,
-    motor_power_t *motorCommands
-);
+float roll_compensation(float d_e_roll, float d_pitch, float d_yaw, SMC1_params_t params);
 
-// Combined PID-based velocity and fixed height controller
-void pid_velocity_fixed_height_controller(
-    actual_state_t actual_state,
-    desired_state_t *desired_state,
-    gains_pid_t gains_pid,
-    float dt,
-    motor_power_t *motorCommands
-);
+float pitch_compensation(float d_e_pitch, float d_roll, float d_yaw, SMC1_params_t params);
 
-// Motor mixing function
-void motor_mixing(control_commands_t control_commands, motor_power_t *motorCommands);
+float calculate_sliding_manifold_pitch(float error_pitch, float error_d_pitch, SMC1_params_t params);
 
-// Calculate thrust and torques
-void calculate_thrust_torques(
-    const motor_power_t *motorCommands,
-    float *T,
-    float *Tx,
-    float *Ty,
-    float *Tz
-);
+float smc_pitch(float error_pitch, float d_roll, float d_yaw, float error_d_pitch, SMC1_params_t params);
 
-#ifdef CRAZYFLIE_FW
+float smc_pitch2(float error_pitch, float d_roll, float d_yaw, float error_d_pitch, SMC1_params_t params);
+
+float smc_roll(float error_roll, float d_pitch, float d_yaw, float error_d_roll, SMC1_params_t params);
+
+float smc_roll2(float error_roll, float d_pitch, float d_yaw, float error_d_roll, SMC1_params_t params);
+
 // Firmware initialization
 void controllerCustomFirmware1Init(void);
 
@@ -100,6 +49,6 @@ void controllerCustomFirmware1(
     const state_t *state,
     const uint32_t stabilizerStep
 );
-#endif // CRAZYFLIE_FW
 
 #endif // __CONTROLLER_CUSTOM1_H__
+

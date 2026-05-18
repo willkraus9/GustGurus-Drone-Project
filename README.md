@@ -91,10 +91,25 @@ cd simulation
 colcon build
 source install/setup.bash
 
-# Launch the simulated drone
+# Launch Gazebo, the ros_gz bridge, and the motor-control node
 ros2 launch crazyflie_gazebo crazyflie_gazebo.launch.py
+```
 
-# In a second terminal: keyboard teleop
+`motor_control_node` runs the C++ port of the firmware PID against a
+goal state on `/crazyflie/goal_state_vector` (Float32MultiArray of
+`[x, y, z, roll, pitch, yaw]`). Publish a setpoint to make the drone
+fly to a target:
+
+```bash
+ros2 topic pub --once /crazyflie/goal_state_vector std_msgs/msg/Float32MultiArray \
+  "{data: [0.0, 0.0, 1.0, 0.0, 0.0, 0.0]}"
+```
+
+For interactive keyboard control, run the optional bridge node and
+`teleop_twist_keyboard` in two extra terminals:
+
+```bash
+ros2 run crazyflie_gazebo control_services
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 

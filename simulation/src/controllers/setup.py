@@ -13,10 +13,10 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='denis',
-    maintainer_email='deniskaanalpay@gmail.com',
-    description='TODO: Package description',
-    license='TODO: License declaration',
+    maintainer='Denis Alpay',
+    maintainer_email='dkalpay@andrew.cmu.edu',
+    description='Python controller nodes for the GustGurus Crazyflie simulation: publishes per-motor velocity commands to the drone in Gazebo.',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

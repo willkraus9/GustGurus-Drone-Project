@@ -3,9 +3,9 @@
 <package format="3">
   <name>cpp_controllers</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="deniskaanalpay@gmail.com">denis</maintainer>
-  <license>TODO: License declaration</license>
+  <description>C++ controller nodes for the GustGurus Crazyflie simulation: custom PID and keyboard control mirroring the firmware control loop.</description>
+  <maintainer email="dkalpay@andrew.cmu.edu">Denis Alpay</maintainer>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

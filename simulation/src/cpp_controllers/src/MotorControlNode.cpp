@@ -207,10 +207,9 @@ private:
 
     void timerCallback()
     {
-      // Purpose of thsi function is to publish motor speed to the gazebo drone at every time step
-      // TODO: Implement the PID controller here
-      // The PID controller should calculate the motor speeds based on the current state of the drone
-        // Call the PID fixed height controller to compute control commands
+        // Publishes motor speeds to the Gazebo drone every timer tick.
+        // Runs the project PID controller against current_state and writes
+        // the four motor commands to the actuator topic.
 
         // if the simulation is not running, do not publish motor commands
         if (!simulation_running){

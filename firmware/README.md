@@ -8,17 +8,22 @@ directly.
 ```
 firmware/src/modules/
 ├── interface/controller/
-│   ├── controller_custom1.h       SMC z + roll/pitch
-│   ├── controller_custom2.h       LQR full-state
-│   ├── controller_custom3.h       Direct-thrust PID (WIP)
-│   ├── controller_custom4.h       Hybrid SMC/PID
-│   ├── controller_custom5.h       Final tuned PID
-│   └── controller_custom_types.h  Shared types for the custom controllers
+│   ├── controller_custom1.h       SMC (z + roll/pitch) -- registered
+│   ├── controller_custom2.h       Direct-thrust PID    -- registered
+│   ├── controller_custom3.h       LQR (full-state)     -- registered
+│   ├── controller_custom4.h       LQR + Riccati solver -- WIP, commented out in controller.c
+│   ├── controller_custom5.h       SMC variant          -- WIP, commented out in controller.c
+│   └── controller_custom_types.h  Shared types
 └── src/controller/
-    ├── controller.c               Registration of the custom controllers
-    ├── controller_pid.c           Baseline PID with project tweaks
+    ├── controller.c               Registration table (controllerFunctions[])
+    ├── controller_pid.c           Stock PID with project tweaks
     └── controller_customN.c       Implementation for each custom variant
 ```
+
+The two WIP controllers (Custom4, Custom5) are kept in-tree for the
+record of what we explored but are not registered in
+`controllerFunctions[]`. Uncomment the matching lines in
+`controller.c` to flight-test them.
 
 ## Building
 
@@ -52,19 +57,23 @@ matching `config CONTROLLER_CUSTOM_N` blocks to
 ## Selecting a controller at runtime
 
 The stock Crazyflie param subsystem exposes a `stabilizer.controller`
-parameter. Set it via `cfclient` or `cflib`:
+parameter. Set it via `cfclient` or `cflib`. The integer maps to the
+position in `controllerFunctions[]`:
 
-| Value | Controller |
-|------:|------------|
-| `1`   | PID (stock, with our tweaks in `controller_pid.c`) |
-| `5`   | `CONTROLLER_CUSTOM1` -- SMC |
-| `6`   | `CONTROLLER_CUSTOM2` -- LQR |
-| `7`   | `CONTROLLER_CUSTOM3` -- Direct-thrust PID (WIP) |
-| `8`   | `CONTROLLER_CUSTOM4` -- Hybrid |
-| `9`   | `CONTROLLER_CUSTOM5` -- Final tuned PID |
+| Value | Controller | Notes |
+|------:|------------|-------|
+| `1`   | PID (stock + project tweaks) | `controller_pid.c` |
+| `2`   | Mellinger | upstream |
+| `3`   | INDI | upstream |
+| `4`   | Brescianini | upstream |
+| `5`   | Custom 1 -- SMC | our work |
+| `6`   | Custom 2 -- Direct-thrust PID | our work |
+| `7`   | Custom 3 -- LQR | our work |
 
-(Exact integer mapping depends on the order they are registered in
-`controller.c`. Use `cfclient` to confirm.)
+Use `cfclient` -> Parameters -> `stabilizer.controller` to switch live
+without re-flashing. The `controllerGetName()` helper in
+`controller.c` returns the registered name string so you can confirm
+which one is active in the log stream.
 
 ## Why patches and not a full vendored copy?
 

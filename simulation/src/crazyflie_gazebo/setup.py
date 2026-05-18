@@ -25,11 +25,11 @@ setup(
     install_requires=['setuptools'],
     zip_safe=True,
 
-    maintainer='denis, Will, denisab, Nikolaj',
+    maintainer='Denis Alpay, Will Kraus, Nikolaj Hindsbo (GustGurus team)',
     maintainer_email='dkalpay@andrew.cmu.edu',
 
-    description='Package for loading a crazyflie drone in gazebo. Also include a keyboard controller',
-    license='TODO: License declaration',
+    description='Crazyflie 2.1 SDF models, ros_gz bridge configuration, launch files, and a keyboard control node for the GustGurus Gazebo simulation.',
+    license='MIT',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

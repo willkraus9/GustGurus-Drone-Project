@@ -24,9 +24,10 @@ compared tracking error.
 | **LQR** (full-state) | Crazyflie firmware | Discrete infinite-horizon gain solved offline in `analysis/Kinf_calc_final.py`, loaded as a constant `K` matrix. |
 | **SMC** (sliding mode) | Crazyflie firmware + Simulink | First validated in Simulink against the nonlinear plant in `dynamics/`, then ported to C. |
 
-Each lives as a separate "custom controller" in the firmware tree
-(`controller_custom1..5`) and is selected at runtime via the standard
-Crazyflie `stabilizer.controller` parameter — no rebuild needed to switch.
+Each is registered as a custom controller in the Crazyflie firmware
+(see [`firmware/README.md`](firmware/README.md) for the integer mapping)
+and is selected at runtime via the standard `stabilizer.controller`
+parameter — no rebuild needed to switch between PID, LQR, and SMC.
 
 A ROS 2 + Gazebo simulation under `simulation/` mirrors the firmware control
 loop for development outside the lab.
@@ -66,14 +67,18 @@ the tradeoff concrete instead of theoretical.
 │   ├── Coriolis.m / inertia_matrix_J.m   Manipulator-form terms
 │   ├── smc1.m / smc2.m       Sliding-mode controller scripts
 │   └── control_stack.slx     Full Simulink control stack
-├── analysis/                 Offline analysis + flight data
-│   ├── Kinf_calc_final.py    Discrete LQR gain solver (DARE)
-│   ├── square_wave_tracking.py   Step-response analysis utility
-│   ├── plotter1.py / plotter2.py Flight-log plotting
-│   └── data/                 Recorded error and motor logs from flights
-└── docs/
-    └── dynamics-derivation/  LaTeX derivation of the dynamics (PDF + source)
+└── analysis/                 Offline analysis + flight data
+    ├── Kinf_calc_final.py    Discrete LQR gain solver (DARE)
+    ├── square_wave_tracking.py   Step-response analysis utility
+    ├── plotter1.py / plotter2.py Flight-log plotting
+    └── data/                 Recorded error and motor logs from flights
 ```
+
+The rigid-body derivation lives in the MATLAB source under
+`dynamics/` -- `Baseline.m` sets numerical parameters,
+`p_dyn.m` / `eta_dyn.m` build the position and attitude dynamics, and
+`Coriolis.m` / `inertia_matrix_J.m` provide the manipulator-form terms
+that `control_stack.slx` consumes.
 
 ---
 
@@ -109,6 +114,7 @@ cd crazyflie-firmware && make cf2_defconfig && make -j && make cload
 ```
 
 Switch controllers at runtime from `cfclient` (Parameters → `stabilizer.controller`).
+See the integer mapping in [`firmware/README.md`](firmware/README.md).
 
 ### Offline analysis
 
@@ -134,8 +140,8 @@ runs (full data in `analysis/data/normalized_error_log.csv`):
 - **SMC:** strongest disturbance rejection of the three; visible chattering
   in motor commands, mitigated with a boundary-layer approximation.
 
-See the demo videos for the qualitative difference, and `docs/` for the
-derivation that motivates each gain choice.
+See the demo videos for the qualitative difference, and the `dynamics/`
+MATLAB sources for the model derivation that motivates each gain choice.
 
 ---
 

@@ -11,8 +11,8 @@ firmware/src/modules/
 │   ├── controller_custom1.h       SMC (z + roll/pitch) -- registered
 │   ├── controller_custom2.h       Direct-thrust PID    -- registered
 │   ├── controller_custom3.h       LQR (full-state)     -- registered
-│   ├── controller_custom4.h       LQR + Riccati solver -- WIP, commented out in controller.c
-│   ├── controller_custom5.h       SMC variant          -- WIP, commented out in controller.c
+│   ├── controller_custom4.h       LQR + Riccati solver -- exploratory, not registered
+│   ├── controller_custom5.h       SMC variant          -- exploratory, not registered
 │   └── controller_custom_types.h  Shared types
 └── src/controller/
     ├── controller.c               Registration table (controllerFunctions[])
@@ -20,10 +20,10 @@ firmware/src/modules/
     └── controller_customN.c       Implementation for each custom variant
 ```
 
-The two WIP controllers (Custom4, Custom5) are kept in-tree for the
-record of what we explored but are not registered in
-`controllerFunctions[]`. Uncomment the matching lines in
-`controller.c` to flight-test them.
+Custom4 and Custom5 are kept in-tree as exploratory prototypes -- a
+Riccati-based LQR and an alternate SMC formulation -- but are
+intentionally not registered in `controllerFunctions[]`. Uncomment the
+matching lines in `controller.c` to flight-test them.
 
 ## Building
 

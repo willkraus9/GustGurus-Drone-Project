@@ -53,12 +53,12 @@ def generate_launch_description():
         output='screen'
     )
 
-    keyboard_control = Node(
-        package = "crazyflie_gazebo",
-        executable = "control_services",
-        output = "screen"
-    )
-
+    # Optional service node that translates teleop_twist_keyboard cmd_vel
+    # into Gazebo bridge calls. Run separately when you want keyboard
+    # control:
+    #   ros2 run crazyflie_gazebo control_services
+    # then
+    #   ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
     return LaunchDescription([
         gz_sim,

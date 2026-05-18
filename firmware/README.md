@@ -22,25 +22,32 @@ firmware/src/modules/
 
 ## Building
 
-The custom controllers are registered alongside the stock controllers in
-`controller.c`. To build:
+The custom controllers are wired into the stabilizer through the
+`controllerFunctions[]` registration table in `controller.c` -- there is
+no Kconfig switch, so the patched `controller.c` builds them all in by
+default. To build:
 
 ```bash
-# 1. Clone Bitcraze firmware at a known-good tag (we used 2024.10 / commit dac34d4)
+# 1. Clone Bitcraze firmware (we used the 2024.10 release; commit dac34d4
+#    of this repo is known good).
 git clone --recurse-submodules https://github.com/bitcraze/crazyflie-firmware.git
 cd crazyflie-firmware
 
-# 2. Copy the patches over
+# 2. Copy the patches over (preserves the upstream directory layout).
 cp -r /path/to/this/repo/firmware/src/* src/
 
-# 3. Configure -- enable the custom controllers
+# 3. Configure for the Crazyflie 2.1 and build.
 make cf2_defconfig
-make menuconfig    # Expert -> Controllers -> include the desired CONTROLLER_CUSTOM_N
-
-# 4. Build and flash
 make -j$(nproc)
+
+# 4. Flash over USB or radio.
 make cload
 ```
+
+If you also want the upstream `CONFIG_CONTROLLER_*` Kconfig switches to
+recognize the custom controllers (for compile-time selection), add the
+matching `config CONTROLLER_CUSTOM_N` blocks to
+`src/modules/src/Kconfig`. The runtime path below works without it.
 
 ## Selecting a controller at runtime
 

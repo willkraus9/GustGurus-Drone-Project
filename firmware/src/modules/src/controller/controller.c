@@ -60,7 +60,7 @@ void controllerInit(ControllerType controller) {
   #if defined(CONFIG_CONTROLLER_PID)
     #define CONTROLLER ControllerTypePID
   #elif defined(CONFIG_CONTROLLER_INDI)
-    #define CONTROLLER Cont#define CONTROLLER ControllerTypeCustom5   ollerTypeINDI
+    #define CONTROLLER ControllerTypeINDI
   #elif defined(CONFIG_CONTROLLER_MELLINGER)
     #define CONTROLLER ControllerTypeMellinger
   #elif defined(CONFIG_CONTROLLER_BRESCIANINI)

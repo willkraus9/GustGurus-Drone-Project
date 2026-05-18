@@ -22,13 +22,17 @@
         name="ignition::gazebo::systems::Contact">
         </plugin>
 
-        <!-- it would be nice to figure out how to make these work with relative paths -->
+        <!--
+            @MODELS_DIR@ is substituted at launch time by
+            crazyflie_gazebo.launch.py to the absolute path of the package
+            share models directory. Do not edit by hand.
+        -->
         <include>
-            <uri>/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/models/model_each_motor.sdf</uri>
+            <uri>@MODELS_DIR@/model_each_motor.sdf</uri>
         </include>
 
         <include>
-            <uri>/home/kaust/Desktop/GustGurus-Drone-Project/crazyflie_simulation/src/crazyflie_gazebo/models/ground_plane.sdf</uri>
+            <uri>@MODELS_DIR@/ground_plane.sdf</uri>
         </include>
 
         <light name="sun" type="directional">

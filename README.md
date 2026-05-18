@@ -93,8 +93,8 @@ ros2 launch crazyflie_gazebo crazyflie_gazebo.launch.py
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
-Note: paths in `crazyflie_world.sdf` are currently absolute and need editing
-for your machine. Making these relative is a known TODO.
+The world file uses `@MODELS_DIR@` placeholders that the launch file
+substitutes at runtime, so no per-machine path editing is required.
 
 ### Hardware (Crazyflie 2.1)
 
@@ -116,8 +116,8 @@ Switch controllers at runtime from `cfclient` (Parameters → `stabilizer.contro
 # Solve the discrete LQR gain (uses scipy.linalg.solve_discrete_are)
 python analysis/Kinf_calc_final.py
 
-# Plot a recorded flight
-python analysis/plotter1.py analysis/data/normalized_error_log.csv
+# Plot a recorded flight (plotters read fixed filenames from cwd)
+cd analysis/data && python ../plotter1.py
 ```
 
 ---

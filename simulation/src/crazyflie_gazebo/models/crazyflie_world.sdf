@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+    <world name="crazyflie_world">
+        <physics name="2ms" type="ignored">
+        <max_step_size>0.002</max_step_size>
+        <real_time_factor>1.0</real_time_factor>
+        </physics>
+        <plugin
+        filename="ignition-gazebo-physics-system"
+        name="ignition::gazebo::systems::Physics">
+        </plugin>
+        <plugin
+        filename="ignition-gazebo-user-commands-system"
+        name="ignition::gazebo::systems::UserCommands">
+        </plugin>
+        <plugin
+        filename="ignition-gazebo-scene-broadcaster-system"
+        name="ignition::gazebo::systems::SceneBroadcaster">
+        </plugin>
+        <plugin
+        filename="ignition-gazebo-contact-system"
+        name="ignition::gazebo::systems::Contact">
+        </plugin>
+
+        <!--
+            @MODELS_DIR@ is substituted at launch time by
+            crazyflie_gazebo.launch.py to the absolute path of the package
+            share models directory. Do not edit by hand.
+        -->
+        <include>
+            <uri>@MODELS_DIR@/model_each_motor.sdf</uri>
+        </include>
+
+        <include>
+            <uri>@MODELS_DIR@/ground_plane.sdf</uri>
+        </include>
+
+        <light name="sun" type="directional">
+            <cast_shadows>true</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>-0.5 0.5 -1</direction>
+        </light>
+
+
+    </world>
+</sdf>

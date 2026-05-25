@@ -1,0 +1,39 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.venv/
+venv/
+
+# MATLAB / Simulink
+*.asv
+*.slxc
+*.autosave
+slprj/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.dvi
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# ROS2 / colcon
+build/
+install/
+log/
+
+# Misc
+*.zip
